@@ -6,15 +6,18 @@
 
 **💡 NeuroBench-LS **, a unified benchmark framework designed to evaluate and enhance the generalizability of foundation models across the human lifespan using brain MRI. *** 
 
-## 📋 README.md template
+## 📋 Our Dataset
 
-We provide a [README.md template](templates/README.md) that you can use for releasing ML research repositories. The sections in the template were derived by looking at existing repositories, seeing which had the best reception in the community, and then looking at common components that correlate with popularity.    
+We provide a comprehensive MRI dataset on [Harvard Dataverse](https://dataverse.harvard.edu/) spanning the full human lifespan—from fetus and infant to elderly adults. The collection includes over **22,000** high-quality **T1-weighted** and **T2-weighted** structural brain MRI scans.
 
-## ✓ ML Code Completeness Checklist
+- **Publicly released subcortical segmentation** are available via the official [Dataverse link](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/B5OU7H).
+- **Private or restricted datasets** can be accessed upon request. Please contact the corresponding principal investigator (PI) for access approval.
 
-We compiled this checklist by looking at what's common to the most popular ML research repositories. In addition, we prioritized items that facilitate reproducibility and make it easier for others build upon research code.
+For more details on data usage, structure, and benchmarks, please refer to the full documentation in this repository.   
 
-The ML Code Completeness Checklist consists of five items:
+## ✓ Get Dataset
+
+We provide links and instructions for all dataset
 
 1. **Specification of dependencies**
 2. **Training code** 
@@ -62,21 +65,19 @@ Adding a table of results into README.md lets your users quickly understand what
 
 You can further help the user understand and contextualize your results by linking back to the full leaderboard that has up-to-date results from other papers. There are [multiple leaderboard services](#results-leaderboards) where this information is stored.  
 
-## 🎉 Additional awesome resources for releasing research code
+## 🎉 NeuroBench_LS
 
-### Hosting pretrained models files
+### Mask Autoencoder for Lifespan
 
-1. [Zenodo](https://zenodo.org) - versioning, 50GB, free bandwidth, DOI, provides long-term preservation
-2. [GitHub Releases](https://help.github.com/en/github/administering-a-repository/managing-releases-in-a-repository) - versioning, 2GB file limit, free bandwidth
-3. [OneDrive](https://www.onedrive.com/) - versioning, 2GB (free)/ 1TB (with Office 365), free bandwidth
-4. [Google Drive](https://drive.google.com) - versioning, 15GB, free bandwidth
-5. [Dropbox](https://dropbox.com) - versioning, 2GB (paid unlimited), free bandwidth
-6. [AWS S3](https://aws.amazon.com/s3/) - versioning, paid only, paid bandwidth
-7. [huggingface_hub](https://github.com/huggingface/huggingface_hub) - versioning, no size limitations, free bandwidth
-8. [DAGsHub](https://dagshub.com/) - versioning, no size limitations, free bandwith
-9. [CodaLab Worksheets](https://worksheets.codalab.org/) - 10GB, free bandwith
+We provide 2D and 3D MAE
 
-### Managing model files
+1. [2D MAE](https://github.com/rlu25/NeuroBrench_LS/tree/main/MAE_Model/MAE_2D) - 2D MAE pretrained on slice-based MRI acquisitions.
+2. [3D MAE](https://github.com/rlu25/NeuroBrench_LS/tree/main/MAE_Model/MAE_3D) - 3D MAE pretrained on volumetric MRI scans
+3. [Google Drive](https://drive.google.com/drive/folders/1JwdIB00tUwrLIUAX7HIbTgUj6c97j6Aa?usp=sharing) - Weights in here
+
+### Baseline
+
+We provide seven SOTA for different tasks
 
 1. [RClone](https://rclone.org/) - provides unified access to many different cloud storage providers
 
