@@ -1,16 +1,14 @@
-# Tips for Publishing Research Code
+# NeuroBench_LS: Benchmarking Foundation Models on a Lifespan-Scale Brain MRI Dataset
+
+ 
 
 <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/08/Logo_for_Conference_on_Neural_Information_Processing_Systems.svg/1200px-Logo_for_Conference_on_Neural_Information_Processing_Systems.svg.png" width=200>
 
-**💡 Collated best practices from most popular ML research repositories - *now official guidelines at NeurIPS 2021!*** 
-
-Based on analysis of more than 200 Machine Learning repositories, these recommendations facilitate reproducibility and correlate with GitHub stars - for more details, see our [our blog post](https://medium.com/paperswithcode/ml-code-completeness-checklist-e9127b168501). 
-
-For NeurIPS 2021 code submissions it is recommended (but not mandatory) to use the [README.md template](templates/README.md) and check as many items on the ML Code Completeness Checklist (described below) as possible. 
+**💡 NeuroBench-LS **, a unified benchmark framework designed to evaluate and enhance the generalizability of foundation models across the human lifespan using brain MRI. *** 
 
 ## 📋 README.md template
 
-We provide a [README.md template](templates/README.md) that you can use for releasing ML research repositories. The sections in the template were derived by looking at existing repositories, seeing which had the best reception in the community, and then looking at common components that correlate with popularity.
+We provide a [README.md template](templates/README.md) that you can use for releasing ML research repositories. The sections in the template were derived by looking at existing repositories, seeing which had the best reception in the community, and then looking at common components that correlate with popularity.    
 
 ## ✓ ML Code Completeness Checklist
 
@@ -77,7 +75,7 @@ You can further help the user understand and contextualize your results by linki
 7. [huggingface_hub](https://github.com/huggingface/huggingface_hub) - versioning, no size limitations, free bandwidth
 8. [DAGsHub](https://dagshub.com/) - versioning, no size limitations, free bandwith
 9. [CodaLab Worksheets](https://worksheets.codalab.org/) - 10GB, free bandwith
- 
+
 ### Managing model files
 
 1. [RClone](https://rclone.org/) - provides unified access to many different cloud storage providers
