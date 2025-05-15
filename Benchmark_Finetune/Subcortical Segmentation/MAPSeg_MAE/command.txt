@@ -1,0 +1,3 @@
+python train.py --config="/opt/localdata/data/usr-envs/MAPSEG/MAPSeg-main/cfg/example_yaml/brain_mae.yaml"
+
+python train.py --config="/opt/localdata/data/usr-envs/MAPSEG/MAPSeg-main/cfg/example_yaml/brain_mae.yaml"

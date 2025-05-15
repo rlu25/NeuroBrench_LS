@@ -1,0 +1,13 @@
+url:
+- "https://zenodo.org/records/10390573/files"
+- "https://b2share.fz-juelich.de/api/files/a423a576-220d-47b0-9e0c-b5b32d45fc59"
+
+checkpoint:
+  axial: "axial.pkl"
+  coronal: "coronal.pkl"
+  sagittal: "sagittal.pkl"
+
+config:
+  axial: "axial.yaml"
+  coronal: "coronal.yaml"
+  sagittal: "sagittal.yaml"

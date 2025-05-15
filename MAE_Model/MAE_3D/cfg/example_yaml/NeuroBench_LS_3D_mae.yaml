@@ -1,0 +1,18 @@
+system:
+  project: PROJ
+  exp_name: NeuroBench_LS_2D_3D
+  n_threads: 8
+  ckpt_dir: ''
+  seed: 0
+
+train: 
+  niter: 200
+  niter_decay: 100
+  type: 'mae'
+
+data: 
+  mae_root: 'NeuroBench_LS-Clean-T1T2'  #NeuroBench_LS dataset
+  mae_domain: 'mae_domain.txt'          #domain
+  mae_test_list: 'sub_list_final.csv'     #data for tasks
+model:
+  pretrain_model: ''    #pretrian_model_dir

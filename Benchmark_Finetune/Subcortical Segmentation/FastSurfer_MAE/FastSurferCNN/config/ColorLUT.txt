@@ -1,0 +1,11 @@
+
+#No. Label Name:                            R   G   B   A
+
+0   Unknown                                 0   0   0   0
+1   Hippocampus                        220 216 20  0
+2   Amygdala                           103 255 255 0
+3   Caudate                           122 186 220 0
+4   Putamen                           236 13  176 0
+5   Pallidum                          13  48  255 0
+6   Thalamus                          0   118 14  0
+7   Accumbens-area                     255 165 0   0

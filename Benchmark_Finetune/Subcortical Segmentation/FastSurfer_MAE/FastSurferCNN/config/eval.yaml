@@ -1,0 +1,20 @@
+# input_root: "/path/to/input"  # Replace with actual input path
+# output_root: "/path/to/output"  # Replace with actual output path
+# lut_path: "ColorLUT.txt"
+
+# ckpt_ax: "/path/to/axial_checkpoint.pkl"
+# ckpt_cor: "/path/to/coronal_checkpoint.pkl"
+# ckpt_sag: "/path/to/sagital_checkpoint.pkl"
+
+# cfg_ax: "/path/to/axial_config.yaml"
+# cfg_cor: "/path/to/coronal_config.yaml"
+# cfg_sag: "/path/to/sagittal_config.yaml"
+input_root : "/opt/localdata/data/usr-envs/ruiying/Code/NeurIPS/Dataset_labeled/test"
+output_root : "/opt/localdata/data/usr-envs/ruiying/Code/NeurIPS/finetune_result/fastsurfer/adult_rest"
+lut_path : "/opt/localdata/data/usr-envs/ruiying/Code/NeurIPS/FastSurfer/FastSurfer_MAE/FastSurferCNN/config/ColorLUT.txt"
+ckpt_ax : "/opt/localdata/data/usr-envs/ruiying/Code/NeurIPS/FastSurfer/FastSurfer_MAE/FastSurferCNN/experiments/axial/FastSurferVINN_NeuroBenchLS/checkpoints/FastSurferVINN/Epoch_00078_training_state.pkl"
+ckpt_cor : "/opt/localdata/data/usr-envs/ruiying/Code/NeurIPS/FastSurfer/FastSurfer_MAE/FastSurferCNN/experiments/coronal/FastSurferVINN_NeuroBenchLS/checkpoints/FastSurferVINN/Epoch_00100_training_state.pkl"
+ckpt_sag : "/opt/localdata/data/usr-envs/ruiying/Code/NeurIPS/FastSurfer/FastSurfer_MAE/FastSurferCNN/experiments/sagittal/FastSurferVINN_NeuroBenchLS/checkpoints/FastSurferVINN/Epoch_00052_training_state.pkl"
+cfg_ax : "/opt/localdata/data/usr-envs/ruiying/Code/NeurIPS/FastSurfer/FastSurfer_MAE/FastSurferCNN/experiments/axial/FastSurferVINN_NeuroBenchLS/config/FastSurferVINN/config.yaml"
+cfg_cor : "/opt/localdata/data/usr-envs/ruiying/Code/NeurIPS/FastSurfer/FastSurfer_MAE/FastSurferCNN/experiments/coronal/FastSurferVINN_NeuroBenchLS/config/FastSurferVINN/config.yaml"
+cfg_sag : "/opt/localdata/data/usr-envs/ruiying/Code/NeurIPS/FastSurfer/FastSurfer_MAE/FastSurferCNN/experiments/sagittal/FastSurferVINN_NeuroBenchLS/config/FastSurferVINN/config.yaml"

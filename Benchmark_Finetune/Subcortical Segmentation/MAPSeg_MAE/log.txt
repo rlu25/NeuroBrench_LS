@@ -1,0 +1,1370 @@
+nohup: ignoring input
+/opt/localdata/data/usr-envs/ruiying/Code/NeurIPS/MAPSeg-main/model/mpl_seg.py:292: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  torch.load(self.cfg.model.pretrain_model),
+wandb: Currently logged in as: lrying0128 (lrying0128-emory-university). Use `wandb login --relogin` to force relogin
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Tracking run with wandb version 0.19.3
+wandb: Run data is saved locally in /opt/localdata/data/usr-envs/ruiying/Code/NeurIPS/MAPSeg-main/wandb/run-20250503_204136-pp3t14r0
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run X_site_70_final
+wandb: ⭐️ View project at https://wandb.ai/lrying0128-emory-university/PROJ
+wandb: 🚀 View run at https://wandb.ai/lrying0128-emory-university/PROJ/runs/pp3t14r0
+loaded configuration file /opt/localdata/data/usr-envs/ruiying/Code/NeurIPS/MAPSeg-main/cfg/example_yaml/X_site_finetune70.yaml
+pretrained weights loaded, /opt/localdata/data/usr-envs/ruiying/Code/NeurIPS/MAPSeg-main/ckpt/PROJE/BRAIN_MAE_70/model_final.pth
+create web directory /opt/localdata/data/usr-envs/ruiying/Code/NeurIPS/MAPSeg-main/ckpt_mpl/PROJ/X_site_70_final/web...
+num of target domian: 3
+num of source domain: 8
+Start training with this config:
+data:
+  aug: True
+  aug_prob: 0.35
+  extension: .nii.gz
+  mae_domain: /opt/localdata/data/usr-envs/ruiying/Code/NeurIPS/MAPSeg-main/cfg/example_yaml/mae_domain.txt
+  mae_root: /opt/localdata/data/usr-envs/MAPSEG/MAPSeg-main/mae_train
+  mae_test_list: /opt/localdata/data/usr-envs/ruiying/Code/NeurIPS/MAPSeg-main/cfg/example_yaml/sub_list_final.csv
+  norm_perc: 99.5
+  normalize: True
+  patch_size: (96, 96, 96)
+  remove_bg: True
+  src_data: /opt/localdata/data/usr-envs/ruiying/Code/NeurIPS/MAPSeg-main/src_data
+  tgt_data: /opt/localdata/data/usr-envs/ruiying/Code/NeurIPS/MAPSeg-main/tgt_data
+  val_img: /opt/localdata/data/usr-envs/ruiying/Code/NeurIPS/MAPSeg-main/val_data/MCRIB_T2_img
+  val_label: /opt/localdata/data/usr-envs/ruiying/Code/NeurIPS/MAPSeg-main/val_data/MCRIB_T2_label
+model:
+  depth: 8
+  embed_dim: 512
+  large_scale: True
+  load_pretrain: True
+  pretrain_model: /opt/localdata/data/usr-envs/ruiying/Code/NeurIPS/MAPSeg-main/ckpt/PROJE/BRAIN_MAE_70/model_final.pth
+system:
+  ckpt_dir: /opt/localdata/data/usr-envs/ruiying/Code/NeurIPS/MAPSeg-main/ckpt_mpl
+  display_winsize: 128
+  exp_name: X_site_70_final
+  n_threads: 8
+  no_html: False
+  project: PROJ
+  save_nii: True
+  seed: 0
+  wandb: True
+train:
+  batch_size: 1
+  betas: (0.9, 0.999)
+  cls_num: 8
+  global_mae_patch: 4
+  local_mae_patch: 8
+  lr: 0.0001
+  mask_ratio: 0.7
+  niter: 200
+  niter_decay: 100
+  optimizer: AdamW
+  patience: 50
+  print_freq: 100
+  save_epoch_freq: 50
+  test_time: False
+  type: mpl
+  warmup: 10
+  weight_decay: 0.01
+(epoch: 1, iters: 0, time: 0.192) src_seg_loss: 2.650 src_seg_loss_masked: 2.642 src_seg_loss_aux: 2.672 src_seg_loss_aux_masked: 2.676 src_cos_reg: 0.797 src_cos_reg_masked: 0.743 
+Epoch: 1, Validation Dice: 0.07620974652336143, Validation score: 0.07620974652336143, target pseudo loss: 0.0
+Current cumulative epochs of no improvement: 0
+End of epoch 1 / 300 	 Time Taken: 121 sec
+(epoch: 2, iters: 0, time: 0.018) src_seg_loss: 0.191 src_seg_loss_masked: 0.087 src_seg_loss_aux: 0.092 src_seg_loss_aux_masked: 0.019 src_cos_reg: 0.057 src_cos_reg_masked: 0.051 
+Epoch: 2, Validation Dice: 0.17722990017761592, Validation score: 0.17722990017761592, target pseudo loss: 0.0
+Current cumulative epochs of no improvement: 0
+End of epoch 2 / 300 	 Time Taken: 107 sec
+(epoch: 3, iters: 0, time: 0.023) src_seg_loss: -0.052 src_seg_loss_masked: -0.042 src_seg_loss_aux: -0.060 src_seg_loss_aux_masked: -0.068 src_cos_reg: 0.022 src_cos_reg_masked: 0.022 
+Epoch: 3, Validation Dice: 0.4134775693797305, Validation score: 0.4134775693797305, target pseudo loss: 0.0
+Current cumulative epochs of no improvement: 0
+End of epoch 3 / 300 	 Time Taken: 107 sec
+(epoch: 4, iters: 0, time: 0.020) src_seg_loss: -0.124 src_seg_loss_masked: -0.109 src_seg_loss_aux: -0.125 src_seg_loss_aux_masked: -0.122 src_cos_reg: 0.016 src_cos_reg_masked: 0.019 
+Epoch: 4, Validation Dice: 0.5748734007365475, Validation score: 0.5748734007365475, target pseudo loss: 0.0
+Current cumulative epochs of no improvement: 0
+End of epoch 4 / 300 	 Time Taken: 106 sec
+(epoch: 5, iters: 0, time: 0.053) src_seg_loss: -0.459 src_seg_loss_masked: -0.446 src_seg_loss_aux: -0.407 src_seg_loss_aux_masked: -0.411 src_cos_reg: 0.023 src_cos_reg_masked: 0.025 
+Epoch: 5, Validation Dice: 0.6412909694527574, Validation score: 0.6412909694527574, target pseudo loss: 0.0
+Current cumulative epochs of no improvement: 0
+End of epoch 5 / 300 	 Time Taken: 108 sec
+(epoch: 6, iters: 0, time: 0.041) src_seg_loss: -0.572 src_seg_loss_masked: -0.569 src_seg_loss_aux: -0.504 src_seg_loss_aux_masked: -0.496 src_cos_reg: 0.035 src_cos_reg_masked: 0.037 
+Epoch: 6, Validation Dice: 0.6457159776765298, Validation score: 0.6457159776765298, target pseudo loss: 0.0
+Current cumulative epochs of no improvement: 0
+End of epoch 6 / 300 	 Time Taken: 107 sec
+(epoch: 7, iters: 0, time: 0.029) src_seg_loss: -0.543 src_seg_loss_masked: -0.486 src_seg_loss_aux: -0.401 src_seg_loss_aux_masked: -0.392 src_cos_reg: 0.052 src_cos_reg_masked: 0.053 
+Epoch: 7, Validation Dice: 0.7386604049033103, Validation score: 0.7386604049033103, target pseudo loss: 0.0
+Current cumulative epochs of no improvement: 0
+End of epoch 7 / 300 	 Time Taken: 107 sec
+(epoch: 8, iters: 0, time: 0.017) src_seg_loss: -0.694 src_seg_loss_masked: -0.689 src_seg_loss_aux: -0.638 src_seg_loss_aux_masked: -0.640 src_cos_reg: 0.024 src_cos_reg_masked: 0.026 
+Epoch: 8, Validation Dice: 0.7330470215619596, Validation score: 0.7330470215619596, target pseudo loss: 0.0
+Current cumulative epochs of no improvement: 1
+End of epoch 8 / 300 	 Time Taken: 104 sec
+(epoch: 9, iters: 0, time: 0.067) src_seg_loss: -0.701 src_seg_loss_masked: -0.661 src_seg_loss_aux: -0.488 src_seg_loss_aux_masked: -0.480 src_cos_reg: 0.063 src_cos_reg_masked: 0.063 
+Epoch: 9, Validation Dice: 0.7039568471532914, Validation score: 0.7039568471532914, target pseudo loss: 0.0
+Current cumulative epochs of no improvement: 2
+End of epoch 9 / 300 	 Time Taken: 107 sec
+(epoch: 10, iters: 0, time: 0.051) src_seg_loss: -0.577 src_seg_loss_masked: -0.551 src_seg_loss_aux: -0.657 src_seg_loss_aux_masked: -0.625 src_cos_reg: 0.027 src_cos_reg_masked: 0.028 
+Epoch: 10, Validation Dice: 0.726060582598772, Validation score: 0.726060582598772, target pseudo loss: 0.0
+Current cumulative epochs of no improvement: 3
+End of epoch 10 / 300 	 Time Taken: 106 sec
+EMA weights initialized
+(epoch: 11, iters: 0, time: 0.028) src_seg_loss: -0.573 src_seg_loss_masked: -0.519 src_seg_loss_aux: -0.683 src_seg_loss_aux_masked: -0.674 src_cos_reg: 0.059 src_cos_reg_masked: 0.064 tgt_pse_seg_loss: -0.819 tgt_pse_seg_loss_aux: -0.837 tgt_cos_reg: 0.037 
+Epoch: 11, Validation Dice: 0.7299129038014769, Validation score: 1.0309359471955657, target pseudo loss: -0.6020460867881775
+Current cumulative epochs of no improvement: 0
+End of epoch 11 / 300 	 Time Taken: 154 sec
+(epoch: 12, iters: 0, time: 0.024) src_seg_loss: -0.753 src_seg_loss_masked: -0.697 src_seg_loss_aux: -0.589 src_seg_loss_aux_masked: -0.544 src_cos_reg: 0.059 src_cos_reg_masked: 0.080 tgt_pse_seg_loss: -0.789 tgt_pse_seg_loss_aux: -0.767 tgt_cos_reg: 0.034 
+Epoch: 12, Validation Dice: 0.7282196145484809, Validation score: 1.0451749198863869, target pseudo loss: -0.6339106106758118
+Current cumulative epochs of no improvement: 0
+End of epoch 12 / 300 	 Time Taken: 153 sec
+(epoch: 13, iters: 0, time: 0.021) src_seg_loss: -0.648 src_seg_loss_masked: -0.627 src_seg_loss_aux: -0.713 src_seg_loss_aux_masked: -0.695 src_cos_reg: 0.037 src_cos_reg_masked: 0.038 tgt_pse_seg_loss: -0.742 tgt_pse_seg_loss_aux: -0.828 tgt_cos_reg: 0.042 
+Epoch: 13, Validation Dice: 0.7184723870345413, Validation score: 1.0237749574432171, target pseudo loss: -0.6106051408173516
+Current cumulative epochs of no improvement: 1
+End of epoch 13 / 300 	 Time Taken: 150 sec
+(epoch: 14, iters: 0, time: 0.057) src_seg_loss: -0.518 src_seg_loss_masked: -0.496 src_seg_loss_aux: -0.663 src_seg_loss_aux_masked: -0.653 src_cos_reg: 0.038 src_cos_reg_masked: 0.045 tgt_pse_seg_loss: -0.845 tgt_pse_seg_loss_aux: -0.845 tgt_cos_reg: 0.018 
+Epoch: 14, Validation Dice: 0.7381718677869658, Validation score: 1.0983217175892213, target pseudo loss: -0.7202996996045112
+Current cumulative epochs of no improvement: 0
+End of epoch 14 / 300 	 Time Taken: 156 sec
+(epoch: 15, iters: 0, time: 0.022) src_seg_loss: -0.777 src_seg_loss_masked: -0.745 src_seg_loss_aux: -0.764 src_seg_loss_aux_masked: -0.756 src_cos_reg: 0.024 src_cos_reg_masked: 0.025 tgt_pse_seg_loss: -0.207 tgt_pse_seg_loss_aux: -0.816 tgt_cos_reg: 0.058 
+Epoch: 15, Validation Dice: 0.7248095047570386, Validation score: 1.0894201276547828, target pseudo loss: -0.7292212457954883
+Current cumulative epochs of no improvement: 1
+End of epoch 15 / 300 	 Time Taken: 151 sec
+(epoch: 16, iters: 0, time: 0.043) src_seg_loss: -0.755 src_seg_loss_masked: -0.695 src_seg_loss_aux: -0.672 src_seg_loss_aux_masked: -0.639 src_cos_reg: 0.019 src_cos_reg_masked: 0.020 tgt_pse_seg_loss: -0.793 tgt_pse_seg_loss_aux: -0.781 tgt_cos_reg: 0.021 
+Epoch: 16, Validation Dice: 0.7344905592865396, Validation score: 1.099647127500837, target pseudo loss: -0.7303131364285946
+Current cumulative epochs of no improvement: 0
+End of epoch 16 / 300 	 Time Taken: 155 sec
+(epoch: 17, iters: 0, time: 0.022) src_seg_loss: -0.769 src_seg_loss_masked: -0.735 src_seg_loss_aux: -0.717 src_seg_loss_aux_masked: -0.697 src_cos_reg: 0.023 src_cos_reg_masked: 0.023 tgt_pse_seg_loss: -0.857 tgt_pse_seg_loss_aux: -0.845 tgt_cos_reg: 0.034 
+Epoch: 17, Validation Dice: 0.7317968260591459, Validation score: 1.11152939722888, target pseudo loss: -0.759465142339468
+Current cumulative epochs of no improvement: 0
+End of epoch 17 / 300 	 Time Taken: 153 sec
+(epoch: 18, iters: 0, time: 0.056) src_seg_loss: -0.701 src_seg_loss_masked: -0.667 src_seg_loss_aux: -0.684 src_seg_loss_aux_masked: -0.668 src_cos_reg: 0.030 src_cos_reg_masked: 0.032 tgt_pse_seg_loss: -0.869 tgt_pse_seg_loss_aux: -0.881 tgt_cos_reg: 0.027 
+Epoch: 18, Validation Dice: 0.7416694942033173, Validation score: 1.1110699024712922, target pseudo loss: -0.7388008165359498
+Current cumulative epochs of no improvement: 1
+End of epoch 18 / 300 	 Time Taken: 154 sec
+(epoch: 19, iters: 0, time: 0.042) src_seg_loss: -0.792 src_seg_loss_masked: -0.756 src_seg_loss_aux: -0.767 src_seg_loss_aux_masked: -0.752 src_cos_reg: 0.028 src_cos_reg_masked: 0.028 tgt_pse_seg_loss: -0.882 tgt_pse_seg_loss_aux: -0.892 tgt_cos_reg: 0.044 
+Epoch: 19, Validation Dice: 0.7273226261350875, Validation score: 1.1080984119910364, target pseudo loss: -0.7615515717118978
+Current cumulative epochs of no improvement: 2
+End of epoch 19 / 300 	 Time Taken: 153 sec
+(epoch: 20, iters: 0, time: 0.029) src_seg_loss: -0.792 src_seg_loss_masked: -0.771 src_seg_loss_aux: -0.707 src_seg_loss_aux_masked: -0.690 src_cos_reg: 0.057 src_cos_reg_masked: 0.056 tgt_pse_seg_loss: -0.471 tgt_pse_seg_loss_aux: -0.748 tgt_cos_reg: 0.045 
+Epoch: 20, Validation Dice: 0.7462697210027802, Validation score: 1.1373376773907768, target pseudo loss: -0.7821359127759934
+Current cumulative epochs of no improvement: 0
+End of epoch 20 / 300 	 Time Taken: 153 sec
+(epoch: 21, iters: 0, time: 0.041) src_seg_loss: -0.776 src_seg_loss_masked: -0.767 src_seg_loss_aux: -0.764 src_seg_loss_aux_masked: -0.754 src_cos_reg: 0.022 src_cos_reg_masked: 0.023 tgt_pse_seg_loss: -0.671 tgt_pse_seg_loss_aux: -0.743 tgt_cos_reg: 0.043 
+Epoch: 21, Validation Dice: 0.746506532864744, Validation score: 1.1366644899417704, target pseudo loss: -0.7803159141540528
+Current cumulative epochs of no improvement: 1
+End of epoch 21 / 300 	 Time Taken: 152 sec
+(epoch: 22, iters: 0, time: 0.034) src_seg_loss: -0.600 src_seg_loss_masked: -0.548 src_seg_loss_aux: -0.693 src_seg_loss_aux_masked: -0.674 src_cos_reg: 0.026 src_cos_reg_masked: 0.026 tgt_pse_seg_loss: -0.903 tgt_pse_seg_loss_aux: -0.903 tgt_cos_reg: 0.009 
+Epoch: 22, Validation Dice: 0.7402952877878863, Validation score: 1.1133990727066714, target pseudo loss: -0.7462075698375702
+Current cumulative epochs of no improvement: 2
+End of epoch 22 / 300 	 Time Taken: 152 sec
+(epoch: 23, iters: 0, time: 0.024) src_seg_loss: -0.781 src_seg_loss_masked: -0.733 src_seg_loss_aux: -0.779 src_seg_loss_aux_masked: -0.737 src_cos_reg: 0.031 src_cos_reg_masked: 0.032 tgt_pse_seg_loss: -0.836 tgt_pse_seg_loss_aux: -0.890 tgt_cos_reg: 0.061 
+Epoch: 23, Validation Dice: 0.7396738362725445, Validation score: 1.123446325589306, target pseudo loss: -0.767544978633523
+Current cumulative epochs of no improvement: 3
+End of epoch 23 / 300 	 Time Taken: 150 sec
+(epoch: 24, iters: 0, time: 0.050) src_seg_loss: -0.759 src_seg_loss_masked: -0.745 src_seg_loss_aux: -0.569 src_seg_loss_aux_masked: -0.535 src_cos_reg: 0.025 src_cos_reg_masked: 0.026 tgt_pse_seg_loss: -0.801 tgt_pse_seg_loss_aux: -0.843 tgt_cos_reg: 0.044 
+Epoch: 24, Validation Dice: 0.7454211680631885, Validation score: 1.1428286816220532, target pseudo loss: -0.7948150271177292
+Current cumulative epochs of no improvement: 0
+End of epoch 24 / 300 	 Time Taken: 155 sec
+(epoch: 25, iters: 0, time: 0.033) src_seg_loss: -0.805 src_seg_loss_masked: -0.776 src_seg_loss_aux: -0.745 src_seg_loss_aux_masked: -0.721 src_cos_reg: 0.034 src_cos_reg_masked: 0.034 tgt_pse_seg_loss: -0.873 tgt_pse_seg_loss_aux: -0.895 tgt_cos_reg: 0.027 
+Epoch: 25, Validation Dice: 0.7319292113048202, Validation score: 1.1197178087991841, target pseudo loss: -0.7755771949887276
+Current cumulative epochs of no improvement: 1
+End of epoch 25 / 300 	 Time Taken: 153 sec
+(epoch: 26, iters: 0, time: 0.029) src_seg_loss: -0.490 src_seg_loss_masked: -0.459 src_seg_loss_aux: -0.672 src_seg_loss_aux_masked: -0.645 src_cos_reg: 0.029 src_cos_reg_masked: 0.028 tgt_pse_seg_loss: -0.846 tgt_pse_seg_loss_aux: -0.868 tgt_cos_reg: 0.028 
+Epoch: 26, Validation Dice: 0.7303839016260278, Validation score: 1.1123404745312107, target pseudo loss: -0.7639131458103656
+Current cumulative epochs of no improvement: 2
+End of epoch 26 / 300 	 Time Taken: 153 sec
+(epoch: 27, iters: 0, time: 0.028) src_seg_loss: -0.736 src_seg_loss_masked: -0.692 src_seg_loss_aux: -0.742 src_seg_loss_aux_masked: -0.719 src_cos_reg: 0.032 src_cos_reg_masked: 0.032 tgt_pse_seg_loss: -0.707 tgt_pse_seg_loss_aux: -0.905 tgt_cos_reg: 0.019 
+Epoch: 27, Validation Dice: 0.731661793979456, Validation score: 1.1207480941513677, target pseudo loss: -0.7781726003438234
+Current cumulative epochs of no improvement: 3
+End of epoch 27 / 300 	 Time Taken: 151 sec
+(epoch: 28, iters: 0, time: 0.028) src_seg_loss: -0.736 src_seg_loss_masked: -0.702 src_seg_loss_aux: -0.669 src_seg_loss_aux_masked: -0.661 src_cos_reg: 0.053 src_cos_reg_masked: 0.059 tgt_pse_seg_loss: -0.875 tgt_pse_seg_loss_aux: -0.870 tgt_cos_reg: 0.018 
+Epoch: 28, Validation Dice: 0.7488653874602079, Validation score: 1.139646863659835, target pseudo loss: -0.7815629523992539
+Current cumulative epochs of no improvement: 4
+End of epoch 28 / 300 	 Time Taken: 151 sec
+(epoch: 29, iters: 0, time: 0.046) src_seg_loss: -0.794 src_seg_loss_masked: -0.762 src_seg_loss_aux: -0.785 src_seg_loss_aux_masked: -0.757 src_cos_reg: 0.029 src_cos_reg_masked: 0.030 tgt_pse_seg_loss: -0.444 tgt_pse_seg_loss_aux: -0.791 tgt_cos_reg: 0.099 
+Epoch: 29, Validation Dice: 0.7469029426276184, Validation score: 1.1311390731930233, target pseudo loss: -0.7684722611308098
+Current cumulative epochs of no improvement: 5
+End of epoch 29 / 300 	 Time Taken: 153 sec
+(epoch: 30, iters: 0, time: 0.029) src_seg_loss: -0.687 src_seg_loss_masked: -0.669 src_seg_loss_aux: -0.717 src_seg_loss_aux_masked: -0.696 src_cos_reg: 0.031 src_cos_reg_masked: 0.031 tgt_pse_seg_loss: -0.904 tgt_pse_seg_loss_aux: -0.908 tgt_cos_reg: 0.025 
+Epoch: 30, Validation Dice: 0.7406860731224337, Validation score: 1.1260631680357078, target pseudo loss: -0.7707541898265481
+Current cumulative epochs of no improvement: 6
+End of epoch 30 / 300 	 Time Taken: 152 sec
+(epoch: 31, iters: 0, time: 0.021) src_seg_loss: -0.818 src_seg_loss_masked: -0.790 src_seg_loss_aux: -0.791 src_seg_loss_aux_masked: -0.768 src_cos_reg: 0.029 src_cos_reg_masked: 0.027 tgt_pse_seg_loss: -0.899 tgt_pse_seg_loss_aux: -0.898 tgt_cos_reg: 0.030 
+Epoch: 31, Validation Dice: 0.74799033086292, Validation score: 1.1363409682690309, target pseudo loss: -0.7767012748122215
+Current cumulative epochs of no improvement: 7
+End of epoch 31 / 300 	 Time Taken: 151 sec
+(epoch: 32, iters: 0, time: 0.020) src_seg_loss: -0.811 src_seg_loss_masked: -0.795 src_seg_loss_aux: -0.804 src_seg_loss_aux_masked: -0.797 src_cos_reg: 0.020 src_cos_reg_masked: 0.021 tgt_pse_seg_loss: -0.884 tgt_pse_seg_loss_aux: -0.884 tgt_cos_reg: 0.025 
+Epoch: 32, Validation Dice: 0.7407391142588735, Validation score: 1.1246315775927782, target pseudo loss: -0.7677849266678095
+Current cumulative epochs of no improvement: 8
+End of epoch 32 / 300 	 Time Taken: 150 sec
+(epoch: 33, iters: 0, time: 0.049) src_seg_loss: -0.193 src_seg_loss_masked: -0.194 src_seg_loss_aux: -0.749 src_seg_loss_aux_masked: -0.739 src_cos_reg: 0.018 src_cos_reg_masked: 0.017 tgt_pse_seg_loss: -0.324 tgt_pse_seg_loss_aux: -0.812 tgt_cos_reg: 0.151 
+Epoch: 33, Validation Dice: 0.7467129651071011, Validation score: 1.1311669001342235, target pseudo loss: -0.768907870054245
+Current cumulative epochs of no improvement: 9
+End of epoch 33 / 300 	 Time Taken: 153 sec
+(epoch: 34, iters: 0, time: 0.022) src_seg_loss: -0.631 src_seg_loss_masked: -0.594 src_seg_loss_aux: -0.756 src_seg_loss_aux_masked: -0.737 src_cos_reg: 0.018 src_cos_reg_masked: 0.018 tgt_pse_seg_loss: -0.912 tgt_pse_seg_loss_aux: -0.921 tgt_cos_reg: 0.025 
+Epoch: 34, Validation Dice: 0.7363756176142624, Validation score: 1.1255947190581492, target pseudo loss: -0.7784382028877735
+Current cumulative epochs of no improvement: 10
+End of epoch 34 / 300 	 Time Taken: 154 sec
+(epoch: 35, iters: 0, time: 0.026) src_seg_loss: -0.787 src_seg_loss_masked: -0.754 src_seg_loss_aux: -0.751 src_seg_loss_aux_masked: -0.731 src_cos_reg: 0.047 src_cos_reg_masked: 0.046 tgt_pse_seg_loss: -0.613 tgt_pse_seg_loss_aux: -0.882 tgt_cos_reg: 0.147 
+Epoch: 35, Validation Dice: 0.7437503155987476, Validation score: 1.137997909627459, target pseudo loss: -0.7884951880574227
+Current cumulative epochs of no improvement: 11
+End of epoch 35 / 300 	 Time Taken: 151 sec
+(epoch: 36, iters: 0, time: 0.064) src_seg_loss: -0.782 src_seg_loss_masked: -0.738 src_seg_loss_aux: -0.772 src_seg_loss_aux_masked: -0.763 src_cos_reg: 0.024 src_cos_reg_masked: 0.023 tgt_pse_seg_loss: -0.668 tgt_pse_seg_loss_aux: -0.903 tgt_cos_reg: 0.059 
+Epoch: 36, Validation Dice: 0.7360048325989036, Validation score: 1.1230331631831931, target pseudo loss: -0.774056661168579
+Current cumulative epochs of no improvement: 12
+End of epoch 36 / 300 	 Time Taken: 155 sec
+(epoch: 37, iters: 0, time: 0.053) src_seg_loss: -0.750 src_seg_loss_masked: -0.707 src_seg_loss_aux: -0.745 src_seg_loss_aux_masked: -0.733 src_cos_reg: 0.032 src_cos_reg_masked: 0.032 tgt_pse_seg_loss: -0.812 tgt_pse_seg_loss_aux: -0.880 tgt_cos_reg: 0.056 
+Epoch: 37, Validation Dice: 0.7441782678490799, Validation score: 1.1605758783909788, target pseudo loss: -0.8327952210837976
+Current cumulative epochs of no improvement: 0
+End of epoch 37 / 300 	 Time Taken: 156 sec
+(epoch: 38, iters: 0, time: 0.021) src_seg_loss: -0.633 src_seg_loss_masked: -0.592 src_seg_loss_aux: -0.800 src_seg_loss_aux_masked: -0.788 src_cos_reg: 0.020 src_cos_reg_masked: 0.020 tgt_pse_seg_loss: -0.147 tgt_pse_seg_loss_aux: -0.927 tgt_cos_reg: 0.028 
+Epoch: 38, Validation Dice: 0.7410118472700964, Validation score: 1.1501243154829393, target pseudo loss: -0.8182249364256858
+Current cumulative epochs of no improvement: 1
+End of epoch 38 / 300 	 Time Taken: 151 sec
+(epoch: 39, iters: 0, time: 0.068) src_seg_loss: -0.814 src_seg_loss_masked: -0.787 src_seg_loss_aux: -0.773 src_seg_loss_aux_masked: -0.744 src_cos_reg: 0.026 src_cos_reg_masked: 0.025 tgt_pse_seg_loss: -0.894 tgt_pse_seg_loss_aux: -0.896 tgt_cos_reg: 0.009 
+Epoch: 39, Validation Dice: 0.745513454279449, Validation score: 1.1451000211150908, target pseudo loss: -0.7991731336712837
+Current cumulative epochs of no improvement: 2
+End of epoch 39 / 300 	 Time Taken: 155 sec
+(epoch: 40, iters: 0, time: 0.049) src_seg_loss: -0.497 src_seg_loss_masked: -0.466 src_seg_loss_aux: -0.727 src_seg_loss_aux_masked: -0.694 src_cos_reg: 0.022 src_cos_reg_masked: 0.022 tgt_pse_seg_loss: -0.542 tgt_pse_seg_loss_aux: -0.908 tgt_cos_reg: 0.034 
+Epoch: 40, Validation Dice: 0.7365055367715689, Validation score: 1.1374073362715575, target pseudo loss: -0.8018035989999771
+Current cumulative epochs of no improvement: 3
+End of epoch 40 / 300 	 Time Taken: 153 sec
+(epoch: 41, iters: 0, time: 0.029) src_seg_loss: -0.780 src_seg_loss_masked: -0.763 src_seg_loss_aux: -0.751 src_seg_loss_aux_masked: -0.745 src_cos_reg: 0.017 src_cos_reg_masked: 0.017 tgt_pse_seg_loss: -0.896 tgt_pse_seg_loss_aux: -0.909 tgt_cos_reg: 0.034 
+Epoch: 41, Validation Dice: 0.7416498967768008, Validation score: 1.1394235130162294, target pseudo loss: -0.7955472324788571
+Current cumulative epochs of no improvement: 4
+End of epoch 41 / 300 	 Time Taken: 152 sec
+(epoch: 42, iters: 0, time: 0.056) src_seg_loss: -0.773 src_seg_loss_masked: -0.740 src_seg_loss_aux: -0.780 src_seg_loss_aux_masked: -0.746 src_cos_reg: 0.017 src_cos_reg_masked: 0.017 tgt_pse_seg_loss: -0.903 tgt_pse_seg_loss_aux: -0.917 tgt_cos_reg: 0.021 
+Epoch: 42, Validation Dice: 0.7408105340378676, Validation score: 1.1539799967186841, target pseudo loss: -0.8263389253616333
+Current cumulative epochs of no improvement: 5
+End of epoch 42 / 300 	 Time Taken: 154 sec
+(epoch: 43, iters: 0, time: 0.024) src_seg_loss: -0.803 src_seg_loss_masked: -0.788 src_seg_loss_aux: -0.805 src_seg_loss_aux_masked: -0.792 src_cos_reg: 0.023 src_cos_reg_masked: 0.023 tgt_pse_seg_loss: -0.882 tgt_pse_seg_loss_aux: -0.909 tgt_cos_reg: 0.015 
+Epoch: 43, Validation Dice: 0.7390790733363016, Validation score: 1.14274257105249, target pseudo loss: -0.8073269954323768
+Current cumulative epochs of no improvement: 6
+End of epoch 43 / 300 	 Time Taken: 152 sec
+(epoch: 44, iters: 0, time: 0.024) src_seg_loss: -0.536 src_seg_loss_masked: -0.490 src_seg_loss_aux: -0.775 src_seg_loss_aux_masked: -0.765 src_cos_reg: 0.019 src_cos_reg_masked: 0.019 tgt_pse_seg_loss: -0.349 tgt_pse_seg_loss_aux: -0.580 tgt_cos_reg: 0.069 
+Epoch: 44, Validation Dice: 0.7479611919031798, Validation score: 1.1431165418730438, target pseudo loss: -0.7903106999397278
+Current cumulative epochs of no improvement: 7
+End of epoch 44 / 300 	 Time Taken: 151 sec
+(epoch: 45, iters: 0, time: 0.024) src_seg_loss: -0.638 src_seg_loss_masked: -0.612 src_seg_loss_aux: -0.751 src_seg_loss_aux_masked: -0.717 src_cos_reg: 0.026 src_cos_reg_masked: 0.025 tgt_pse_seg_loss: -0.862 tgt_pse_seg_loss_aux: -0.876 tgt_cos_reg: 0.045 
+Epoch: 45, Validation Dice: 0.7497477784973419, Validation score: 1.1428894934278762, target pseudo loss: -0.7862834298610687
+Current cumulative epochs of no improvement: 8
+End of epoch 45 / 300 	 Time Taken: 154 sec
+(epoch: 46, iters: 0, time: 0.050) src_seg_loss: -0.732 src_seg_loss_masked: -0.694 src_seg_loss_aux: -0.766 src_seg_loss_aux_masked: -0.751 src_cos_reg: 0.021 src_cos_reg_masked: 0.021 tgt_pse_seg_loss: -0.893 tgt_pse_seg_loss_aux: -0.918 tgt_cos_reg: 0.022 
+Epoch: 46, Validation Dice: 0.7463396265636113, Validation score: 1.135303978645141, target pseudo loss: -0.7779287041630596
+Current cumulative epochs of no improvement: 9
+End of epoch 46 / 300 	 Time Taken: 154 sec
+(epoch: 47, iters: 0, time: 0.022) src_seg_loss: -0.844 src_seg_loss_masked: -0.820 src_seg_loss_aux: -0.823 src_seg_loss_aux_masked: -0.813 src_cos_reg: 0.018 src_cos_reg_masked: 0.018 tgt_pse_seg_loss: -0.811 tgt_pse_seg_loss_aux: -0.919 tgt_cos_reg: 0.042 
+Epoch: 47, Validation Dice: 0.74401636692167, Validation score: 1.132420682184703, target pseudo loss: -0.7768086305260659
+Current cumulative epochs of no improvement: 10
+End of epoch 47 / 300 	 Time Taken: 151 sec
+(epoch: 48, iters: 0, time: 0.023) src_seg_loss: -0.801 src_seg_loss_masked: -0.765 src_seg_loss_aux: -0.789 src_seg_loss_aux_masked: -0.762 src_cos_reg: 0.030 src_cos_reg_masked: 0.030 tgt_pse_seg_loss: -0.742 tgt_pse_seg_loss_aux: -0.923 tgt_cos_reg: 0.026 
+Epoch: 48, Validation Dice: 0.748573071696291, Validation score: 1.156598345675001, target pseudo loss: -0.8160505479574204
+Current cumulative epochs of no improvement: 11
+End of epoch 48 / 300 	 Time Taken: 154 sec
+(epoch: 49, iters: 0, time: 0.044) src_seg_loss: -0.833 src_seg_loss_masked: -0.815 src_seg_loss_aux: -0.823 src_seg_loss_aux_masked: -0.806 src_cos_reg: 0.021 src_cos_reg_masked: 0.021 tgt_pse_seg_loss: -0.540 tgt_pse_seg_loss_aux: -0.907 tgt_cos_reg: 0.035 
+Epoch: 49, Validation Dice: 0.7382037042566931, Validation score: 1.143691079665104, target pseudo loss: -0.810974750816822
+Current cumulative epochs of no improvement: 12
+End of epoch 49 / 300 	 Time Taken: 153 sec
+(epoch: 50, iters: 0, time: 0.053) src_seg_loss: -0.071 src_seg_loss_masked: -0.080 src_seg_loss_aux: -0.729 src_seg_loss_aux_masked: -0.701 src_cos_reg: 0.025 src_cos_reg_masked: 0.024 tgt_pse_seg_loss: -0.911 tgt_pse_seg_loss_aux: -0.919 tgt_cos_reg: 0.022 
+Epoch: 50, Validation Dice: 0.7491144289518912, Validation score: 1.152787237882169, target pseudo loss: -0.8073456178605557
+Current cumulative epochs of no improvement: 13
+End of epoch 50 / 300 	 Time Taken: 156 sec
+(epoch: 51, iters: 0, time: 0.022) src_seg_loss: -0.669 src_seg_loss_masked: -0.622 src_seg_loss_aux: -0.794 src_seg_loss_aux_masked: -0.781 src_cos_reg: 0.022 src_cos_reg_masked: 0.021 tgt_pse_seg_loss: -0.905 tgt_pse_seg_loss_aux: -0.922 tgt_cos_reg: 0.036 
+Epoch: 51, Validation Dice: 0.7481624272698959, Validation score: 1.158571676486214, target pseudo loss: -0.8208184984326362
+Current cumulative epochs of no improvement: 14
+End of epoch 51 / 300 	 Time Taken: 156 sec
+(epoch: 52, iters: 0, time: 0.037) src_seg_loss: -0.703 src_seg_loss_masked: -0.679 src_seg_loss_aux: -0.771 src_seg_loss_aux_masked: -0.749 src_cos_reg: 0.023 src_cos_reg_masked: 0.023 tgt_pse_seg_loss: -0.885 tgt_pse_seg_loss_aux: -0.913 tgt_cos_reg: 0.028 
+Epoch: 52, Validation Dice: 0.7391810590548717, Validation score: 1.1495685139818392, target pseudo loss: -0.8207749098539352
+Current cumulative epochs of no improvement: 15
+End of epoch 52 / 300 	 Time Taken: 154 sec
+(epoch: 53, iters: 0, time: 0.026) src_seg_loss: -0.840 src_seg_loss_masked: -0.811 src_seg_loss_aux: -0.822 src_seg_loss_aux_masked: -0.804 src_cos_reg: 0.016 src_cos_reg_masked: 0.017 tgt_pse_seg_loss: -0.887 tgt_pse_seg_loss_aux: -0.915 tgt_cos_reg: 0.033 
+Epoch: 53, Validation Dice: 0.746511435292917, Validation score: 1.1542979609298283, target pseudo loss: -0.8155730512738227
+Current cumulative epochs of no improvement: 16
+End of epoch 53 / 300 	 Time Taken: 151 sec
+(epoch: 54, iters: 0, time: 0.032) src_seg_loss: -0.323 src_seg_loss_masked: -0.300 src_seg_loss_aux: -0.772 src_seg_loss_aux_masked: -0.763 src_cos_reg: 0.024 src_cos_reg_masked: 0.025 tgt_pse_seg_loss: -0.539 tgt_pse_seg_loss_aux: -0.907 tgt_cos_reg: 0.043 
+Epoch: 54, Validation Dice: 0.7491311234129012, Validation score: 1.1534357874733747, target pseudo loss: -0.8086093281209469
+Current cumulative epochs of no improvement: 17
+End of epoch 54 / 300 	 Time Taken: 152 sec
+(epoch: 55, iters: 0, time: 0.035) src_seg_loss: -0.711 src_seg_loss_masked: -0.649 src_seg_loss_aux: -0.619 src_seg_loss_aux_masked: -0.595 src_cos_reg: 0.020 src_cos_reg_masked: 0.020 tgt_pse_seg_loss: -0.880 tgt_pse_seg_loss_aux: -0.908 tgt_cos_reg: 0.038 
+Epoch: 55, Validation Dice: 0.7375056531307566, Validation score: 1.119164577427255, target pseudo loss: -0.7633178485929966
+Current cumulative epochs of no improvement: 18
+End of epoch 55 / 300 	 Time Taken: 152 sec
+(epoch: 56, iters: 0, time: 0.026) src_seg_loss: -0.527 src_seg_loss_masked: -0.467 src_seg_loss_aux: -0.771 src_seg_loss_aux_masked: -0.749 src_cos_reg: 0.024 src_cos_reg_masked: 0.024 tgt_pse_seg_loss: -0.908 tgt_pse_seg_loss_aux: -0.917 tgt_cos_reg: 0.025 
+Epoch: 56, Validation Dice: 0.7461237045024347, Validation score: 1.1565504508112383, target pseudo loss: -0.8208534926176071
+Current cumulative epochs of no improvement: 19
+End of epoch 56 / 300 	 Time Taken: 152 sec
+(epoch: 57, iters: 0, time: 0.049) src_seg_loss: -0.814 src_seg_loss_masked: -0.763 src_seg_loss_aux: -0.757 src_seg_loss_aux_masked: -0.741 src_cos_reg: 0.040 src_cos_reg_masked: 0.039 tgt_pse_seg_loss: -0.904 tgt_pse_seg_loss_aux: -0.916 tgt_cos_reg: 0.042 
+Epoch: 57, Validation Dice: 0.744595434014639, Validation score: 1.14287443151786, target pseudo loss: -0.7965579950064421
+Current cumulative epochs of no improvement: 20
+End of epoch 57 / 300 	 Time Taken: 156 sec
+(epoch: 58, iters: 0, time: 0.026) src_seg_loss: -0.767 src_seg_loss_masked: -0.743 src_seg_loss_aux: -0.769 src_seg_loss_aux_masked: -0.756 src_cos_reg: 0.021 src_cos_reg_masked: 0.020 tgt_pse_seg_loss: -0.914 tgt_pse_seg_loss_aux: -0.920 tgt_cos_reg: 0.036 
+Epoch: 58, Validation Dice: 0.7439112271947967, Validation score: 1.141270943751763, target pseudo loss: -0.7947194331139326
+Current cumulative epochs of no improvement: 21
+End of epoch 58 / 300 	 Time Taken: 151 sec
+(epoch: 59, iters: 0, time: 0.024) src_seg_loss: -0.525 src_seg_loss_masked: -0.486 src_seg_loss_aux: -0.743 src_seg_loss_aux_masked: -0.724 src_cos_reg: 0.021 src_cos_reg_masked: 0.021 tgt_pse_seg_loss: -0.898 tgt_pse_seg_loss_aux: -0.917 tgt_cos_reg: 0.021 
+Epoch: 59, Validation Dice: 0.7450331358664855, Validation score: 1.168162178253494, target pseudo loss: -0.8462580847740173
+Current cumulative epochs of no improvement: 0
+End of epoch 59 / 300 	 Time Taken: 153 sec
+(epoch: 60, iters: 0, time: 0.059) src_seg_loss: -0.505 src_seg_loss_masked: -0.510 src_seg_loss_aux: -0.730 src_seg_loss_aux_masked: -0.719 src_cos_reg: 0.030 src_cos_reg_masked: 0.036 tgt_pse_seg_loss: -0.841 tgt_pse_seg_loss_aux: -0.843 tgt_cos_reg: 0.006 
+Epoch: 60, Validation Dice: 0.7469421613405414, Validation score: 1.1534471928889818, target pseudo loss: -0.813010063096881
+Current cumulative epochs of no improvement: 1
+End of epoch 60 / 300 	 Time Taken: 155 sec
+(epoch: 61, iters: 0, time: 0.031) src_seg_loss: -0.782 src_seg_loss_masked: -0.748 src_seg_loss_aux: -0.720 src_seg_loss_aux_masked: -0.701 src_cos_reg: 0.034 src_cos_reg_masked: 0.034 tgt_pse_seg_loss: -0.851 tgt_pse_seg_loss_aux: -0.901 tgt_cos_reg: 0.034 
+Epoch: 61, Validation Dice: 0.7568051611191638, Validation score: 1.1512404868311295, target pseudo loss: -0.7888706514239311
+Current cumulative epochs of no improvement: 2
+End of epoch 61 / 300 	 Time Taken: 153 sec
+(epoch: 62, iters: 0, time: 0.039) src_seg_loss: -0.077 src_seg_loss_masked: -0.056 src_seg_loss_aux: -0.678 src_seg_loss_aux_masked: -0.651 src_cos_reg: 0.020 src_cos_reg_masked: 0.019 tgt_pse_seg_loss: -0.910 tgt_pse_seg_loss_aux: -0.934 tgt_cos_reg: 0.025 
+Epoch: 62, Validation Dice: 0.7539342550212094, Validation score: 1.1562123598554679, target pseudo loss: -0.8045562096685172
+Current cumulative epochs of no improvement: 3
+End of epoch 62 / 300 	 Time Taken: 153 sec
+(epoch: 63, iters: 0, time: 0.027) src_seg_loss: -0.756 src_seg_loss_masked: -0.652 src_seg_loss_aux: -0.755 src_seg_loss_aux_masked: -0.731 src_cos_reg: 0.020 src_cos_reg_masked: 0.019 tgt_pse_seg_loss: -0.732 tgt_pse_seg_loss_aux: -0.771 tgt_cos_reg: 0.046 
+Epoch: 63, Validation Dice: 0.7446843034865714, Validation score: 1.1569089613201475, target pseudo loss: -0.8244493156671524
+Current cumulative epochs of no improvement: 4
+End of epoch 63 / 300 	 Time Taken: 154 sec
+(epoch: 64, iters: 0, time: 0.024) src_seg_loss: -0.785 src_seg_loss_masked: -0.766 src_seg_loss_aux: -0.786 src_seg_loss_aux_masked: -0.758 src_cos_reg: 0.029 src_cos_reg_masked: 0.029 tgt_pse_seg_loss: -0.642 tgt_pse_seg_loss_aux: -0.906 tgt_cos_reg: 0.077 
+Epoch: 64, Validation Dice: 0.7434311951402683, Validation score: 1.144760827467229, target pseudo loss: -0.8026592646539211
+Current cumulative epochs of no improvement: 5
+End of epoch 64 / 300 	 Time Taken: 157 sec
+(epoch: 65, iters: 0, time: 0.041) src_seg_loss: -0.556 src_seg_loss_masked: -0.549 src_seg_loss_aux: -0.718 src_seg_loss_aux_masked: -0.686 src_cos_reg: 0.025 src_cos_reg_masked: 0.025 tgt_pse_seg_loss: -0.907 tgt_pse_seg_loss_aux: -0.926 tgt_cos_reg: 0.042 
+Epoch: 65, Validation Dice: 0.7478773170290767, Validation score: 1.1545834369538603, target pseudo loss: -0.8134122398495675
+Current cumulative epochs of no improvement: 6
+End of epoch 65 / 300 	 Time Taken: 153 sec
+(epoch: 66, iters: 0, time: 0.025) src_seg_loss: -0.557 src_seg_loss_masked: -0.540 src_seg_loss_aux: -0.814 src_seg_loss_aux_masked: -0.795 src_cos_reg: 0.014 src_cos_reg_masked: 0.014 tgt_pse_seg_loss: -0.386 tgt_pse_seg_loss_aux: -0.938 tgt_cos_reg: 0.013 
+Epoch: 66, Validation Dice: 0.7465063325552717, Validation score: 1.1569166513769402, target pseudo loss: -0.8208206376433372
+Current cumulative epochs of no improvement: 7
+End of epoch 66 / 300 	 Time Taken: 153 sec
+(epoch: 67, iters: 0, time: 0.073) src_seg_loss: -0.230 src_seg_loss_masked: -0.219 src_seg_loss_aux: -0.777 src_seg_loss_aux_masked: -0.762 src_cos_reg: 0.017 src_cos_reg_masked: 0.016 tgt_pse_seg_loss: -0.909 tgt_pse_seg_loss_aux: -0.922 tgt_cos_reg: 0.015 
+Epoch: 67, Validation Dice: 0.7395561198040996, Validation score: 1.1598724972352539, target pseudo loss: -0.8406327548623085
+Current cumulative epochs of no improvement: 8
+End of epoch 67 / 300 	 Time Taken: 156 sec
+(epoch: 68, iters: 0, time: 0.024) src_seg_loss: -0.681 src_seg_loss_masked: -0.665 src_seg_loss_aux: -0.778 src_seg_loss_aux_masked: -0.780 src_cos_reg: 0.020 src_cos_reg_masked: 0.019 tgt_pse_seg_loss: -0.766 tgt_pse_seg_loss_aux: -0.813 tgt_cos_reg: 0.015 
+Epoch: 68, Validation Dice: 0.7417070862120441, Validation score: 1.159310761078303, target pseudo loss: -0.8352073497325182
+Current cumulative epochs of no improvement: 9
+End of epoch 68 / 300 	 Time Taken: 152 sec
+(epoch: 69, iters: 0, time: 0.023) src_seg_loss: -0.809 src_seg_loss_masked: -0.764 src_seg_loss_aux: -0.778 src_seg_loss_aux_masked: -0.757 src_cos_reg: 0.026 src_cos_reg_masked: 0.026 tgt_pse_seg_loss: -0.929 tgt_pse_seg_loss_aux: -0.931 tgt_cos_reg: 0.020 
+Epoch: 69, Validation Dice: 0.7433376024547526, Validation score: 1.1568724854174564, target pseudo loss: -0.8270697659254074
+Current cumulative epochs of no improvement: 10
+End of epoch 69 / 300 	 Time Taken: 151 sec
+(epoch: 70, iters: 0, time: 0.024) src_seg_loss: -0.817 src_seg_loss_masked: -0.765 src_seg_loss_aux: -0.805 src_seg_loss_aux_masked: -0.790 src_cos_reg: 0.022 src_cos_reg_masked: 0.021 tgt_pse_seg_loss: -0.393 tgt_pse_seg_loss_aux: -0.903 tgt_cos_reg: 0.017 
+Epoch: 70, Validation Dice: 0.7453151932782074, Validation score: 1.1573908129757782, target pseudo loss: -0.8241512393951416
+Current cumulative epochs of no improvement: 11
+End of epoch 70 / 300 	 Time Taken: 151 sec
+(epoch: 71, iters: 0, time: 0.021) src_seg_loss: -0.705 src_seg_loss_masked: -0.684 src_seg_loss_aux: -0.809 src_seg_loss_aux_masked: -0.802 src_cos_reg: 0.020 src_cos_reg_masked: 0.019 tgt_pse_seg_loss: -0.833 tgt_pse_seg_loss_aux: -0.859 tgt_cos_reg: 0.030 
+Epoch: 71, Validation Dice: 0.7417139417563838, Validation score: 1.156699445310728, target pseudo loss: -0.8299710071086883
+Current cumulative epochs of no improvement: 12
+End of epoch 71 / 300 	 Time Taken: 152 sec
+(epoch: 72, iters: 0, time: 0.028) src_seg_loss: -0.789 src_seg_loss_masked: -0.722 src_seg_loss_aux: -0.739 src_seg_loss_aux_masked: -0.728 src_cos_reg: 0.023 src_cos_reg_masked: 0.022 tgt_pse_seg_loss: -0.893 tgt_pse_seg_loss_aux: -0.923 tgt_cos_reg: 0.018 
+Epoch: 72, Validation Dice: 0.7450785260478531, Validation score: 1.170749558789519, target pseudo loss: -0.8513420654833317
+Current cumulative epochs of no improvement: 0
+End of epoch 72 / 300 	 Time Taken: 154 sec
+(epoch: 73, iters: 0, time: 0.040) src_seg_loss: -0.854 src_seg_loss_masked: -0.830 src_seg_loss_aux: -0.843 src_seg_loss_aux_masked: -0.825 src_cos_reg: 0.018 src_cos_reg_masked: 0.017 tgt_pse_seg_loss: -0.884 tgt_pse_seg_loss_aux: -0.905 tgt_cos_reg: 0.015 
+Epoch: 73, Validation Dice: 0.7394744202159776, Validation score: 1.142840791013135, target pseudo loss: -0.8067327415943146
+Current cumulative epochs of no improvement: 1
+End of epoch 73 / 300 	 Time Taken: 152 sec
+(epoch: 74, iters: 0, time: 0.022) src_seg_loss: -0.804 src_seg_loss_masked: -0.790 src_seg_loss_aux: -0.791 src_seg_loss_aux_masked: -0.779 src_cos_reg: 0.021 src_cos_reg_masked: 0.020 tgt_pse_seg_loss: -0.911 tgt_pse_seg_loss_aux: -0.915 tgt_cos_reg: 0.027 
+Epoch: 74, Validation Dice: 0.7543541341617785, Validation score: 1.168467223827549, target pseudo loss: -0.8282261793315411
+Current cumulative epochs of no improvement: 2
+End of epoch 74 / 300 	 Time Taken: 152 sec
+(epoch: 75, iters: 0, time: 0.047) src_seg_loss: -0.590 src_seg_loss_masked: -0.538 src_seg_loss_aux: -0.785 src_seg_loss_aux_masked: -0.776 src_cos_reg: 0.014 src_cos_reg_masked: 0.014 tgt_pse_seg_loss: -0.860 tgt_pse_seg_loss_aux: -0.874 tgt_cos_reg: 0.028 
+Epoch: 75, Validation Dice: 0.7427333434440639, Validation score: 1.1436850826211717, target pseudo loss: -0.8019034783542156
+Current cumulative epochs of no improvement: 3
+End of epoch 75 / 300 	 Time Taken: 154 sec
+(epoch: 76, iters: 0, time: 0.023) src_seg_loss: -0.799 src_seg_loss_masked: -0.774 src_seg_loss_aux: -0.808 src_seg_loss_aux_masked: -0.800 src_cos_reg: 0.024 src_cos_reg_masked: 0.024 tgt_pse_seg_loss: -0.913 tgt_pse_seg_loss_aux: -0.923 tgt_cos_reg: 0.021 
+Epoch: 76, Validation Dice: 0.7424459340525932, Validation score: 1.1561604371024436, target pseudo loss: -0.8274290060997009
+Current cumulative epochs of no improvement: 4
+End of epoch 76 / 300 	 Time Taken: 152 sec
+(epoch: 77, iters: 0, time: 0.031) src_seg_loss: -0.417 src_seg_loss_masked: -0.416 src_seg_loss_aux: -0.745 src_seg_loss_aux_masked: -0.712 src_cos_reg: 0.019 src_cos_reg_masked: 0.018 tgt_pse_seg_loss: -0.916 tgt_pse_seg_loss_aux: -0.918 tgt_cos_reg: 0.021 
+Epoch: 77, Validation Dice: 0.7468350905815078, Validation score: 1.15900667636487, target pseudo loss: -0.8243431715667248
+Current cumulative epochs of no improvement: 5
+End of epoch 77 / 300 	 Time Taken: 151 sec
+(epoch: 78, iters: 0, time: 0.020) src_seg_loss: -0.755 src_seg_loss_masked: -0.701 src_seg_loss_aux: -0.722 src_seg_loss_aux_masked: -0.697 src_cos_reg: 0.009 src_cos_reg_masked: 0.010 tgt_pse_seg_loss: -0.796 tgt_pse_seg_loss_aux: -0.842 tgt_cos_reg: 0.025 
+Epoch: 78, Validation Dice: 0.7478457159247982, Validation score: 1.1537101778832066, target pseudo loss: -0.8117289239168167
+Current cumulative epochs of no improvement: 6
+End of epoch 78 / 300 	 Time Taken: 150 sec
+(epoch: 79, iters: 0, time: 0.028) src_seg_loss: -0.823 src_seg_loss_masked: -0.798 src_seg_loss_aux: -0.797 src_seg_loss_aux_masked: -0.781 src_cos_reg: 0.037 src_cos_reg_masked: 0.036 tgt_pse_seg_loss: -0.591 tgt_pse_seg_loss_aux: -0.927 tgt_cos_reg: 0.018 
+Epoch: 79, Validation Dice: 0.7466255227880546, Validation score: 1.1727915732221672, target pseudo loss: -0.8523321008682251
+Current cumulative epochs of no improvement: 0
+End of epoch 79 / 300 	 Time Taken: 153 sec
+(epoch: 80, iters: 0, time: 0.064) src_seg_loss: -0.657 src_seg_loss_masked: -0.636 src_seg_loss_aux: -0.688 src_seg_loss_aux_masked: -0.674 src_cos_reg: 0.025 src_cos_reg_masked: 0.028 tgt_pse_seg_loss: -0.918 tgt_pse_seg_loss_aux: -0.932 tgt_cos_reg: 0.023 
+Epoch: 80, Validation Dice: 0.7447419785984645, Validation score: 1.175787827176679, target pseudo loss: -0.8620916971564293
+Current cumulative epochs of no improvement: 0
+End of epoch 80 / 300 	 Time Taken: 157 sec
+(epoch: 81, iters: 0, time: 0.022) src_seg_loss: -0.843 src_seg_loss_masked: -0.811 src_seg_loss_aux: -0.834 src_seg_loss_aux_masked: -0.818 src_cos_reg: 0.017 src_cos_reg_masked: 0.017 tgt_pse_seg_loss: -0.915 tgt_pse_seg_loss_aux: -0.925 tgt_cos_reg: 0.023 
+Epoch: 81, Validation Dice: 0.7459584378355247, Validation score: 1.1630344153099759, target pseudo loss: -0.8341519549489022
+Current cumulative epochs of no improvement: 1
+End of epoch 81 / 300 	 Time Taken: 151 sec
+(epoch: 82, iters: 0, time: 0.022) src_seg_loss: -0.686 src_seg_loss_masked: -0.666 src_seg_loss_aux: -0.828 src_seg_loss_aux_masked: -0.797 src_cos_reg: 0.021 src_cos_reg_masked: 0.021 tgt_pse_seg_loss: -0.686 tgt_pse_seg_loss_aux: -0.748 tgt_cos_reg: 0.045 
+Epoch: 82, Validation Dice: 0.7375750455211364, Validation score: 1.1511275996218884, target pseudo loss: -0.8271051082015037
+Current cumulative epochs of no improvement: 2
+End of epoch 82 / 300 	 Time Taken: 155 sec
+(epoch: 83, iters: 0, time: 0.051) src_seg_loss: -0.569 src_seg_loss_masked: -0.457 src_seg_loss_aux: -0.805 src_seg_loss_aux_masked: -0.784 src_cos_reg: 0.015 src_cos_reg_masked: 0.014 tgt_pse_seg_loss: -0.611 tgt_pse_seg_loss_aux: -0.860 tgt_cos_reg: 0.028 
+Epoch: 83, Validation Dice: 0.7411436507959408, Validation score: 1.1613697696585699, target pseudo loss: -0.8404522377252579
+Current cumulative epochs of no improvement: 3
+End of epoch 83 / 300 	 Time Taken: 154 sec
+(epoch: 84, iters: 0, time: 0.035) src_seg_loss: -0.499 src_seg_loss_masked: -0.492 src_seg_loss_aux: -0.809 src_seg_loss_aux_masked: -0.748 src_cos_reg: 0.023 src_cos_reg_masked: 0.021 tgt_pse_seg_loss: -0.807 tgt_pse_seg_loss_aux: -0.892 tgt_cos_reg: 0.036 
+Epoch: 84, Validation Dice: 0.7502931138379136, Validation score: 1.1672218422097722, target pseudo loss: -0.8338574567437171
+Current cumulative epochs of no improvement: 4
+End of epoch 84 / 300 	 Time Taken: 154 sec
+(epoch: 85, iters: 0, time: 0.056) src_seg_loss: -0.810 src_seg_loss_masked: -0.782 src_seg_loss_aux: -0.810 src_seg_loss_aux_masked: -0.778 src_cos_reg: 0.017 src_cos_reg_masked: 0.017 tgt_pse_seg_loss: -0.914 tgt_pse_seg_loss_aux: -0.940 tgt_cos_reg: 0.027 
+Epoch: 85, Validation Dice: 0.7472430816153472, Validation score: 1.150978993536014, target pseudo loss: -0.8074718238413334
+Current cumulative epochs of no improvement: 5
+End of epoch 85 / 300 	 Time Taken: 154 sec
+(epoch: 86, iters: 0, time: 0.021) src_seg_loss: -0.821 src_seg_loss_masked: -0.799 src_seg_loss_aux: -0.822 src_seg_loss_aux_masked: -0.804 src_cos_reg: 0.022 src_cos_reg_masked: 0.022 tgt_pse_seg_loss: -0.917 tgt_pse_seg_loss_aux: -0.920 tgt_cos_reg: 0.010 
+Epoch: 86, Validation Dice: 0.740640876496946, Validation score: 1.1528512681078067, target pseudo loss: -0.8244207832217216
+Current cumulative epochs of no improvement: 6
+End of epoch 86 / 300 	 Time Taken: 151 sec
+(epoch: 87, iters: 0, time: 0.031) src_seg_loss: -0.598 src_seg_loss_masked: -0.551 src_seg_loss_aux: -0.806 src_seg_loss_aux_masked: -0.771 src_cos_reg: 0.015 src_cos_reg_masked: 0.017 tgt_pse_seg_loss: -0.768 tgt_pse_seg_loss_aux: -0.902 tgt_cos_reg: 0.057 
+Epoch: 87, Validation Dice: 0.7438810674802143, Validation score: 1.158542123395272, target pseudo loss: -0.8293221118301153
+Current cumulative epochs of no improvement: 7
+End of epoch 87 / 300 	 Time Taken: 153 sec
+(epoch: 88, iters: 0, time: 0.024) src_seg_loss: -0.762 src_seg_loss_masked: -0.743 src_seg_loss_aux: -0.740 src_seg_loss_aux_masked: -0.728 src_cos_reg: 0.007 src_cos_reg_masked: 0.008 tgt_pse_seg_loss: -0.860 tgt_pse_seg_loss_aux: -0.895 tgt_cos_reg: 0.018 
+Epoch: 88, Validation Dice: 0.752923146992396, Validation score: 1.170000562577914, target pseudo loss: -0.8341548311710357
+Current cumulative epochs of no improvement: 8
+End of epoch 88 / 300 	 Time Taken: 153 sec
+(epoch: 89, iters: 0, time: 0.060) src_seg_loss: -0.758 src_seg_loss_masked: -0.722 src_seg_loss_aux: -0.753 src_seg_loss_aux_masked: -0.735 src_cos_reg: 0.021 src_cos_reg_masked: 0.020 tgt_pse_seg_loss: -0.674 tgt_pse_seg_loss_aux: -0.907 tgt_cos_reg: 0.054 
+Epoch: 89, Validation Dice: 0.7289490845428604, Validation score: 1.1536942201481957, target pseudo loss: -0.8494902712106704
+Current cumulative epochs of no improvement: 9
+End of epoch 89 / 300 	 Time Taken: 154 sec
+(epoch: 90, iters: 0, time: 0.060) src_seg_loss: -0.762 src_seg_loss_masked: -0.742 src_seg_loss_aux: -0.781 src_seg_loss_aux_masked: -0.775 src_cos_reg: 0.034 src_cos_reg_masked: 0.033 tgt_pse_seg_loss: -0.862 tgt_pse_seg_loss_aux: -0.909 tgt_cos_reg: 0.014 
+Epoch: 90, Validation Dice: 0.7435176983367432, Validation score: 1.1608772055696477, target pseudo loss: -0.8347190144658089
+Current cumulative epochs of no improvement: 10
+End of epoch 90 / 300 	 Time Taken: 155 sec
+(epoch: 91, iters: 0, time: 0.019) src_seg_loss: -0.810 src_seg_loss_masked: -0.782 src_seg_loss_aux: -0.790 src_seg_loss_aux_masked: -0.783 src_cos_reg: 0.011 src_cos_reg_masked: 0.011 tgt_pse_seg_loss: -0.921 tgt_pse_seg_loss_aux: -0.925 tgt_cos_reg: 0.011 
+Epoch: 91, Validation Dice: 0.7427366858271073, Validation score: 1.1706520990205118, target pseudo loss: -0.8558308263868093
+Current cumulative epochs of no improvement: 11
+End of epoch 91 / 300 	 Time Taken: 151 sec
+(epoch: 92, iters: 0, time: 0.050) src_seg_loss: -0.794 src_seg_loss_masked: -0.759 src_seg_loss_aux: -0.800 src_seg_loss_aux_masked: -0.773 src_cos_reg: 0.023 src_cos_reg_masked: 0.022 tgt_pse_seg_loss: -0.827 tgt_pse_seg_loss_aux: -0.865 tgt_cos_reg: 0.023 
+Epoch: 92, Validation Dice: 0.7431203542030336, Validation score: 1.166642764893818, target pseudo loss: -0.8470448213815689
+Current cumulative epochs of no improvement: 12
+End of epoch 92 / 300 	 Time Taken: 154 sec
+(epoch: 93, iters: 0, time: 0.031) src_seg_loss: -0.696 src_seg_loss_masked: -0.619 src_seg_loss_aux: -0.822 src_seg_loss_aux_masked: -0.799 src_cos_reg: 0.017 src_cos_reg_masked: 0.017 tgt_pse_seg_loss: -0.884 tgt_pse_seg_loss_aux: -0.894 tgt_cos_reg: 0.005 
+Epoch: 93, Validation Dice: 0.7466757960608991, Validation score: 1.165748695283273, target pseudo loss: -0.8381457984447479
+Current cumulative epochs of no improvement: 13
+End of epoch 93 / 300 	 Time Taken: 156 sec
+(epoch: 94, iters: 0, time: 0.051) src_seg_loss: -0.623 src_seg_loss_masked: -0.462 src_seg_loss_aux: -0.768 src_seg_loss_aux_masked: -0.761 src_cos_reg: 0.023 src_cos_reg_masked: 0.023 tgt_pse_seg_loss: -0.881 tgt_pse_seg_loss_aux: -0.910 tgt_cos_reg: 0.017 
+Epoch: 94, Validation Dice: 0.7434685140830928, Validation score: 1.1639799433929379, target pseudo loss: -0.84102285861969
+Current cumulative epochs of no improvement: 14
+End of epoch 94 / 300 	 Time Taken: 154 sec
+(epoch: 95, iters: 0, time: 0.021) src_seg_loss: -0.667 src_seg_loss_masked: -0.652 src_seg_loss_aux: -0.821 src_seg_loss_aux_masked: -0.812 src_cos_reg: 0.014 src_cos_reg_masked: 0.014 tgt_pse_seg_loss: -0.561 tgt_pse_seg_loss_aux: -0.838 tgt_cos_reg: 0.048 
+Epoch: 95, Validation Dice: 0.7437895899137468, Validation score: 1.1404525980224818, target pseudo loss: -0.7933260162174701
+Current cumulative epochs of no improvement: 15
+End of epoch 95 / 300 	 Time Taken: 154 sec
+(epoch: 96, iters: 0, time: 0.049) src_seg_loss: -0.827 src_seg_loss_masked: -0.810 src_seg_loss_aux: -0.818 src_seg_loss_aux_masked: -0.805 src_cos_reg: 0.018 src_cos_reg_masked: 0.018 tgt_pse_seg_loss: -0.772 tgt_pse_seg_loss_aux: -0.917 tgt_cos_reg: 0.015 
+Epoch: 96, Validation Dice: 0.7365309953803301, Validation score: 1.1523392786199331, target pseudo loss: -0.8316165664792061
+Current cumulative epochs of no improvement: 16
+End of epoch 96 / 300 	 Time Taken: 156 sec
+(epoch: 97, iters: 0, time: 0.027) src_seg_loss: -0.830 src_seg_loss_masked: -0.794 src_seg_loss_aux: -0.820 src_seg_loss_aux_masked: -0.808 src_cos_reg: 0.017 src_cos_reg_masked: 0.018 tgt_pse_seg_loss: -0.914 tgt_pse_seg_loss_aux: -0.923 tgt_cos_reg: 0.031 
+Epoch: 97, Validation Dice: 0.7493842193819458, Validation score: 1.1664356707371646, target pseudo loss: -0.8341029027104377
+Current cumulative epochs of no improvement: 17
+End of epoch 97 / 300 	 Time Taken: 152 sec
+(epoch: 98, iters: 0, time: 0.053) src_seg_loss: -0.783 src_seg_loss_masked: -0.735 src_seg_loss_aux: -0.807 src_seg_loss_aux_masked: -0.791 src_cos_reg: 0.019 src_cos_reg_masked: 0.019 tgt_pse_seg_loss: -0.847 tgt_pse_seg_loss_aux: -0.908 tgt_cos_reg: 0.026 
+Epoch: 98, Validation Dice: 0.7478065364274901, Validation score: 1.160652117154352, target pseudo loss: -0.8256911614537239
+Current cumulative epochs of no improvement: 18
+End of epoch 98 / 300 	 Time Taken: 154 sec
+(epoch: 99, iters: 0, time: 0.048) src_seg_loss: -0.828 src_seg_loss_masked: -0.799 src_seg_loss_aux: -0.804 src_seg_loss_aux_masked: -0.784 src_cos_reg: 0.030 src_cos_reg_masked: 0.030 tgt_pse_seg_loss: -0.916 tgt_pse_seg_loss_aux: -0.934 tgt_cos_reg: 0.024 
+Epoch: 99, Validation Dice: 0.744392057864923, Validation score: 1.1453183918474203, target pseudo loss: -0.8018526679649949
+Current cumulative epochs of no improvement: 19
+End of epoch 99 / 300 	 Time Taken: 153 sec
+(epoch: 100, iters: 0, time: 0.054) src_seg_loss: -0.775 src_seg_loss_masked: -0.757 src_seg_loss_aux: -0.788 src_seg_loss_aux_masked: -0.781 src_cos_reg: 0.030 src_cos_reg_masked: 0.030 tgt_pse_seg_loss: -0.905 tgt_pse_seg_loss_aux: -0.900 tgt_cos_reg: 0.013 
+Epoch: 100, Validation Dice: 0.7456445177279519, Validation score: 1.1581250466786432, target pseudo loss: -0.8249610579013824
+Current cumulative epochs of no improvement: 20
+End of epoch 100 / 300 	 Time Taken: 156 sec
+(epoch: 101, iters: 0, time: 0.047) src_seg_loss: -0.760 src_seg_loss_masked: -0.671 src_seg_loss_aux: -0.634 src_seg_loss_aux_masked: -0.608 src_cos_reg: 0.016 src_cos_reg_masked: 0.017 tgt_pse_seg_loss: -0.914 tgt_pse_seg_loss_aux: -0.929 tgt_cos_reg: 0.024 
+Epoch: 101, Validation Dice: 0.7409543394287794, Validation score: 1.1650808795531957, target pseudo loss: -0.8482530802488327
+Current cumulative epochs of no improvement: 21
+End of epoch 101 / 300 	 Time Taken: 154 sec
+(epoch: 102, iters: 0, time: 0.054) src_seg_loss: -0.810 src_seg_loss_masked: -0.764 src_seg_loss_aux: -0.810 src_seg_loss_aux_masked: -0.798 src_cos_reg: 0.016 src_cos_reg_masked: 0.015 tgt_pse_seg_loss: -0.907 tgt_pse_seg_loss_aux: -0.927 tgt_cos_reg: 0.026 
+Epoch: 102, Validation Dice: 0.7418139340733033, Validation score: 1.1686734896157724, target pseudo loss: -0.853719111084938
+Current cumulative epochs of no improvement: 22
+End of epoch 102 / 300 	 Time Taken: 157 sec
+(epoch: 103, iters: 0, time: 0.044) src_seg_loss: -0.835 src_seg_loss_masked: -0.805 src_seg_loss_aux: -0.825 src_seg_loss_aux_masked: -0.814 src_cos_reg: 0.015 src_cos_reg_masked: 0.016 tgt_pse_seg_loss: -0.733 tgt_pse_seg_loss_aux: -0.932 tgt_cos_reg: 0.023 
+Epoch: 103, Validation Dice: 0.744854335524407, Validation score: 1.1693300607430608, target pseudo loss: -0.8489514504373074
+Current cumulative epochs of no improvement: 23
+End of epoch 103 / 300 	 Time Taken: 153 sec
+(epoch: 104, iters: 0, time: 0.053) src_seg_loss: -0.508 src_seg_loss_masked: -0.487 src_seg_loss_aux: -0.786 src_seg_loss_aux_masked: -0.779 src_cos_reg: 0.022 src_cos_reg_masked: 0.024 tgt_pse_seg_loss: -0.931 tgt_pse_seg_loss_aux: -0.933 tgt_cos_reg: 0.016 
+Epoch: 104, Validation Dice: 0.7543958911662864, Validation score: 1.174909670314746, target pseudo loss: -0.8410275582969189
+Current cumulative epochs of no improvement: 24
+End of epoch 104 / 300 	 Time Taken: 154 sec
+(epoch: 105, iters: 0, time: 0.058) src_seg_loss: -0.770 src_seg_loss_masked: -0.733 src_seg_loss_aux: -0.737 src_seg_loss_aux_masked: -0.691 src_cos_reg: 0.055 src_cos_reg_masked: 0.058 tgt_pse_seg_loss: -0.846 tgt_pse_seg_loss_aux: -0.923 tgt_cos_reg: 0.062 
+Epoch: 105, Validation Dice: 0.7575634179671299, Validation score: 1.1780835600604307, target pseudo loss: -0.8410402841866016
+Current cumulative epochs of no improvement: 0
+End of epoch 105 / 300 	 Time Taken: 157 sec
+(epoch: 106, iters: 0, time: 0.029) src_seg_loss: -0.801 src_seg_loss_masked: -0.778 src_seg_loss_aux: -0.786 src_seg_loss_aux_masked: -0.777 src_cos_reg: 0.022 src_cos_reg_masked: 0.022 tgt_pse_seg_loss: -0.922 tgt_pse_seg_loss_aux: -0.934 tgt_cos_reg: 0.020 
+Epoch: 106, Validation Dice: 0.7529826164145911, Validation score: 1.1831421565909825, target pseudo loss: -0.8603190803527831
+Current cumulative epochs of no improvement: 0
+End of epoch 106 / 300 	 Time Taken: 154 sec
+(epoch: 107, iters: 0, time: 0.021) src_seg_loss: -0.832 src_seg_loss_masked: -0.800 src_seg_loss_aux: -0.826 src_seg_loss_aux_masked: -0.802 src_cos_reg: 0.016 src_cos_reg_masked: 0.016 tgt_pse_seg_loss: -0.856 tgt_pse_seg_loss_aux: -0.892 tgt_cos_reg: 0.018 
+Epoch: 107, Validation Dice: 0.7464502874521008, Validation score: 1.1688622713593235, target pseudo loss: -0.8448239678144455
+Current cumulative epochs of no improvement: 1
+End of epoch 107 / 300 	 Time Taken: 155 sec
+(epoch: 108, iters: 0, time: 0.020) src_seg_loss: -0.832 src_seg_loss_masked: -0.812 src_seg_loss_aux: -0.826 src_seg_loss_aux_masked: -0.815 src_cos_reg: 0.016 src_cos_reg_masked: 0.015 tgt_pse_seg_loss: -0.895 tgt_pse_seg_loss_aux: -0.915 tgt_cos_reg: 0.008 
+Epoch: 108, Validation Dice: 0.7492991532482958, Validation score: 1.16288144723557, target pseudo loss: -0.8271645879745484
+Current cumulative epochs of no improvement: 2
+End of epoch 108 / 300 	 Time Taken: 152 sec
+(epoch: 109, iters: 0, time: 0.021) src_seg_loss: -0.870 src_seg_loss_masked: -0.843 src_seg_loss_aux: -0.855 src_seg_loss_aux_masked: -0.855 src_cos_reg: 0.017 src_cos_reg_masked: 0.017 tgt_pse_seg_loss: -0.922 tgt_pse_seg_loss_aux: -0.942 tgt_cos_reg: 0.012 
+Epoch: 109, Validation Dice: 0.7518078907550803, Validation score: 1.1678274105460873, target pseudo loss: -0.8320390395820141
+Current cumulative epochs of no improvement: 3
+End of epoch 109 / 300 	 Time Taken: 150 sec
+(epoch: 110, iters: 0, time: 0.022) src_seg_loss: -0.814 src_seg_loss_masked: -0.788 src_seg_loss_aux: -0.781 src_seg_loss_aux_masked: -0.753 src_cos_reg: 0.011 src_cos_reg_masked: 0.011 tgt_pse_seg_loss: -0.905 tgt_pse_seg_loss_aux: -0.938 tgt_cos_reg: 0.025 
+Epoch: 110, Validation Dice: 0.7518878484187771, Validation score: 1.178903786432569, target pseudo loss: -0.8540318760275841
+Current cumulative epochs of no improvement: 4
+End of epoch 110 / 300 	 Time Taken: 153 sec
+(epoch: 111, iters: 0, time: 0.029) src_seg_loss: -0.564 src_seg_loss_masked: -0.534 src_seg_loss_aux: -0.768 src_seg_loss_aux_masked: -0.725 src_cos_reg: 0.025 src_cos_reg_masked: 0.026 tgt_pse_seg_loss: -0.920 tgt_pse_seg_loss_aux: -0.937 tgt_cos_reg: 0.014 
+Epoch: 111, Validation Dice: 0.7517123098903593, Validation score: 1.1736826545232233, target pseudo loss: -0.843940689265728
+Current cumulative epochs of no improvement: 5
+End of epoch 111 / 300 	 Time Taken: 152 sec
+(epoch: 112, iters: 0, time: 0.027) src_seg_loss: -0.705 src_seg_loss_masked: -0.602 src_seg_loss_aux: -0.767 src_seg_loss_aux_masked: -0.750 src_cos_reg: 0.020 src_cos_reg_masked: 0.022 tgt_pse_seg_loss: -0.811 tgt_pse_seg_loss_aux: -0.904 tgt_cos_reg: 0.034 
+Epoch: 112, Validation Dice: 0.7526347084704514, Validation score: 1.17504425335561, target pseudo loss: -0.844819089770317
+Current cumulative epochs of no improvement: 6
+End of epoch 112 / 300 	 Time Taken: 152 sec
+(epoch: 113, iters: 0, time: 0.047) src_seg_loss: -0.838 src_seg_loss_masked: -0.820 src_seg_loss_aux: -0.831 src_seg_loss_aux_masked: -0.821 src_cos_reg: 0.018 src_cos_reg_masked: 0.018 tgt_pse_seg_loss: -0.865 tgt_pse_seg_loss_aux: -0.925 tgt_cos_reg: 0.035 
+Epoch: 113, Validation Dice: 0.7463030808319694, Validation score: 1.1589744641532547, target pseudo loss: -0.8253427666425704
+Current cumulative epochs of no improvement: 7
+End of epoch 113 / 300 	 Time Taken: 153 sec
+(epoch: 114, iters: 0, time: 0.053) src_seg_loss: -0.767 src_seg_loss_masked: -0.751 src_seg_loss_aux: -0.777 src_seg_loss_aux_masked: -0.747 src_cos_reg: 0.019 src_cos_reg_masked: 0.018 tgt_pse_seg_loss: -0.912 tgt_pse_seg_loss_aux: -0.937 tgt_cos_reg: 0.022 
+Epoch: 114, Validation Dice: 0.744729930507771, Validation score: 1.1591629158433596, target pseudo loss: -0.828865970671177
+Current cumulative epochs of no improvement: 8
+End of epoch 114 / 300 	 Time Taken: 154 sec
+(epoch: 115, iters: 0, time: 0.043) src_seg_loss: -0.870 src_seg_loss_masked: -0.845 src_seg_loss_aux: -0.855 src_seg_loss_aux_masked: -0.842 src_cos_reg: 0.016 src_cos_reg_masked: 0.015 tgt_pse_seg_loss: -0.926 tgt_pse_seg_loss_aux: -0.933 tgt_cos_reg: 0.017 
+Epoch: 115, Validation Dice: 0.7447629048273697, Validation score: 1.164472138618006, target pseudo loss: -0.8394184675812721
+Current cumulative epochs of no improvement: 9
+End of epoch 115 / 300 	 Time Taken: 153 sec
+(epoch: 116, iters: 0, time: 0.025) src_seg_loss: -0.661 src_seg_loss_masked: -0.636 src_seg_loss_aux: -0.776 src_seg_loss_aux_masked: -0.752 src_cos_reg: 0.017 src_cos_reg_masked: 0.017 tgt_pse_seg_loss: -0.798 tgt_pse_seg_loss_aux: -0.923 tgt_cos_reg: 0.025 
+Epoch: 116, Validation Dice: 0.7519639219475486, Validation score: 1.1613028631491162, target pseudo loss: -0.8186778824031353
+Current cumulative epochs of no improvement: 10
+End of epoch 116 / 300 	 Time Taken: 153 sec
+(epoch: 117, iters: 0, time: 0.055) src_seg_loss: -0.799 src_seg_loss_masked: -0.737 src_seg_loss_aux: -0.769 src_seg_loss_aux_masked: -0.742 src_cos_reg: 0.022 src_cos_reg_masked: 0.021 tgt_pse_seg_loss: -0.886 tgt_pse_seg_loss_aux: -0.917 tgt_cos_reg: 0.028 
+Epoch: 117, Validation Dice: 0.7492011062044897, Validation score: 1.1740486089874305, target pseudo loss: -0.8496950055658817
+Current cumulative epochs of no improvement: 11
+End of epoch 117 / 300 	 Time Taken: 154 sec
+(epoch: 118, iters: 0, time: 0.028) src_seg_loss: -0.243 src_seg_loss_masked: -0.230 src_seg_loss_aux: -0.813 src_seg_loss_aux_masked: -0.785 src_cos_reg: 0.017 src_cos_reg_masked: 0.018 tgt_pse_seg_loss: -0.807 tgt_pse_seg_loss_aux: -0.925 tgt_cos_reg: 0.022 
+Epoch: 118, Validation Dice: 0.744962172964209, Validation score: 1.154673798987263, target pseudo loss: -0.8194232520461082
+Current cumulative epochs of no improvement: 12
+End of epoch 118 / 300 	 Time Taken: 152 sec
+(epoch: 119, iters: 0, time: 0.026) src_seg_loss: -0.582 src_seg_loss_masked: -0.532 src_seg_loss_aux: -0.568 src_seg_loss_aux_masked: -0.526 src_cos_reg: 0.012 src_cos_reg_masked: 0.011 tgt_pse_seg_loss: -0.923 tgt_pse_seg_loss_aux: -0.938 tgt_cos_reg: 0.009 
+Epoch: 119, Validation Dice: 0.7489035934800359, Validation score: 1.173202873378441, target pseudo loss: -0.8485985597968102
+Current cumulative epochs of no improvement: 13
+End of epoch 119 / 300 	 Time Taken: 153 sec
+(epoch: 120, iters: 0, time: 0.056) src_seg_loss: -0.804 src_seg_loss_masked: -0.773 src_seg_loss_aux: -0.808 src_seg_loss_aux_masked: -0.795 src_cos_reg: 0.024 src_cos_reg_masked: 0.022 tgt_pse_seg_loss: -0.903 tgt_pse_seg_loss_aux: -0.922 tgt_cos_reg: 0.017 
+Epoch: 120, Validation Dice: 0.7544139941749444, Validation score: 1.175220153328525, target pseudo loss: -0.8416123183071613
+Current cumulative epochs of no improvement: 14
+End of epoch 120 / 300 	 Time Taken: 154 sec
+(epoch: 121, iters: 0, time: 0.021) src_seg_loss: -0.832 src_seg_loss_masked: -0.809 src_seg_loss_aux: -0.826 src_seg_loss_aux_masked: -0.810 src_cos_reg: 0.016 src_cos_reg_masked: 0.016 tgt_pse_seg_loss: -0.916 tgt_pse_seg_loss_aux: -0.930 tgt_cos_reg: 0.019 
+Epoch: 121, Validation Dice: 0.7519566995842902, Validation score: 1.1695942603989093, target pseudo loss: -0.8352751216292381
+Current cumulative epochs of no improvement: 15
+End of epoch 121 / 300 	 Time Taken: 151 sec
+(epoch: 122, iters: 0, time: 0.028) src_seg_loss: -0.837 src_seg_loss_masked: -0.820 src_seg_loss_aux: -0.834 src_seg_loss_aux_masked: -0.821 src_cos_reg: 0.021 src_cos_reg_masked: 0.020 tgt_pse_seg_loss: -0.928 tgt_pse_seg_loss_aux: -0.930 tgt_cos_reg: 0.024 
+Epoch: 122, Validation Dice: 0.7539116527780327, Validation score: 1.1910864958807263, target pseudo loss: -0.8743496862053871
+Current cumulative epochs of no improvement: 0
+End of epoch 122 / 300 	 Time Taken: 153 sec
+(epoch: 123, iters: 0, time: 0.088) src_seg_loss: -0.814 src_seg_loss_masked: -0.791 src_seg_loss_aux: -0.776 src_seg_loss_aux_masked: -0.759 src_cos_reg: 0.018 src_cos_reg_masked: 0.018 tgt_pse_seg_loss: -0.855 tgt_pse_seg_loss_aux: -0.910 tgt_cos_reg: 0.008 
+Epoch: 123, Validation Dice: 0.7496516076898917, Validation score: 1.1645857731676443, target pseudo loss: -0.8298683309555054
+Current cumulative epochs of no improvement: 1
+End of epoch 123 / 300 	 Time Taken: 158 sec
+(epoch: 124, iters: 0, time: 0.021) src_seg_loss: -0.836 src_seg_loss_masked: -0.809 src_seg_loss_aux: -0.834 src_seg_loss_aux_masked: -0.814 src_cos_reg: 0.026 src_cos_reg_masked: 0.026 tgt_pse_seg_loss: -0.907 tgt_pse_seg_loss_aux: -0.929 tgt_cos_reg: 0.016 
+Epoch: 124, Validation Dice: 0.7451980004974877, Validation score: 1.162285314477352, target pseudo loss: -0.8341746279597282
+Current cumulative epochs of no improvement: 2
+End of epoch 124 / 300 	 Time Taken: 151 sec
+(epoch: 125, iters: 0, time: 0.030) src_seg_loss: -0.258 src_seg_loss_masked: -0.270 src_seg_loss_aux: -0.732 src_seg_loss_aux_masked: -0.696 src_cos_reg: 0.039 src_cos_reg_masked: 0.069 tgt_pse_seg_loss: -0.711 tgt_pse_seg_loss_aux: -0.742 tgt_cos_reg: 0.046 
+Epoch: 125, Validation Dice: 0.7489197526598076, Validation score: 1.1750046360218624, target pseudo loss: -0.8521697667241096
+Current cumulative epochs of no improvement: 3
+End of epoch 125 / 300 	 Time Taken: 152 sec
+(epoch: 126, iters: 0, time: 0.056) src_seg_loss: -0.810 src_seg_loss_masked: -0.782 src_seg_loss_aux: -0.814 src_seg_loss_aux_masked: -0.785 src_cos_reg: 0.022 src_cos_reg_masked: 0.021 tgt_pse_seg_loss: -0.897 tgt_pse_seg_loss_aux: -0.897 tgt_cos_reg: 0.019 
+Epoch: 126, Validation Dice: 0.7442680242678864, Validation score: 1.1596614726281507, target pseudo loss: -0.8307868967205286
+Current cumulative epochs of no improvement: 4
+End of epoch 126 / 300 	 Time Taken: 154 sec
+(epoch: 127, iters: 0, time: 0.035) src_seg_loss: -0.840 src_seg_loss_masked: -0.822 src_seg_loss_aux: -0.800 src_seg_loss_aux_masked: -0.752 src_cos_reg: 0.024 src_cos_reg_masked: 0.022 tgt_pse_seg_loss: -0.753 tgt_pse_seg_loss_aux: -0.899 tgt_cos_reg: 0.015 
+Epoch: 127, Validation Dice: 0.7473955028804105, Validation score: 1.1700292844625275, target pseudo loss: -0.8452675631642341
+Current cumulative epochs of no improvement: 5
+End of epoch 127 / 300 	 Time Taken: 153 sec
+(epoch: 128, iters: 0, time: 0.058) src_seg_loss: -0.765 src_seg_loss_masked: -0.748 src_seg_loss_aux: -0.787 src_seg_loss_aux_masked: -0.777 src_cos_reg: 0.029 src_cos_reg_masked: 0.030 tgt_pse_seg_loss: -0.929 tgt_pse_seg_loss_aux: -0.942 tgt_cos_reg: 0.024 
+Epoch: 128, Validation Dice: 0.7517073263569357, Validation score: 1.1906982024355415, target pseudo loss: -0.8779817521572113
+Current cumulative epochs of no improvement: 6
+End of epoch 128 / 300 	 Time Taken: 154 sec
+(epoch: 129, iters: 0, time: 0.022) src_seg_loss: -0.808 src_seg_loss_masked: -0.770 src_seg_loss_aux: -0.800 src_seg_loss_aux_masked: -0.781 src_cos_reg: 0.017 src_cos_reg_masked: 0.016 tgt_pse_seg_loss: -0.937 tgt_pse_seg_loss_aux: -0.950 tgt_cos_reg: 0.018 
+Epoch: 129, Validation Dice: 0.7413016048555702, Validation score: 1.171348240125689, target pseudo loss: -0.8600932705402374
+Current cumulative epochs of no improvement: 7
+End of epoch 129 / 300 	 Time Taken: 153 sec
+(epoch: 130, iters: 0, time: 0.022) src_seg_loss: -0.853 src_seg_loss_masked: -0.825 src_seg_loss_aux: -0.841 src_seg_loss_aux_masked: -0.821 src_cos_reg: 0.017 src_cos_reg_masked: 0.017 tgt_pse_seg_loss: -0.925 tgt_pse_seg_loss_aux: -0.937 tgt_cos_reg: 0.019 
+Epoch: 130, Validation Dice: 0.7483747916346298, Validation score: 1.1807673049395786, target pseudo loss: -0.8647850266098976
+Current cumulative epochs of no improvement: 8
+End of epoch 130 / 300 	 Time Taken: 153 sec
+(epoch: 131, iters: 0, time: 0.030) src_seg_loss: -0.233 src_seg_loss_masked: -0.208 src_seg_loss_aux: -0.729 src_seg_loss_aux_masked: -0.737 src_cos_reg: 0.015 src_cos_reg_masked: 0.015 tgt_pse_seg_loss: -0.904 tgt_pse_seg_loss_aux: -0.926 tgt_cos_reg: 0.026 
+Epoch: 131, Validation Dice: 0.7470159286785065, Validation score: 1.1490958779212679, target pseudo loss: -0.8041598984855227
+Current cumulative epochs of no improvement: 9
+End of epoch 131 / 300 	 Time Taken: 153 sec
+(epoch: 132, iters: 0, time: 0.055) src_seg_loss: -0.824 src_seg_loss_masked: -0.795 src_seg_loss_aux: -0.831 src_seg_loss_aux_masked: -0.806 src_cos_reg: 0.022 src_cos_reg_masked: 0.021 tgt_pse_seg_loss: -0.906 tgt_pse_seg_loss_aux: -0.926 tgt_cos_reg: 0.010 
+Epoch: 132, Validation Dice: 0.7521040187641883, Validation score: 1.185798966275146, target pseudo loss: -0.8673898950219154
+Current cumulative epochs of no improvement: 10
+End of epoch 132 / 300 	 Time Taken: 154 sec
+(epoch: 133, iters: 0, time: 0.029) src_seg_loss: -0.722 src_seg_loss_masked: -0.706 src_seg_loss_aux: -0.759 src_seg_loss_aux_masked: -0.743 src_cos_reg: 0.024 src_cos_reg_masked: 0.026 tgt_pse_seg_loss: -0.926 tgt_pse_seg_loss_aux: -0.930 tgt_cos_reg: 0.013 
+Epoch: 133, Validation Dice: 0.7459335583638489, Validation score: 1.1678541383337318, target pseudo loss: -0.8438411599397659
+Current cumulative epochs of no improvement: 11
+End of epoch 133 / 300 	 Time Taken: 154 sec
+(epoch: 134, iters: 0, time: 0.019) src_seg_loss: -0.835 src_seg_loss_masked: -0.795 src_seg_loss_aux: -0.823 src_seg_loss_aux_masked: -0.812 src_cos_reg: 0.010 src_cos_reg_masked: 0.010 tgt_pse_seg_loss: -0.724 tgt_pse_seg_loss_aux: -0.904 tgt_cos_reg: 0.053 
+Epoch: 134, Validation Dice: 0.7497046170300067, Validation score: 1.1700456330841602, target pseudo loss: -0.8406820321083068
+Current cumulative epochs of no improvement: 12
+End of epoch 134 / 300 	 Time Taken: 150 sec
+(epoch: 135, iters: 0, time: 0.024) src_seg_loss: -0.852 src_seg_loss_masked: -0.835 src_seg_loss_aux: -0.817 src_seg_loss_aux_masked: -0.773 src_cos_reg: 0.031 src_cos_reg_masked: 0.029 tgt_pse_seg_loss: -0.925 tgt_pse_seg_loss_aux: -0.936 tgt_cos_reg: 0.012 
+Epoch: 135, Validation Dice: 0.7512544202762265, Validation score: 1.1882365845101495, target pseudo loss: -0.8739643284678459
+Current cumulative epochs of no improvement: 13
+End of epoch 135 / 300 	 Time Taken: 152 sec
+(epoch: 136, iters: 0, time: 0.030) src_seg_loss: -0.672 src_seg_loss_masked: -0.634 src_seg_loss_aux: -0.779 src_seg_loss_aux_masked: -0.775 src_cos_reg: 0.012 src_cos_reg_masked: 0.013 tgt_pse_seg_loss: -0.905 tgt_pse_seg_loss_aux: -0.897 tgt_cos_reg: 0.009 
+Epoch: 136, Validation Dice: 0.7447983493896008, Validation score: 1.1666637519987106, target pseudo loss: -0.8437308052182197
+Current cumulative epochs of no improvement: 14
+End of epoch 136 / 300 	 Time Taken: 152 sec
+(epoch: 137, iters: 0, time: 0.030) src_seg_loss: -0.574 src_seg_loss_masked: -0.546 src_seg_loss_aux: -0.755 src_seg_loss_aux_masked: -0.734 src_cos_reg: 0.021 src_cos_reg_masked: 0.024 tgt_pse_seg_loss: -0.881 tgt_pse_seg_loss_aux: -0.930 tgt_cos_reg: 0.033 
+Epoch: 137, Validation Dice: 0.7540776086106626, Validation score: 1.18054343479422, target pseudo loss: -0.852931652367115
+Current cumulative epochs of no improvement: 15
+End of epoch 137 / 300 	 Time Taken: 152 sec
+(epoch: 138, iters: 0, time: 0.059) src_seg_loss: -0.639 src_seg_loss_masked: -0.609 src_seg_loss_aux: -0.786 src_seg_loss_aux_masked: -0.774 src_cos_reg: 0.015 src_cos_reg_masked: 0.016 tgt_pse_seg_loss: -0.922 tgt_pse_seg_loss_aux: -0.939 tgt_cos_reg: 0.023 
+Epoch: 138, Validation Dice: 0.7420944755066545, Validation score: 1.1690248718399914, target pseudo loss: -0.8538607926666737
+Current cumulative epochs of no improvement: 16
+End of epoch 138 / 300 	 Time Taken: 155 sec
+(epoch: 139, iters: 0, time: 0.052) src_seg_loss: -0.805 src_seg_loss_masked: -0.785 src_seg_loss_aux: -0.777 src_seg_loss_aux_masked: -0.770 src_cos_reg: 0.014 src_cos_reg_masked: 0.014 tgt_pse_seg_loss: -0.908 tgt_pse_seg_loss_aux: -0.930 tgt_cos_reg: 0.016 
+Epoch: 139, Validation Dice: 0.7518195865757497, Validation score: 1.1715443654812605, target pseudo loss: -0.8394495578110218
+Current cumulative epochs of no improvement: 17
+End of epoch 139 / 300 	 Time Taken: 154 sec
+(epoch: 140, iters: 0, time: 0.027) src_seg_loss: -0.828 src_seg_loss_masked: -0.794 src_seg_loss_aux: -0.789 src_seg_loss_aux_masked: -0.774 src_cos_reg: 0.021 src_cos_reg_masked: 0.022 tgt_pse_seg_loss: -0.891 tgt_pse_seg_loss_aux: -0.933 tgt_cos_reg: 0.016 
+Epoch: 140, Validation Dice: 0.7493058294344018, Validation score: 1.1595326533454726, target pseudo loss: -0.8204536478221417
+Current cumulative epochs of no improvement: 18
+End of epoch 140 / 300 	 Time Taken: 151 sec
+(epoch: 141, iters: 0, time: 0.028) src_seg_loss: -0.869 src_seg_loss_masked: -0.851 src_seg_loss_aux: -0.856 src_seg_loss_aux_masked: -0.842 src_cos_reg: 0.015 src_cos_reg_masked: 0.015 tgt_pse_seg_loss: -0.610 tgt_pse_seg_loss_aux: -0.876 tgt_cos_reg: 0.031 
+Epoch: 141, Validation Dice: 0.7512461940806383, Validation score: 1.162751688943433, target pseudo loss: -0.8230109897255897
+Current cumulative epochs of no improvement: 19
+End of epoch 141 / 300 	 Time Taken: 152 sec
+(epoch: 142, iters: 0, time: 0.047) src_seg_loss: -0.852 src_seg_loss_masked: -0.817 src_seg_loss_aux: -0.823 src_seg_loss_aux_masked: -0.800 src_cos_reg: 0.014 src_cos_reg_masked: 0.014 tgt_pse_seg_loss: -0.926 tgt_pse_seg_loss_aux: -0.934 tgt_cos_reg: 0.014 
+Epoch: 142, Validation Dice: 0.7476538373938596, Validation score: 1.1702051663807427, target pseudo loss: -0.8451026579737664
+Current cumulative epochs of no improvement: 20
+End of epoch 142 / 300 	 Time Taken: 153 sec
+(epoch: 143, iters: 0, time: 0.024) src_seg_loss: -0.709 src_seg_loss_masked: -0.696 src_seg_loss_aux: -0.831 src_seg_loss_aux_masked: -0.810 src_cos_reg: 0.022 src_cos_reg_masked: 0.021 tgt_pse_seg_loss: -0.911 tgt_pse_seg_loss_aux: -0.938 tgt_cos_reg: 0.004 
+Epoch: 143, Validation Dice: 0.751001096510256, Validation score: 1.1661861479961522, target pseudo loss: -0.8303701029717923
+Current cumulative epochs of no improvement: 21
+End of epoch 143 / 300 	 Time Taken: 153 sec
+(epoch: 144, iters: 0, time: 0.031) src_seg_loss: -0.797 src_seg_loss_masked: -0.760 src_seg_loss_aux: -0.762 src_seg_loss_aux_masked: -0.740 src_cos_reg: 0.016 src_cos_reg_masked: 0.015 tgt_pse_seg_loss: -0.659 tgt_pse_seg_loss_aux: -0.933 tgt_cos_reg: 0.033 
+Epoch: 144, Validation Dice: 0.7527703632115328, Validation score: 1.1934152637123072, target pseudo loss: -0.8812898010015487
+Current cumulative epochs of no improvement: 0
+End of epoch 144 / 300 	 Time Taken: 154 sec
+(epoch: 145, iters: 0, time: 0.055) src_seg_loss: -0.744 src_seg_loss_masked: -0.698 src_seg_loss_aux: -0.716 src_seg_loss_aux_masked: -0.696 src_cos_reg: 0.015 src_cos_reg_masked: 0.015 tgt_pse_seg_loss: -0.910 tgt_pse_seg_loss_aux: -0.932 tgt_cos_reg: 0.029 
+Epoch: 145, Validation Dice: 0.7473265207396601, Validation score: 1.1795654851780986, target pseudo loss: -0.8644779288768768
+Current cumulative epochs of no improvement: 1
+End of epoch 145 / 300 	 Time Taken: 154 sec
+(epoch: 146, iters: 0, time: 0.037) src_seg_loss: -0.235 src_seg_loss_masked: -0.228 src_seg_loss_aux: -0.819 src_seg_loss_aux_masked: -0.769 src_cos_reg: 0.010 src_cos_reg_masked: 0.010 tgt_pse_seg_loss: -0.918 tgt_pse_seg_loss_aux: -0.939 tgt_cos_reg: 0.029 
+Epoch: 146, Validation Dice: 0.7476215313962774, Validation score: 1.1866346337488967, target pseudo loss: -0.8780262047052383
+Current cumulative epochs of no improvement: 2
+End of epoch 146 / 300 	 Time Taken: 152 sec
+(epoch: 147, iters: 0, time: 0.023) src_seg_loss: -0.797 src_seg_loss_masked: -0.775 src_seg_loss_aux: -0.836 src_seg_loss_aux_masked: -0.811 src_cos_reg: 0.020 src_cos_reg_masked: 0.020 tgt_pse_seg_loss: -0.929 tgt_pse_seg_loss_aux: -0.947 tgt_cos_reg: 0.026 
+Epoch: 147, Validation Dice: 0.7507542223455962, Validation score: 1.184976247099286, target pseudo loss: -0.8684440495073795
+Current cumulative epochs of no improvement: 3
+End of epoch 147 / 300 	 Time Taken: 153 sec
+(epoch: 148, iters: 0, time: 0.063) src_seg_loss: -0.836 src_seg_loss_masked: -0.814 src_seg_loss_aux: -0.789 src_seg_loss_aux_masked: -0.769 src_cos_reg: 0.030 src_cos_reg_masked: 0.030 tgt_pse_seg_loss: -0.875 tgt_pse_seg_loss_aux: -0.903 tgt_cos_reg: 0.031 
+Epoch: 148, Validation Dice: 0.7523367394620996, Validation score: 1.1745577259475808, target pseudo loss: -0.8444419729709626
+Current cumulative epochs of no improvement: 4
+End of epoch 148 / 300 	 Time Taken: 155 sec
+(epoch: 149, iters: 0, time: 0.022) src_seg_loss: -0.831 src_seg_loss_masked: -0.794 src_seg_loss_aux: -0.822 src_seg_loss_aux_masked: -0.801 src_cos_reg: 0.014 src_cos_reg_masked: 0.014 tgt_pse_seg_loss: -0.800 tgt_pse_seg_loss_aux: -0.899 tgt_cos_reg: 0.042 
+Epoch: 149, Validation Dice: 0.7457533110658657, Validation score: 1.1634333755056394, target pseudo loss: -0.8353601288795471
+Current cumulative epochs of no improvement: 5
+End of epoch 149 / 300 	 Time Taken: 152 sec
+(epoch: 150, iters: 0, time: 0.035) src_seg_loss: -0.122 src_seg_loss_masked: -0.114 src_seg_loss_aux: -0.813 src_seg_loss_aux_masked: -0.782 src_cos_reg: 0.011 src_cos_reg_masked: 0.015 tgt_pse_seg_loss: -0.790 tgt_pse_seg_loss_aux: -0.898 tgt_cos_reg: 0.046 
+Epoch: 150, Validation Dice: 0.7450302282718638, Validation score: 1.1848346083609083, target pseudo loss: -0.8796087601780891
+Current cumulative epochs of no improvement: 6
+End of epoch 150 / 300 	 Time Taken: 154 sec
+(epoch: 151, iters: 0, time: 0.031) src_seg_loss: -0.333 src_seg_loss_masked: -0.364 src_seg_loss_aux: -0.787 src_seg_loss_aux_masked: -0.766 src_cos_reg: 0.015 src_cos_reg_masked: 0.016 tgt_pse_seg_loss: -0.936 tgt_pse_seg_loss_aux: -0.939 tgt_cos_reg: 0.016 
+Epoch: 151, Validation Dice: 0.7503485841130392, Validation score: 1.1814815989708083, target pseudo loss: -0.862266029715538
+Current cumulative epochs of no improvement: 7
+End of epoch 151 / 300 	 Time Taken: 152 sec
+(epoch: 152, iters: 0, time: 0.032) src_seg_loss: -0.823 src_seg_loss_masked: -0.803 src_seg_loss_aux: -0.805 src_seg_loss_aux_masked: -0.791 src_cos_reg: 0.017 src_cos_reg_masked: 0.018 tgt_pse_seg_loss: -0.921 tgt_pse_seg_loss_aux: -0.938 tgt_cos_reg: 0.016 
+Epoch: 152, Validation Dice: 0.7497523550499714, Validation score: 1.1805117168833053, target pseudo loss: -0.8615187236666679
+Current cumulative epochs of no improvement: 8
+End of epoch 152 / 300 	 Time Taken: 152 sec
+(epoch: 153, iters: 0, time: 0.056) src_seg_loss: -0.700 src_seg_loss_masked: -0.664 src_seg_loss_aux: -0.751 src_seg_loss_aux_masked: -0.716 src_cos_reg: 0.027 src_cos_reg_masked: 0.026 tgt_pse_seg_loss: -0.894 tgt_pse_seg_loss_aux: -0.939 tgt_cos_reg: 0.027 
+Epoch: 153, Validation Dice: 0.7485554642600459, Validation score: 1.177630946598713, target pseudo loss: -0.8581509646773339
+Current cumulative epochs of no improvement: 9
+End of epoch 153 / 300 	 Time Taken: 154 sec
+(epoch: 154, iters: 0, time: 0.020) src_seg_loss: -0.872 src_seg_loss_masked: -0.848 src_seg_loss_aux: -0.860 src_seg_loss_aux_masked: -0.847 src_cos_reg: 0.012 src_cos_reg_masked: 0.012 tgt_pse_seg_loss: -0.940 tgt_pse_seg_loss_aux: -0.937 tgt_cos_reg: 0.004 
+Epoch: 154, Validation Dice: 0.7443490838185396, Validation score: 1.1756929900423136, target pseudo loss: -0.8626878124475479
+Current cumulative epochs of no improvement: 10
+End of epoch 154 / 300 	 Time Taken: 151 sec
+(epoch: 155, iters: 0, time: 0.053) src_seg_loss: -0.678 src_seg_loss_masked: -0.608 src_seg_loss_aux: -0.728 src_seg_loss_aux_masked: -0.718 src_cos_reg: 0.027 src_cos_reg_masked: 0.043 tgt_pse_seg_loss: -0.783 tgt_pse_seg_loss_aux: -0.867 tgt_cos_reg: 0.066 
+Epoch: 155, Validation Dice: 0.751190531084504, Validation score: 1.1781679142063521, target pseudo loss: -0.8539547662436963
+Current cumulative epochs of no improvement: 11
+End of epoch 155 / 300 	 Time Taken: 154 sec
+(epoch: 156, iters: 0, time: 0.050) src_seg_loss: -0.833 src_seg_loss_masked: -0.811 src_seg_loss_aux: -0.830 src_seg_loss_aux_masked: -0.801 src_cos_reg: 0.036 src_cos_reg_masked: 0.037 tgt_pse_seg_loss: -0.729 tgt_pse_seg_loss_aux: -0.872 tgt_cos_reg: 0.050 
+Epoch: 156, Validation Dice: 0.7514136189388925, Validation score: 1.1700796425881679, target pseudo loss: -0.8373320472985506
+Current cumulative epochs of no improvement: 12
+End of epoch 156 / 300 	 Time Taken: 153 sec
+(epoch: 157, iters: 0, time: 0.029) src_seg_loss: -0.774 src_seg_loss_masked: -0.734 src_seg_loss_aux: -0.829 src_seg_loss_aux_masked: -0.794 src_cos_reg: 0.019 src_cos_reg_masked: 0.019 tgt_pse_seg_loss: -0.924 tgt_pse_seg_loss_aux: -0.918 tgt_cos_reg: 0.008 
+Epoch: 157, Validation Dice: 0.7558899306945178, Validation score: 1.1830693447284075, target pseudo loss: -0.8543588280677795
+Current cumulative epochs of no improvement: 13
+End of epoch 157 / 300 	 Time Taken: 151 sec
+(epoch: 158, iters: 0, time: 0.023) src_seg_loss: -0.479 src_seg_loss_masked: -0.453 src_seg_loss_aux: -0.808 src_seg_loss_aux_masked: -0.786 src_cos_reg: 0.012 src_cos_reg_masked: 0.012 tgt_pse_seg_loss: -0.925 tgt_pse_seg_loss_aux: -0.936 tgt_cos_reg: 0.007 
+Epoch: 158, Validation Dice: 0.7454174201203863, Validation score: 1.1673723585917035, target pseudo loss: -0.8439098769426345
+Current cumulative epochs of no improvement: 14
+End of epoch 158 / 300 	 Time Taken: 151 sec
+(epoch: 159, iters: 0, time: 0.057) src_seg_loss: -0.830 src_seg_loss_masked: -0.793 src_seg_loss_aux: -0.851 src_seg_loss_aux_masked: -0.835 src_cos_reg: 0.021 src_cos_reg_masked: 0.020 tgt_pse_seg_loss: -0.912 tgt_pse_seg_loss_aux: -0.942 tgt_cos_reg: 0.025 
+Epoch: 159, Validation Dice: 0.754242431605556, Validation score: 1.1759141285068775, target pseudo loss: -0.8433433938026428
+Current cumulative epochs of no improvement: 15
+End of epoch 159 / 300 	 Time Taken: 154 sec
+(epoch: 160, iters: 0, time: 0.043) src_seg_loss: -0.847 src_seg_loss_masked: -0.798 src_seg_loss_aux: -0.837 src_seg_loss_aux_masked: -0.815 src_cos_reg: 0.012 src_cos_reg_masked: 0.012 tgt_pse_seg_loss: -0.913 tgt_pse_seg_loss_aux: -0.939 tgt_cos_reg: 0.017 
+Epoch: 160, Validation Dice: 0.7471492840943494, Validation score: 1.18216156466283, target pseudo loss: -0.870024561136961
+Current cumulative epochs of no improvement: 16
+End of epoch 160 / 300 	 Time Taken: 153 sec
+(epoch: 161, iters: 0, time: 0.061) src_seg_loss: -0.810 src_seg_loss_masked: -0.783 src_seg_loss_aux: -0.830 src_seg_loss_aux_masked: -0.813 src_cos_reg: 0.012 src_cos_reg_masked: 0.011 tgt_pse_seg_loss: -0.919 tgt_pse_seg_loss_aux: -0.940 tgt_cos_reg: 0.030 
+Epoch: 161, Validation Dice: 0.7452286393580363, Validation score: 1.1828122190771029, target pseudo loss: -0.8751671594381333
+Current cumulative epochs of no improvement: 17
+End of epoch 161 / 300 	 Time Taken: 154 sec
+(epoch: 162, iters: 0, time: 0.037) src_seg_loss: -0.636 src_seg_loss_masked: -0.622 src_seg_loss_aux: -0.788 src_seg_loss_aux_masked: -0.772 src_cos_reg: 0.022 src_cos_reg_masked: 0.022 tgt_pse_seg_loss: -0.910 tgt_pse_seg_loss_aux: -0.935 tgt_cos_reg: 0.018 
+Epoch: 162, Validation Dice: 0.7435515538688418, Validation score: 1.1646737004156824, target pseudo loss: -0.8422442930936813
+Current cumulative epochs of no improvement: 18
+End of epoch 162 / 300 	 Time Taken: 152 sec
+(epoch: 163, iters: 0, time: 0.033) src_seg_loss: -0.214 src_seg_loss_masked: -0.204 src_seg_loss_aux: -0.842 src_seg_loss_aux_masked: -0.801 src_cos_reg: 0.010 src_cos_reg_masked: 0.010 tgt_pse_seg_loss: -0.927 tgt_pse_seg_loss_aux: -0.930 tgt_cos_reg: 0.028 
+Epoch: 163, Validation Dice: 0.7489348676976046, Validation score: 1.1836195969756922, target pseudo loss: -0.8693694585561752
+Current cumulative epochs of no improvement: 19
+End of epoch 163 / 300 	 Time Taken: 152 sec
+(epoch: 164, iters: 0, time: 0.028) src_seg_loss: -0.783 src_seg_loss_masked: -0.760 src_seg_loss_aux: -0.798 src_seg_loss_aux_masked: -0.765 src_cos_reg: 0.027 src_cos_reg_masked: 0.026 tgt_pse_seg_loss: -0.877 tgt_pse_seg_loss_aux: -0.931 tgt_cos_reg: 0.015 
+Epoch: 164, Validation Dice: 0.7514093675145412, Validation score: 1.1731703266927505, target pseudo loss: -0.8435219183564187
+Current cumulative epochs of no improvement: 20
+End of epoch 164 / 300 	 Time Taken: 154 sec
+(epoch: 165, iters: 0, time: 0.045) src_seg_loss: -0.704 src_seg_loss_masked: -0.672 src_seg_loss_aux: -0.842 src_seg_loss_aux_masked: -0.824 src_cos_reg: 0.011 src_cos_reg_masked: 0.010 tgt_pse_seg_loss: -0.898 tgt_pse_seg_loss_aux: -0.905 tgt_cos_reg: 0.014 
+Epoch: 165, Validation Dice: 0.7478531188595172, Validation score: 1.1846221938061592, target pseudo loss: -0.8735381498932838
+Current cumulative epochs of no improvement: 21
+End of epoch 165 / 300 	 Time Taken: 153 sec
+(epoch: 166, iters: 0, time: 0.031) src_seg_loss: -0.865 src_seg_loss_masked: -0.840 src_seg_loss_aux: -0.855 src_seg_loss_aux_masked: -0.834 src_cos_reg: 0.023 src_cos_reg_masked: 0.022 tgt_pse_seg_loss: -0.933 tgt_pse_seg_loss_aux: -0.944 tgt_cos_reg: 0.020 
+Epoch: 166, Validation Dice: 0.7570030913748089, Validation score: 1.1955791089929884, target pseudo loss: -0.8771520352363587
+Current cumulative epochs of no improvement: 0
+End of epoch 166 / 300 	 Time Taken: 154 sec
+(epoch: 167, iters: 0, time: 0.034) src_seg_loss: -0.597 src_seg_loss_masked: -0.543 src_seg_loss_aux: -0.747 src_seg_loss_aux_masked: -0.728 src_cos_reg: 0.018 src_cos_reg_masked: 0.021 tgt_pse_seg_loss: -0.757 tgt_pse_seg_loss_aux: -0.938 tgt_cos_reg: 0.011 
+Epoch: 167, Validation Dice: 0.7495564871584882, Validation score: 1.1778046211158744, target pseudo loss: -0.8564962679147721
+Current cumulative epochs of no improvement: 1
+End of epoch 167 / 300 	 Time Taken: 153 sec
+(epoch: 168, iters: 0, time: 0.021) src_seg_loss: -0.842 src_seg_loss_masked: -0.809 src_seg_loss_aux: -0.831 src_seg_loss_aux_masked: -0.811 src_cos_reg: 0.015 src_cos_reg_masked: 0.015 tgt_pse_seg_loss: -0.932 tgt_pse_seg_loss_aux: -0.946 tgt_cos_reg: 0.018 
+Epoch: 168, Validation Dice: 0.7454988935974398, Validation score: 1.1819992866006652, target pseudo loss: -0.8730007860064507
+Current cumulative epochs of no improvement: 2
+End of epoch 168 / 300 	 Time Taken: 153 sec
+(epoch: 169, iters: 0, time: 0.028) src_seg_loss: -0.787 src_seg_loss_masked: -0.755 src_seg_loss_aux: -0.758 src_seg_loss_aux_masked: -0.735 src_cos_reg: 0.016 src_cos_reg_masked: 0.017 tgt_pse_seg_loss: -0.926 tgt_pse_seg_loss_aux: -0.941 tgt_cos_reg: 0.018 
+Epoch: 169, Validation Dice: 0.7512046348067271, Validation score: 1.1979485931011187, target pseudo loss: -0.8934879165887832
+Current cumulative epochs of no improvement: 0
+End of epoch 169 / 300 	 Time Taken: 156 sec
+(epoch: 170, iters: 0, time: 0.047) src_seg_loss: -0.277 src_seg_loss_masked: -0.275 src_seg_loss_aux: -0.836 src_seg_loss_aux_masked: -0.800 src_cos_reg: 0.009 src_cos_reg_masked: 0.010 tgt_pse_seg_loss: -0.896 tgt_pse_seg_loss_aux: -0.934 tgt_cos_reg: 0.030 
+Epoch: 170, Validation Dice: 0.7452560756873428, Validation score: 1.1730751350294888, target pseudo loss: -0.8556381186842918
+Current cumulative epochs of no improvement: 1
+End of epoch 170 / 300 	 Time Taken: 154 sec
+(epoch: 171, iters: 0, time: 0.049) src_seg_loss: -0.819 src_seg_loss_masked: -0.801 src_seg_loss_aux: -0.819 src_seg_loss_aux_masked: -0.811 src_cos_reg: 0.016 src_cos_reg_masked: 0.016 tgt_pse_seg_loss: -0.899 tgt_pse_seg_loss_aux: -0.912 tgt_cos_reg: 0.020 
+Epoch: 171, Validation Dice: 0.7526774173185795, Validation score: 1.197526455442664, target pseudo loss: -0.889698076248169
+Current cumulative epochs of no improvement: 2
+End of epoch 171 / 300 	 Time Taken: 154 sec
+(epoch: 172, iters: 0, time: 0.054) src_seg_loss: -0.830 src_seg_loss_masked: -0.809 src_seg_loss_aux: -0.839 src_seg_loss_aux_masked: -0.817 src_cos_reg: 0.015 src_cos_reg_masked: 0.015 tgt_pse_seg_loss: -0.896 tgt_pse_seg_loss_aux: -0.903 tgt_cos_reg: 0.013 
+Epoch: 172, Validation Dice: 0.7499286595734508, Validation score: 1.1768390104922206, target pseudo loss: -0.8538207018375397
+Current cumulative epochs of no improvement: 3
+End of epoch 172 / 300 	 Time Taken: 154 sec
+(epoch: 173, iters: 0, time: 0.024) src_seg_loss: -0.604 src_seg_loss_masked: -0.583 src_seg_loss_aux: -0.804 src_seg_loss_aux_masked: -0.746 src_cos_reg: 0.014 src_cos_reg_masked: 0.015 tgt_pse_seg_loss: -0.932 tgt_pse_seg_loss_aux: -0.952 tgt_cos_reg: 0.014 
+Epoch: 173, Validation Dice: 0.7528062838671316, Validation score: 1.1826549663750041, target pseudo loss: -0.8596973650157451
+Current cumulative epochs of no improvement: 4
+End of epoch 173 / 300 	 Time Taken: 153 sec
+(epoch: 174, iters: 0, time: 0.021) src_seg_loss: -0.854 src_seg_loss_masked: -0.826 src_seg_loss_aux: -0.841 src_seg_loss_aux_masked: -0.825 src_cos_reg: 0.013 src_cos_reg_masked: 0.014 tgt_pse_seg_loss: -0.926 tgt_pse_seg_loss_aux: -0.931 tgt_cos_reg: 0.010 
+Epoch: 174, Validation Dice: 0.7473505916829801, Validation score: 1.1807459973927237, target pseudo loss: -0.866790811419487
+Current cumulative epochs of no improvement: 5
+End of epoch 174 / 300 	 Time Taken: 156 sec
+(epoch: 175, iters: 0, time: 0.022) src_seg_loss: -0.838 src_seg_loss_masked: -0.810 src_seg_loss_aux: -0.820 src_seg_loss_aux_masked: -0.797 src_cos_reg: 0.013 src_cos_reg_masked: 0.013 tgt_pse_seg_loss: -0.879 tgt_pse_seg_loss_aux: -0.894 tgt_cos_reg: 0.010 
+Epoch: 175, Validation Dice: 0.7512628333611884, Validation score: 1.1793935228480497, target pseudo loss: -0.8562613789737225
+Current cumulative epochs of no improvement: 6
+End of epoch 175 / 300 	 Time Taken: 151 sec
+(epoch: 176, iters: 0, time: 0.020) src_seg_loss: -0.831 src_seg_loss_masked: -0.814 src_seg_loss_aux: -0.810 src_seg_loss_aux_masked: -0.801 src_cos_reg: 0.013 src_cos_reg_masked: 0.013 tgt_pse_seg_loss: -0.885 tgt_pse_seg_loss_aux: -0.923 tgt_cos_reg: 0.019 
+Epoch: 176, Validation Dice: 0.7526423629354971, Validation score: 1.1872002225350875, target pseudo loss: -0.8691157191991806
+Current cumulative epochs of no improvement: 7
+End of epoch 176 / 300 	 Time Taken: 152 sec
+(epoch: 177, iters: 0, time: 0.075) src_seg_loss: -0.863 src_seg_loss_masked: -0.823 src_seg_loss_aux: -0.829 src_seg_loss_aux_masked: -0.811 src_cos_reg: 0.019 src_cos_reg_masked: 0.018 tgt_pse_seg_loss: -0.517 tgt_pse_seg_loss_aux: -0.910 tgt_cos_reg: 0.048 
+Epoch: 177, Validation Dice: 0.7472474500123004, Validation score: 1.1891945905569534, target pseudo loss: -0.8838942810893059
+Current cumulative epochs of no improvement: 8
+End of epoch 177 / 300 	 Time Taken: 156 sec
+(epoch: 178, iters: 0, time: 0.026) src_seg_loss: -0.742 src_seg_loss_masked: -0.711 src_seg_loss_aux: -0.761 src_seg_loss_aux_masked: -0.768 src_cos_reg: 0.018 src_cos_reg_masked: 0.020 tgt_pse_seg_loss: -0.788 tgt_pse_seg_loss_aux: -0.883 tgt_cos_reg: 0.047 
+Epoch: 178, Validation Dice: 0.7469058138034601, Validation score: 1.1748786300323266, target pseudo loss: -0.8559456324577331
+Current cumulative epochs of no improvement: 9
+End of epoch 178 / 300 	 Time Taken: 154 sec
+(epoch: 179, iters: 0, time: 0.048) src_seg_loss: -0.832 src_seg_loss_masked: -0.822 src_seg_loss_aux: -0.829 src_seg_loss_aux_masked: -0.813 src_cos_reg: 0.018 src_cos_reg_masked: 0.018 tgt_pse_seg_loss: -0.915 tgt_pse_seg_loss_aux: -0.942 tgt_cos_reg: 0.028 
+Epoch: 179, Validation Dice: 0.7543910392945584, Validation score: 1.1822959121888457, target pseudo loss: -0.8558097457885743
+Current cumulative epochs of no improvement: 10
+End of epoch 179 / 300 	 Time Taken: 153 sec
+(epoch: 180, iters: 0, time: 0.047) src_seg_loss: -0.822 src_seg_loss_masked: -0.804 src_seg_loss_aux: -0.781 src_seg_loss_aux_masked: -0.757 src_cos_reg: 0.018 src_cos_reg_masked: 0.019 tgt_pse_seg_loss: -0.939 tgt_pse_seg_loss_aux: -0.939 tgt_cos_reg: 0.003 
+Epoch: 180, Validation Dice: 0.7487441298263595, Validation score: 1.1833673748271987, target pseudo loss: -0.8692464900016784
+Current cumulative epochs of no improvement: 11
+End of epoch 180 / 300 	 Time Taken: 153 sec
+(epoch: 181, iters: 0, time: 0.023) src_seg_loss: -0.832 src_seg_loss_masked: -0.813 src_seg_loss_aux: -0.835 src_seg_loss_aux_masked: -0.824 src_cos_reg: 0.015 src_cos_reg_masked: 0.016 tgt_pse_seg_loss: -0.929 tgt_pse_seg_loss_aux: -0.926 tgt_cos_reg: 0.027 
+Epoch: 181, Validation Dice: 0.7456595753392107, Validation score: 1.1667988255133754, target pseudo loss: -0.8422785003483295
+Current cumulative epochs of no improvement: 12
+End of epoch 181 / 300 	 Time Taken: 151 sec
+(epoch: 182, iters: 0, time: 0.021) src_seg_loss: -0.855 src_seg_loss_masked: -0.828 src_seg_loss_aux: -0.852 src_seg_loss_aux_masked: -0.835 src_cos_reg: 0.014 src_cos_reg_masked: 0.014 tgt_pse_seg_loss: -0.934 tgt_pse_seg_loss_aux: -0.946 tgt_cos_reg: 0.013 
+Epoch: 182, Validation Dice: 0.7475439412258114, Validation score: 1.1714545802138294, target pseudo loss: -0.8478212779760361
+Current cumulative epochs of no improvement: 13
+End of epoch 182 / 300 	 Time Taken: 151 sec
+(epoch: 183, iters: 0, time: 0.028) src_seg_loss: -0.787 src_seg_loss_masked: -0.754 src_seg_loss_aux: -0.714 src_seg_loss_aux_masked: -0.662 src_cos_reg: 0.016 src_cos_reg_masked: 0.016 tgt_pse_seg_loss: -0.918 tgt_pse_seg_loss_aux: -0.928 tgt_cos_reg: 0.010 
+Epoch: 183, Validation Dice: 0.7474988963407885, Validation score: 1.180544651816548, target pseudo loss: -0.866091510951519
+Current cumulative epochs of no improvement: 14
+End of epoch 183 / 300 	 Time Taken: 152 sec
+(epoch: 184, iters: 0, time: 0.022) src_seg_loss: -0.876 src_seg_loss_masked: -0.863 src_seg_loss_aux: -0.865 src_seg_loss_aux_masked: -0.855 src_cos_reg: 0.013 src_cos_reg_masked: 0.013 tgt_pse_seg_loss: -0.910 tgt_pse_seg_loss_aux: -0.945 tgt_cos_reg: 0.028 
+Epoch: 184, Validation Dice: 0.743860708099551, Validation score: 1.1773422780602645, target pseudo loss: -0.8669631399214268
+Current cumulative epochs of no improvement: 15
+End of epoch 184 / 300 	 Time Taken: 152 sec
+(epoch: 185, iters: 0, time: 0.025) src_seg_loss: -0.682 src_seg_loss_masked: -0.656 src_seg_loss_aux: -0.796 src_seg_loss_aux_masked: -0.781 src_cos_reg: 0.010 src_cos_reg_masked: 0.011 tgt_pse_seg_loss: -0.902 tgt_pse_seg_loss_aux: -0.924 tgt_cos_reg: 0.009 
+Epoch: 185, Validation Dice: 0.754093131141056, Validation score: 1.1893840733331338, target pseudo loss: -0.8705818843841553
+Current cumulative epochs of no improvement: 16
+End of epoch 185 / 300 	 Time Taken: 152 sec
+(epoch: 186, iters: 0, time: 0.029) src_seg_loss: -0.578 src_seg_loss_masked: -0.558 src_seg_loss_aux: -0.760 src_seg_loss_aux_masked: -0.746 src_cos_reg: 0.021 src_cos_reg_masked: 0.023 tgt_pse_seg_loss: -0.818 tgt_pse_seg_loss_aux: -0.929 tgt_cos_reg: 0.026 
+Epoch: 186, Validation Dice: 0.7483956200241623, Validation score: 1.1885434772431431, target pseudo loss: -0.8802957144379616
+Current cumulative epochs of no improvement: 17
+End of epoch 186 / 300 	 Time Taken: 152 sec
+(epoch: 187, iters: 0, time: 0.058) src_seg_loss: -0.802 src_seg_loss_masked: -0.762 src_seg_loss_aux: -0.786 src_seg_loss_aux_masked: -0.771 src_cos_reg: 0.012 src_cos_reg_masked: 0.011 tgt_pse_seg_loss: -0.929 tgt_pse_seg_loss_aux: -0.941 tgt_cos_reg: 0.010 
+Epoch: 187, Validation Dice: 0.7550268825924008, Validation score: 1.1896152449434607, target pseudo loss: -0.8691767247021198
+Current cumulative epochs of no improvement: 18
+End of epoch 187 / 300 	 Time Taken: 154 sec
+(epoch: 188, iters: 0, time: 0.029) src_seg_loss: -0.843 src_seg_loss_masked: -0.824 src_seg_loss_aux: -0.834 src_seg_loss_aux_masked: -0.806 src_cos_reg: 0.018 src_cos_reg_masked: 0.018 tgt_pse_seg_loss: -0.925 tgt_pse_seg_loss_aux: -0.945 tgt_cos_reg: 0.015 
+Epoch: 188, Validation Dice: 0.7467248244769276, Validation score: 1.182544562686175, target pseudo loss: -0.8716394764184952
+Current cumulative epochs of no improvement: 19
+End of epoch 188 / 300 	 Time Taken: 154 sec
+(epoch: 189, iters: 0, time: 0.049) src_seg_loss: -0.852 src_seg_loss_masked: -0.836 src_seg_loss_aux: -0.851 src_seg_loss_aux_masked: -0.829 src_cos_reg: 0.016 src_cos_reg_masked: 0.016 tgt_pse_seg_loss: -0.813 tgt_pse_seg_loss_aux: -0.908 tgt_cos_reg: 0.049 
+Epoch: 189, Validation Dice: 0.7416905677790928, Validation score: 1.1705773404712962, target pseudo loss: -0.8577735453844071
+Current cumulative epochs of no improvement: 20
+End of epoch 189 / 300 	 Time Taken: 154 sec
+(epoch: 190, iters: 0, time: 0.029) src_seg_loss: -0.388 src_seg_loss_masked: -0.366 src_seg_loss_aux: -0.815 src_seg_loss_aux_masked: -0.804 src_cos_reg: 0.011 src_cos_reg_masked: 0.012 tgt_pse_seg_loss: -0.935 tgt_pse_seg_loss_aux: -0.942 tgt_cos_reg: 0.010 
+Epoch: 190, Validation Dice: 0.7486810721300557, Validation score: 1.1909899084113553, target pseudo loss: -0.8846176725625992
+Current cumulative epochs of no improvement: 21
+End of epoch 190 / 300 	 Time Taken: 152 sec
+(epoch: 191, iters: 0, time: 0.023) src_seg_loss: -0.839 src_seg_loss_masked: -0.828 src_seg_loss_aux: -0.832 src_seg_loss_aux_masked: -0.814 src_cos_reg: 0.025 src_cos_reg_masked: 0.025 tgt_pse_seg_loss: -0.918 tgt_pse_seg_loss_aux: -0.941 tgt_cos_reg: 0.006 
+Epoch: 191, Validation Dice: 0.7454973041295896, Validation score: 1.1639143987774738, target pseudo loss: -0.8368341892957687
+Current cumulative epochs of no improvement: 22
+End of epoch 191 / 300 	 Time Taken: 152 sec
+(epoch: 192, iters: 0, time: 0.030) src_seg_loss: -0.002 src_seg_loss_masked: -0.002 src_seg_loss_aux: -0.832 src_seg_loss_aux_masked: -0.790 src_cos_reg: 0.021 src_cos_reg_masked: 0.018 tgt_pse_seg_loss: -0.940 tgt_pse_seg_loss_aux: -0.947 tgt_cos_reg: 0.023 
+Epoch: 192, Validation Dice: 0.7485849499373115, Validation score: 1.1793195983438172, target pseudo loss: -0.8614692968130112
+Current cumulative epochs of no improvement: 23
+End of epoch 192 / 300 	 Time Taken: 152 sec
+(epoch: 193, iters: 0, time: 0.024) src_seg_loss: -0.860 src_seg_loss_masked: -0.835 src_seg_loss_aux: -0.845 src_seg_loss_aux_masked: -0.836 src_cos_reg: 0.009 src_cos_reg_masked: 0.009 tgt_pse_seg_loss: -0.925 tgt_pse_seg_loss_aux: -0.939 tgt_cos_reg: 0.017 
+Epoch: 193, Validation Dice: 0.7517934680524591, Validation score: 1.1876024468782667, target pseudo loss: -0.8716179576516151
+Current cumulative epochs of no improvement: 24
+End of epoch 193 / 300 	 Time Taken: 153 sec
+(epoch: 194, iters: 0, time: 0.024) src_seg_loss: -0.844 src_seg_loss_masked: -0.827 src_seg_loss_aux: -0.842 src_seg_loss_aux_masked: -0.823 src_cos_reg: 0.020 src_cos_reg_masked: 0.020 tgt_pse_seg_loss: -0.909 tgt_pse_seg_loss_aux: -0.931 tgt_cos_reg: 0.026 
+Epoch: 194, Validation Dice: 0.7516916904807435, Validation score: 1.1753988284081565, target pseudo loss: -0.847414275854826
+Current cumulative epochs of no improvement: 25
+End of epoch 194 / 300 	 Time Taken: 153 sec
+(epoch: 195, iters: 0, time: 0.033) src_seg_loss: -0.625 src_seg_loss_masked: -0.557 src_seg_loss_aux: -0.790 src_seg_loss_aux_masked: -0.759 src_cos_reg: 0.009 src_cos_reg_masked: 0.009 tgt_pse_seg_loss: -0.923 tgt_pse_seg_loss_aux: -0.935 tgt_cos_reg: 0.007 
+Epoch: 195, Validation Dice: 0.7501992099779841, Validation score: 1.171217633937597, target pseudo loss: -0.8420368479192257
+Current cumulative epochs of no improvement: 26
+End of epoch 195 / 300 	 Time Taken: 152 sec
+(epoch: 196, iters: 0, time: 0.029) src_seg_loss: -0.845 src_seg_loss_masked: -0.819 src_seg_loss_aux: -0.843 src_seg_loss_aux_masked: -0.832 src_cos_reg: 0.012 src_cos_reg_masked: 0.011 tgt_pse_seg_loss: -0.823 tgt_pse_seg_loss_aux: -0.923 tgt_cos_reg: 0.049 
+Epoch: 196, Validation Dice: 0.74928250369915, Validation score: 1.1756924803305528, target pseudo loss: -0.8528199532628059
+Current cumulative epochs of no improvement: 27
+End of epoch 196 / 300 	 Time Taken: 152 sec
+(epoch: 197, iters: 0, time: 0.029) src_seg_loss: -0.874 src_seg_loss_masked: -0.845 src_seg_loss_aux: -0.850 src_seg_loss_aux_masked: -0.830 src_cos_reg: 0.012 src_cos_reg_masked: 0.013 tgt_pse_seg_loss: -0.927 tgt_pse_seg_loss_aux: -0.941 tgt_cos_reg: 0.022 
+Epoch: 197, Validation Dice: 0.7514271123442302, Validation score: 1.1894269065293919, target pseudo loss: -0.8759995883703232
+Current cumulative epochs of no improvement: 28
+End of epoch 197 / 300 	 Time Taken: 152 sec
+(epoch: 198, iters: 0, time: 0.058) src_seg_loss: -0.783 src_seg_loss_masked: -0.765 src_seg_loss_aux: -0.814 src_seg_loss_aux_masked: -0.790 src_cos_reg: 0.037 src_cos_reg_masked: 0.040 tgt_pse_seg_loss: -0.535 tgt_pse_seg_loss_aux: -0.948 tgt_cos_reg: 0.009 
+Epoch: 198, Validation Dice: 0.7404131854964765, Validation score: 1.1687406621767553, target pseudo loss: -0.8566549533605575
+Current cumulative epochs of no improvement: 29
+End of epoch 198 / 300 	 Time Taken: 154 sec
+(epoch: 199, iters: 0, time: 0.024) src_seg_loss: -0.794 src_seg_loss_masked: -0.760 src_seg_loss_aux: -0.847 src_seg_loss_aux_masked: -0.807 src_cos_reg: 0.013 src_cos_reg_masked: 0.013 tgt_pse_seg_loss: -0.444 tgt_pse_seg_loss_aux: -0.928 tgt_cos_reg: 0.027 
+Epoch: 199, Validation Dice: 0.748375054968619, Validation score: 1.175871340258145, target pseudo loss: -0.854992570579052
+Current cumulative epochs of no improvement: 30
+End of epoch 199 / 300 	 Time Taken: 152 sec
+(epoch: 200, iters: 0, time: 0.049) src_seg_loss: -0.845 src_seg_loss_masked: -0.804 src_seg_loss_aux: -0.851 src_seg_loss_aux_masked: -0.829 src_cos_reg: 0.016 src_cos_reg_masked: 0.016 tgt_pse_seg_loss: -0.845 tgt_pse_seg_loss_aux: -0.920 tgt_cos_reg: 0.029 
+Epoch: 200, Validation Dice: 0.7533634312192223, Validation score: 1.184145402435424, target pseudo loss: -0.8615639424324035
+Current cumulative epochs of no improvement: 31
+End of epoch 200 / 300 	 Time Taken: 155 sec
+(epoch: 201, iters: 0, time: 0.053) src_seg_loss: -0.425 src_seg_loss_masked: -0.409 src_seg_loss_aux: -0.815 src_seg_loss_aux_masked: -0.787 src_cos_reg: 0.011 src_cos_reg_masked: 0.011 tgt_pse_seg_loss: -0.921 tgt_pse_seg_loss_aux: -0.926 tgt_cos_reg: 0.016 
+Epoch: 201, Validation Dice: 0.7461926648166869, Validation score: 1.181568878605673, target pseudo loss: -0.8707524275779724
+Current cumulative epochs of no improvement: 32
+End of epoch 201 / 300 	 Time Taken: 154 sec
+Current Learning Rate changed to 9.755307053217622e-05
+(epoch: 202, iters: 0, time: 0.062) src_seg_loss: -0.724 src_seg_loss_masked: -0.708 src_seg_loss_aux: -0.766 src_seg_loss_aux_masked: -0.742 src_cos_reg: 0.020 src_cos_reg_masked: 0.027 tgt_pse_seg_loss: -0.922 tgt_pse_seg_loss_aux: -0.941 tgt_cos_reg: 0.018 
+Epoch: 202, Validation Dice: 0.74950004909593, Validation score: 1.1864242375310077, target pseudo loss: -0.8738483768701554
+Current cumulative epochs of no improvement: 33
+End of epoch 202 / 300 	 Time Taken: 155 sec
+Current Learning Rate changed to 9.045180463377551e-05
+(epoch: 203, iters: 0, time: 0.029) src_seg_loss: -0.835 src_seg_loss_masked: -0.820 src_seg_loss_aux: -0.831 src_seg_loss_aux_masked: -0.799 src_cos_reg: 0.020 src_cos_reg_masked: 0.020 tgt_pse_seg_loss: -0.771 tgt_pse_seg_loss_aux: -0.956 tgt_cos_reg: 0.018 
+Epoch: 203, Validation Dice: 0.7487815551213732, Validation score: 1.1878312198571672, target pseudo loss: -0.8780993294715881
+Current cumulative epochs of no improvement: 34
+End of epoch 203 / 300 	 Time Taken: 151 sec
+Current Learning Rate changed to 7.939132368836219e-05
+(epoch: 204, iters: 0, time: 0.053) src_seg_loss: -0.701 src_seg_loss_masked: -0.662 src_seg_loss_aux: -0.845 src_seg_loss_aux_masked: -0.826 src_cos_reg: 0.011 src_cos_reg_masked: 0.011 tgt_pse_seg_loss: -0.912 tgt_pse_seg_loss_aux: -0.908 tgt_cos_reg: 0.011 
+Epoch: 204, Validation Dice: 0.7429178296998311, Validation score: 1.1708046390852127, target pseudo loss: -0.8557736187707633
+Current cumulative epochs of no improvement: 35
+End of epoch 204 / 300 	 Time Taken: 155 sec
+Current Learning Rate changed to 6.54543046337755e-05
+(epoch: 205, iters: 0, time: 0.024) src_seg_loss: -0.830 src_seg_loss_masked: -0.794 src_seg_loss_aux: -0.821 src_seg_loss_aux_masked: -0.796 src_cos_reg: 0.014 src_cos_reg_masked: 0.014 tgt_pse_seg_loss: -0.929 tgt_pse_seg_loss_aux: -0.934 tgt_cos_reg: 0.007 
+Epoch: 205, Validation Dice: 0.7530465483632938, Validation score: 1.178009719472851, target pseudo loss: -0.8499263422191143
+Current cumulative epochs of no improvement: 36
+End of epoch 205 / 300 	 Time Taken: 152 sec
+Current Learning Rate changed to 5.0005000000000007e-05
+(epoch: 206, iters: 0, time: 0.027) src_seg_loss: -0.840 src_seg_loss_masked: -0.815 src_seg_loss_aux: -0.831 src_seg_loss_aux_masked: -0.823 src_cos_reg: 0.018 src_cos_reg_masked: 0.018 tgt_pse_seg_loss: -0.924 tgt_pse_seg_loss_aux: -0.944 tgt_cos_reg: 0.021 
+Epoch: 206, Validation Dice: 0.7503173202863016, Validation score: 1.1881992444237748, target pseudo loss: -0.8757638482749462
+Current cumulative epochs of no improvement: 37
+End of epoch 206 / 300 	 Time Taken: 151 sec
+Current Learning Rate changed to 3.455569536622451e-05
+(epoch: 207, iters: 0, time: 0.054) src_seg_loss: -0.686 src_seg_loss_masked: -0.650 src_seg_loss_aux: -0.841 src_seg_loss_aux_masked: -0.827 src_cos_reg: 0.011 src_cos_reg_masked: 0.011 tgt_pse_seg_loss: -0.936 tgt_pse_seg_loss_aux: -0.952 tgt_cos_reg: 0.028 
+Epoch: 207, Validation Dice: 0.7502340244114744, Validation score: 1.1850955184162006, target pseudo loss: -0.8697229880094528
+Current cumulative epochs of no improvement: 38
+End of epoch 207 / 300 	 Time Taken: 154 sec
+Current Learning Rate changed to 2.0618676311637815e-05
+(epoch: 208, iters: 0, time: 0.034) src_seg_loss: -0.861 src_seg_loss_masked: -0.772 src_seg_loss_aux: -0.854 src_seg_loss_aux_masked: -0.835 src_cos_reg: 0.018 src_cos_reg_masked: 0.018 tgt_pse_seg_loss: -0.922 tgt_pse_seg_loss_aux: -0.945 tgt_cos_reg: 0.026 
+Epoch: 208, Validation Dice: 0.7518735357208217, Validation score: 1.1956329390985931, target pseudo loss: -0.8875188067555427
+Current cumulative epochs of no improvement: 39
+End of epoch 208 / 300 	 Time Taken: 154 sec
+Current Learning Rate changed to 9.55819536622451e-06
+(epoch: 209, iters: 0, time: 0.037) src_seg_loss: -0.857 src_seg_loss_masked: -0.819 src_seg_loss_aux: -0.847 src_seg_loss_aux_masked: -0.816 src_cos_reg: 0.013 src_cos_reg_masked: 0.013 tgt_pse_seg_loss: -0.806 tgt_pse_seg_loss_aux: -0.906 tgt_cos_reg: 0.035 
+Epoch: 209, Validation Dice: 0.7519585394006635, Validation score: 1.1948188487332727, target pseudo loss: -0.8857206186652183
+Current cumulative epochs of no improvement: 40
+End of epoch 209 / 300 	 Time Taken: 155 sec
+Current Learning Rate changed to 2.4569294678237992e-06
+(epoch: 210, iters: 0, time: 0.022) src_seg_loss: -0.838 src_seg_loss_masked: -0.816 src_seg_loss_aux: -0.829 src_seg_loss_aux_masked: -0.809 src_cos_reg: 0.015 src_cos_reg_masked: 0.015 tgt_pse_seg_loss: -0.881 tgt_pse_seg_loss_aux: -0.953 tgt_cos_reg: 0.014 
+Epoch: 210, Validation Dice: 0.7514157370077429, Validation score: 1.1996315291868505, target pseudo loss: -0.8964315843582153
+Current cumulative epochs of no improvement: 0
+End of epoch 210 / 300 	 Time Taken: 153 sec
+Current Learning Rate changed to 0.0001
+(epoch: 211, iters: 0, time: 0.024) src_seg_loss: -0.580 src_seg_loss_masked: -0.555 src_seg_loss_aux: -0.856 src_seg_loss_aux_masked: -0.830 src_cos_reg: 0.012 src_cos_reg_masked: 0.011 tgt_pse_seg_loss: -0.930 tgt_pse_seg_loss_aux: -0.941 tgt_cos_reg: 0.013 
+Epoch: 211, Validation Dice: 0.7516726718617095, Validation score: 1.1950264261437071, target pseudo loss: -0.8867075085639954
+Current cumulative epochs of no improvement: 1
+End of epoch 211 / 300 	 Time Taken: 151 sec
+Current Learning Rate changed to 9.938447858805392e-05
+(epoch: 212, iters: 0, time: 0.028) src_seg_loss: -0.481 src_seg_loss_masked: -0.435 src_seg_loss_aux: -0.761 src_seg_loss_aux_masked: -0.734 src_cos_reg: 0.016 src_cos_reg_masked: 0.020 tgt_pse_seg_loss: -0.935 tgt_pse_seg_loss_aux: -0.941 tgt_cos_reg: 0.013 
+Epoch: 212, Validation Dice: 0.754941067663309, Validation score: 1.1870648109589785, target pseudo loss: -0.8642474865913391
+Current cumulative epochs of no improvement: 2
+End of epoch 212 / 300 	 Time Taken: 151 sec
+Current Learning Rate changed to 9.755307053217622e-05
+(epoch: 213, iters: 0, time: 0.049) src_seg_loss: -0.673 src_seg_loss_masked: -0.613 src_seg_loss_aux: -0.834 src_seg_loss_aux_masked: -0.830 src_cos_reg: 0.011 src_cos_reg_masked: 0.011 tgt_pse_seg_loss: -0.950 tgt_pse_seg_loss_aux: -0.943 tgt_cos_reg: 0.006 
+Epoch: 213, Validation Dice: 0.7559247414558421, Validation score: 1.1968811784475337, target pseudo loss: -0.8819128739833831
+Current cumulative epochs of no improvement: 3
+End of epoch 213 / 300 	 Time Taken: 154 sec
+Current Learning Rate changed to 9.455087117679746e-05
+(epoch: 214, iters: 0, time: 0.058) src_seg_loss: -0.841 src_seg_loss_masked: -0.817 src_seg_loss_aux: -0.842 src_seg_loss_aux_masked: -0.825 src_cos_reg: 0.012 src_cos_reg_masked: 0.012 tgt_pse_seg_loss: -0.879 tgt_pse_seg_loss_aux: -0.937 tgt_cos_reg: 0.036 
+Epoch: 214, Validation Dice: 0.7530750957047507, Validation score: 1.1827036522990033, target pseudo loss: -0.8592571131885052
+Current cumulative epochs of no improvement: 4
+End of epoch 214 / 300 	 Time Taken: 154 sec
+Current Learning Rate changed to 9.045180463377551e-05
+(epoch: 215, iters: 0, time: 0.028) src_seg_loss: -0.845 src_seg_loss_masked: -0.827 src_seg_loss_aux: -0.851 src_seg_loss_aux_masked: -0.822 src_cos_reg: 0.020 src_cos_reg_masked: 0.020 tgt_pse_seg_loss: -0.930 tgt_pse_seg_loss_aux: -0.938 tgt_cos_reg: 0.017 
+Epoch: 215, Validation Dice: 0.7487877138042338, Validation score: 1.1870655717038996, target pseudo loss: -0.8765557157993317
+Current cumulative epochs of no improvement: 5
+End of epoch 215 / 300 	 Time Taken: 152 sec
+Current Learning Rate changed to 8.535680352542144e-05
+(epoch: 216, iters: 0, time: 0.033) src_seg_loss: -0.819 src_seg_loss_masked: -0.802 src_seg_loss_aux: -0.771 src_seg_loss_aux_masked: -0.769 src_cos_reg: 0.007 src_cos_reg_masked: 0.007 tgt_pse_seg_loss: -0.914 tgt_pse_seg_loss_aux: -0.945 tgt_cos_reg: 0.008 
+Epoch: 216, Validation Dice: 0.7474593578301404, Validation score: 1.187470573934171, target pseudo loss: -0.8800224322080612
+Current cumulative epochs of no improvement: 6
+End of epoch 216 / 300 	 Time Taken: 153 sec
+Current Learning Rate changed to 7.939132368836219e-05
+(epoch: 217, iters: 0, time: 0.027) src_seg_loss: -0.856 src_seg_loss_masked: -0.837 src_seg_loss_aux: -0.859 src_seg_loss_aux_masked: -0.841 src_cos_reg: 0.012 src_cos_reg_masked: 0.011 tgt_pse_seg_loss: -0.924 tgt_pse_seg_loss_aux: -0.930 tgt_cos_reg: 0.031 
+Epoch: 217, Validation Dice: 0.749320575562175, Validation score: 1.1944258543521722, target pseudo loss: -0.8902105575799942
+Current cumulative epochs of no improvement: 7
+End of epoch 217 / 300 	 Time Taken: 154 sec
+Current Learning Rate changed to 7.270225503447864e-05
+(epoch: 218, iters: 0, time: 0.047) src_seg_loss: -0.208 src_seg_loss_masked: -0.151 src_seg_loss_aux: -0.772 src_seg_loss_aux_masked: -0.750 src_cos_reg: 0.011 src_cos_reg_masked: 0.013 tgt_pse_seg_loss: -0.930 tgt_pse_seg_loss_aux: -0.954 tgt_cos_reg: 0.021 
+Epoch: 218, Validation Dice: 0.7552234116346138, Validation score: 1.1756729285568492, target pseudo loss: -0.840899033844471
+Current cumulative epochs of no improvement: 8
+End of epoch 218 / 300 	 Time Taken: 153 sec
+Current Learning Rate changed to 6.54543046337755e-05
+(epoch: 219, iters: 0, time: 0.033) src_seg_loss: -0.764 src_seg_loss_masked: -0.716 src_seg_loss_aux: -0.751 src_seg_loss_aux_masked: -0.736 src_cos_reg: 0.031 src_cos_reg_masked: 0.033 tgt_pse_seg_loss: -0.929 tgt_pse_seg_loss_aux: -0.940 tgt_cos_reg: 0.018 
+Epoch: 219, Validation Dice: 0.7509852646016502, Validation score: 1.1912726108455085, target pseudo loss: -0.8805746924877167
+Current cumulative epochs of no improvement: 9
+End of epoch 219 / 300 	 Time Taken: 152 sec
+Current Learning Rate changed to 5.7825941079686356e-05
+(epoch: 220, iters: 0, time: 0.030) src_seg_loss: -0.252 src_seg_loss_masked: -0.237 src_seg_loss_aux: -0.870 src_seg_loss_aux_masked: -0.847 src_cos_reg: 0.011 src_cos_reg_masked: 0.012 tgt_pse_seg_loss: -0.945 tgt_pse_seg_loss_aux: -0.955 tgt_cos_reg: 0.014 
+Epoch: 220, Validation Dice: 0.7477645592591988, Validation score: 1.186996073444866, target pseudo loss: -0.878463028371334
+Current cumulative epochs of no improvement: 10
+End of epoch 220 / 300 	 Time Taken: 151 sec
+Current Learning Rate changed to 5.0005000000000007e-05
+(epoch: 221, iters: 0, time: 0.071) src_seg_loss: -0.703 src_seg_loss_masked: -0.661 src_seg_loss_aux: -0.856 src_seg_loss_aux_masked: -0.827 src_cos_reg: 0.013 src_cos_reg_masked: 0.013 tgt_pse_seg_loss: -0.876 tgt_pse_seg_loss_aux: -0.900 tgt_cos_reg: 0.014 
+Epoch: 221, Validation Dice: 0.7524752423565204, Validation score: 1.1919090577612932, target pseudo loss: -0.8788676308095456
+Current cumulative epochs of no improvement: 11
+End of epoch 221 / 300 	 Time Taken: 156 sec
+Current Learning Rate changed to 4.218405892031368e-05
+(epoch: 222, iters: 0, time: 0.031) src_seg_loss: -0.828 src_seg_loss_masked: -0.810 src_seg_loss_aux: -0.819 src_seg_loss_aux_masked: -0.804 src_cos_reg: 0.009 src_cos_reg_masked: 0.010 tgt_pse_seg_loss: -0.944 tgt_pse_seg_loss_aux: -0.949 tgt_cos_reg: 0.008 
+Epoch: 222, Validation Dice: 0.7492771975186446, Validation score: 1.1828471256282904, target pseudo loss: -0.8671398562192917
+Current cumulative epochs of no improvement: 12
+End of epoch 222 / 300 	 Time Taken: 152 sec
+Current Learning Rate changed to 3.455569536622451e-05
+(epoch: 223, iters: 0, time: 0.028) src_seg_loss: -0.652 src_seg_loss_masked: -0.632 src_seg_loss_aux: -0.783 src_seg_loss_aux_masked: -0.756 src_cos_reg: 0.027 src_cos_reg_masked: 0.026 tgt_pse_seg_loss: -0.926 tgt_pse_seg_loss_aux: -0.938 tgt_cos_reg: 0.011 
+Epoch: 223, Validation Dice: 0.7506155659887158, Validation score: 1.1942234276863897, target pseudo loss: -0.8872157233953476
+Current cumulative epochs of no improvement: 13
+End of epoch 223 / 300 	 Time Taken: 152 sec
+Current Learning Rate changed to 2.7307744965521364e-05
+(epoch: 224, iters: 0, time: 0.024) src_seg_loss: -0.847 src_seg_loss_masked: -0.822 src_seg_loss_aux: -0.852 src_seg_loss_aux_masked: -0.831 src_cos_reg: 0.011 src_cos_reg_masked: 0.011 tgt_pse_seg_loss: -0.503 tgt_pse_seg_loss_aux: -0.955 tgt_cos_reg: 0.009 
+Epoch: 224, Validation Dice: 0.75240902469852, Validation score: 1.1889269250015262, target pseudo loss: -0.8730358006060124
+Current cumulative epochs of no improvement: 14
+End of epoch 224 / 300 	 Time Taken: 151 sec
+Current Learning Rate changed to 2.0618676311637815e-05
+(epoch: 225, iters: 0, time: 0.052) src_seg_loss: -0.736 src_seg_loss_masked: -0.713 src_seg_loss_aux: -0.869 src_seg_loss_aux_masked: -0.841 src_cos_reg: 0.010 src_cos_reg_masked: 0.010 tgt_pse_seg_loss: -0.947 tgt_pse_seg_loss_aux: -0.949 tgt_cos_reg: 0.017 
+Epoch: 225, Validation Dice: 0.7511704483975299, Validation score: 1.196540450078679, target pseudo loss: -0.890740003362298
+Current cumulative epochs of no improvement: 15
+End of epoch 225 / 300 	 Time Taken: 154 sec
+Current Learning Rate changed to 1.465319647457856e-05
+(epoch: 226, iters: 0, time: 0.023) src_seg_loss: -0.860 src_seg_loss_masked: -0.840 src_seg_loss_aux: -0.857 src_seg_loss_aux_masked: -0.845 src_cos_reg: 0.011 src_cos_reg_masked: 0.012 tgt_pse_seg_loss: -0.887 tgt_pse_seg_loss_aux: -0.954 tgt_cos_reg: 0.011 
+Epoch: 226, Validation Dice: 0.7521189536946151, Validation score: 1.1996822603838775, target pseudo loss: -0.8951266133785247
+Current cumulative epochs of no improvement: 0
+End of epoch 226 / 300 	 Time Taken: 155 sec
+Current Learning Rate changed to 9.55819536622451e-06
+(epoch: 227, iters: 0, time: 0.028) src_seg_loss: -0.849 src_seg_loss_masked: -0.819 src_seg_loss_aux: -0.853 src_seg_loss_aux_masked: -0.830 src_cos_reg: 0.023 src_cos_reg_masked: 0.023 tgt_pse_seg_loss: -0.940 tgt_pse_seg_loss_aux: -0.956 tgt_cos_reg: 0.009 
+Epoch: 227, Validation Dice: 0.7516877944972651, Validation score: 1.195313888808741, target pseudo loss: -0.8872521886229515
+Current cumulative epochs of no improvement: 1
+End of epoch 227 / 300 	 Time Taken: 154 sec
+Current Learning Rate changed to 5.459128823202553e-06
+(epoch: 228, iters: 0, time: 0.021) src_seg_loss: -0.723 src_seg_loss_masked: -0.688 src_seg_loss_aux: -0.856 src_seg_loss_aux_masked: -0.842 src_cos_reg: 0.010 src_cos_reg_masked: 0.010 tgt_pse_seg_loss: -0.887 tgt_pse_seg_loss_aux: -0.912 tgt_cos_reg: 0.006 
+Epoch: 228, Validation Dice: 0.7526325842401299, Validation score: 1.203461557593039, target pseudo loss: -0.9016579467058182
+Current cumulative epochs of no improvement: 0
+End of epoch 228 / 300 	 Time Taken: 155 sec
+Current Learning Rate changed to 2.4569294678237992e-06
+(epoch: 229, iters: 0, time: 0.055) src_seg_loss: -0.851 src_seg_loss_masked: -0.830 src_seg_loss_aux: -0.864 src_seg_loss_aux_masked: -0.846 src_cos_reg: 0.015 src_cos_reg_masked: 0.015 tgt_pse_seg_loss: -0.921 tgt_pse_seg_loss_aux: -0.937 tgt_cos_reg: 0.015 
+Epoch: 229, Validation Dice: 0.7526765445056689, Validation score: 1.1927052426520122, target pseudo loss: -0.8800573962926864
+Current cumulative epochs of no improvement: 1
+End of epoch 229 / 300 	 Time Taken: 154 sec
+Current Learning Rate changed to 6.255214119460928e-07
+(epoch: 230, iters: 0, time: 0.050) src_seg_loss: -0.856 src_seg_loss_masked: -0.836 src_seg_loss_aux: -0.856 src_seg_loss_aux_masked: -0.832 src_cos_reg: 0.026 src_cos_reg_masked: 0.026 tgt_pse_seg_loss: -0.953 tgt_pse_seg_loss_aux: -0.956 tgt_cos_reg: 0.009 
+Epoch: 230, Validation Dice: 0.752737335143198, Validation score: 1.2002053567297353, target pseudo loss: -0.8949360431730747
+Current cumulative epochs of no improvement: 2
+End of epoch 230 / 300 	 Time Taken: 154 sec
+Current Learning Rate changed to 0.0001
+(epoch: 231, iters: 0, time: 0.022) src_seg_loss: -0.588 src_seg_loss_masked: -0.559 src_seg_loss_aux: -0.861 src_seg_loss_aux_masked: -0.841 src_cos_reg: 0.009 src_cos_reg_masked: 0.008 tgt_pse_seg_loss: -0.934 tgt_pse_seg_loss_aux: -0.956 tgt_cos_reg: 0.020 
+Epoch: 231, Validation Dice: 0.7514774679904285, Validation score: 1.1832575933401885, target pseudo loss: -0.8635602506995201
+Current cumulative epochs of no improvement: 3
+End of epoch 231 / 300 	 Time Taken: 152 sec
+Current Learning Rate changed to 9.984588209998774e-05
+(epoch: 232, iters: 0, time: 0.025) src_seg_loss: -0.692 src_seg_loss_masked: -0.661 src_seg_loss_aux: -0.843 src_seg_loss_aux_masked: -0.821 src_cos_reg: 0.015 src_cos_reg_masked: 0.015 tgt_pse_seg_loss: -0.923 tgt_pse_seg_loss_aux: -0.937 tgt_cos_reg: 0.019 
+Epoch: 232, Validation Dice: 0.7450942873065824, Validation score: 1.1853771487479563, target pseudo loss: -0.8805657228827477
+Current cumulative epochs of no improvement: 4
+End of epoch 232 / 300 	 Time Taken: 152 sec
+Current Learning Rate changed to 9.938447858805392e-05
+(epoch: 233, iters: 0, time: 0.022) src_seg_loss: -0.524 src_seg_loss_masked: -0.501 src_seg_loss_aux: -0.791 src_seg_loss_aux_masked: -0.783 src_cos_reg: 0.012 src_cos_reg_masked: 0.012 tgt_pse_seg_loss: -0.907 tgt_pse_seg_loss_aux: -0.923 tgt_cos_reg: 0.010 
+Epoch: 233, Validation Dice: 0.7511313608128112, Validation score: 1.1702538105684799, target pseudo loss: -0.8382448995113373
+Current cumulative epochs of no improvement: 5
+End of epoch 233 / 300 	 Time Taken: 155 sec
+Current Learning Rate changed to 9.861863417028185e-05
+(epoch: 234, iters: 0, time: 0.029) src_seg_loss: -0.875 src_seg_loss_masked: -0.855 src_seg_loss_aux: -0.868 src_seg_loss_aux_masked: -0.850 src_cos_reg: 0.012 src_cos_reg_masked: 0.012 tgt_pse_seg_loss: -0.843 tgt_pse_seg_loss_aux: -0.919 tgt_cos_reg: 0.018 
+Epoch: 234, Validation Dice: 0.7505745326271739, Validation score: 1.184598960458347, target pseudo loss: -0.8680488556623459
+Current cumulative epochs of no improvement: 6
+End of epoch 234 / 300 	 Time Taken: 152 sec
+Current Learning Rate changed to 9.755307053217622e-05
+(epoch: 235, iters: 0, time: 0.052) src_seg_loss: -0.213 src_seg_loss_masked: -0.210 src_seg_loss_aux: -0.782 src_seg_loss_aux_masked: -0.789 src_cos_reg: 0.027 src_cos_reg_masked: 0.026 tgt_pse_seg_loss: -0.926 tgt_pse_seg_loss_aux: -0.900 tgt_cos_reg: 0.014 
+Epoch: 235, Validation Dice: 0.7525062540028371, Validation score: 1.1758282755170144, target pseudo loss: -0.8466440430283546
+Current cumulative epochs of no improvement: 7
+End of epoch 235 / 300 	 Time Taken: 154 sec
+Current Learning Rate changed to 9.619435722790178e-05
+(epoch: 236, iters: 0, time: 0.035) src_seg_loss: -0.780 src_seg_loss_masked: -0.760 src_seg_loss_aux: -0.806 src_seg_loss_aux_masked: -0.792 src_cos_reg: 0.025 src_cos_reg_masked: 0.024 tgt_pse_seg_loss: -0.931 tgt_pse_seg_loss_aux: -0.940 tgt_cos_reg: 0.011 
+Epoch: 236, Validation Dice: 0.7508722382944429, Validation score: 1.1865238431256617, target pseudo loss: -0.8713032096624375
+Current cumulative epochs of no improvement: 8
+End of epoch 236 / 300 	 Time Taken: 153 sec
+Current Learning Rate changed to 9.455087117679746e-05
+(epoch: 237, iters: 0, time: 0.056) src_seg_loss: -0.781 src_seg_loss_masked: -0.770 src_seg_loss_aux: -0.764 src_seg_loss_aux_masked: -0.751 src_cos_reg: 0.010 src_cos_reg_masked: 0.009 tgt_pse_seg_loss: -0.317 tgt_pse_seg_loss_aux: -0.940 tgt_cos_reg: 0.028 
+Epoch: 237, Validation Dice: 0.7563810215236154, Validation score: 1.1985059508027045, target pseudo loss: -0.884249858558178
+Current cumulative epochs of no improvement: 9
+End of epoch 237 / 300 	 Time Taken: 155 sec
+Current Learning Rate changed to 9.263274501688284e-05
+(epoch: 238, iters: 0, time: 0.023) src_seg_loss: -0.234 src_seg_loss_masked: -0.204 src_seg_loss_aux: -0.840 src_seg_loss_aux_masked: -0.820 src_cos_reg: 0.010 src_cos_reg_masked: 0.010 tgt_pse_seg_loss: -0.943 tgt_pse_seg_loss_aux: -0.939 tgt_cos_reg: 0.010 
+Epoch: 238, Validation Dice: 0.7581041011622254, Validation score: 1.1921350564470594, target pseudo loss: -0.8680619105696679
+Current cumulative epochs of no improvement: 10
+End of epoch 238 / 300 	 Time Taken: 152 sec
+Current Learning Rate changed to 9.045180463377551e-05
+(epoch: 239, iters: 0, time: 0.023) src_seg_loss: -0.819 src_seg_loss_masked: -0.771 src_seg_loss_aux: -0.824 src_seg_loss_aux_masked: -0.785 src_cos_reg: 0.015 src_cos_reg_masked: 0.015 tgt_pse_seg_loss: -0.943 tgt_pse_seg_loss_aux: -0.951 tgt_cos_reg: 0.020 
+Epoch: 239, Validation Dice: 0.7491214503542499, Validation score: 1.1853923714355545, target pseudo loss: -0.8725418421626091
+Current cumulative epochs of no improvement: 11
+End of epoch 239 / 300 	 Time Taken: 152 sec
+Current Learning Rate changed to 8.802149625017355e-05
+(epoch: 240, iters: 0, time: 0.021) src_seg_loss: -0.865 src_seg_loss_masked: -0.846 src_seg_loss_aux: -0.851 src_seg_loss_aux_masked: -0.831 src_cos_reg: 0.014 src_cos_reg_masked: 0.014 tgt_pse_seg_loss: -0.604 tgt_pse_seg_loss_aux: -0.476 tgt_cos_reg: 0.013 
+Epoch: 240, Validation Dice: 0.7525271982626732, Validation score: 1.186503471948367, target pseudo loss: -0.8679525473713875
+Current cumulative epochs of no improvement: 12
+End of epoch 240 / 300 	 Time Taken: 152 sec
+Current Learning Rate changed to 8.535680352542144e-05
+(epoch: 241, iters: 0, time: 0.029) src_seg_loss: -0.377 src_seg_loss_masked: -0.368 src_seg_loss_aux: -0.864 src_seg_loss_aux_masked: -0.844 src_cos_reg: 0.009 src_cos_reg_masked: 0.009 tgt_pse_seg_loss: -0.862 tgt_pse_seg_loss_aux: -0.914 tgt_cos_reg: 0.027 
+Epoch: 241, Validation Dice: 0.7494542092218336, Validation score: 1.197007797075742, target pseudo loss: -0.8951071757078171
+Current cumulative epochs of no improvement: 13
+End of epoch 241 / 300 	 Time Taken: 152 sec
+Current Learning Rate changed to 8.247415517626754e-05
+(epoch: 242, iters: 0, time: 0.023) src_seg_loss: -0.714 src_seg_loss_masked: -0.690 src_seg_loss_aux: -0.837 src_seg_loss_aux_masked: -0.829 src_cos_reg: 0.011 src_cos_reg_masked: 0.011 tgt_pse_seg_loss: -0.930 tgt_pse_seg_loss_aux: -0.934 tgt_cos_reg: 0.025 
+Epoch: 242, Validation Dice: 0.7538789823735232, Validation score: 1.1992537504518503, target pseudo loss: -0.8907495361566543
+Current cumulative epochs of no improvement: 14
+End of epoch 242 / 300 	 Time Taken: 156 sec
+Current Learning Rate changed to 7.939132368836219e-05
+(epoch: 243, iters: 0, time: 0.025) src_seg_loss: -0.473 src_seg_loss_masked: -0.434 src_seg_loss_aux: -0.820 src_seg_loss_aux_masked: -0.778 src_cos_reg: 0.007 src_cos_reg_masked: 0.008 tgt_pse_seg_loss: -0.657 tgt_pse_seg_loss_aux: -0.858 tgt_cos_reg: 0.020 
+Epoch: 243, Validation Dice: 0.7512515954766996, Validation score: 1.19729623914702, target pseudo loss: -0.892089287340641
+Current cumulative epochs of no improvement: 15
+End of epoch 243 / 300 	 Time Taken: 151 sec
+Current Learning Rate changed to 7.612731574297387e-05
+(epoch: 244, iters: 0, time: 0.038) src_seg_loss: -0.787 src_seg_loss_masked: -0.772 src_seg_loss_aux: -0.784 src_seg_loss_aux_masked: -0.769 src_cos_reg: 0.011 src_cos_reg_masked: 0.011 tgt_pse_seg_loss: -0.920 tgt_pse_seg_loss_aux: -0.920 tgt_cos_reg: 0.009 
+Epoch: 244, Validation Dice: 0.7494632148368696, Validation score: 1.1971246754749159, target pseudo loss: -0.8953229212760925
+Current cumulative epochs of no improvement: 16
+End of epoch 244 / 300 	 Time Taken: 155 sec
+Current Learning Rate changed to 7.270225503447864e-05
+(epoch: 245, iters: 0, time: 0.025) src_seg_loss: -0.484 src_seg_loss_masked: -0.462 src_seg_loss_aux: -0.851 src_seg_loss_aux_masked: -0.829 src_cos_reg: 0.009 src_cos_reg_masked: 0.011 tgt_pse_seg_loss: -0.902 tgt_pse_seg_loss_aux: -0.920 tgt_cos_reg: 0.014 
+Epoch: 245, Validation Dice: 0.745220717740669, Validation score: 1.182038969424977, target pseudo loss: -0.8736365033686161
+Current cumulative epochs of no improvement: 17
+End of epoch 245 / 300 	 Time Taken: 152 sec
+Current Learning Rate changed to 6.913725820109267e-05
+(epoch: 246, iters: 0, time: 0.021) src_seg_loss: -0.692 src_seg_loss_masked: -0.674 src_seg_loss_aux: -0.856 src_seg_loss_aux_masked: -0.841 src_cos_reg: 0.009 src_cos_reg_masked: 0.009 tgt_pse_seg_loss: -0.906 tgt_pse_seg_loss_aux: -0.946 tgt_cos_reg: 0.024 
+Epoch: 246, Validation Dice: 0.7476302055980463, Validation score: 1.1945650572295685, target pseudo loss: -0.8938697032630444
+Current cumulative epochs of no improvement: 18
+End of epoch 246 / 300 	 Time Taken: 153 sec
+Current Learning Rate changed to 6.54543046337755e-05
+(epoch: 247, iters: 0, time: 0.051) src_seg_loss: -0.855 src_seg_loss_masked: -0.828 src_seg_loss_aux: -0.851 src_seg_loss_aux_masked: -0.837 src_cos_reg: 0.012 src_cos_reg_masked: 0.012 tgt_pse_seg_loss: -0.891 tgt_pse_seg_loss_aux: -0.905 tgt_cos_reg: 0.005 
+Epoch: 247, Validation Dice: 0.7521785473684206, Validation score: 1.1982343576709167, target pseudo loss: -0.8921116206049919
+Current cumulative epochs of no improvement: 19
+End of epoch 247 / 300 	 Time Taken: 154 sec
+Current Learning Rate changed to 6.1676100965976e-05
+(epoch: 248, iters: 0, time: 0.055) src_seg_loss: -0.827 src_seg_loss_masked: -0.798 src_seg_loss_aux: -0.843 src_seg_loss_aux_masked: -0.819 src_cos_reg: 0.019 src_cos_reg_masked: 0.018 tgt_pse_seg_loss: -0.782 tgt_pse_seg_loss_aux: -0.945 tgt_cos_reg: 0.011 
+Epoch: 248, Validation Dice: 0.7502094875571521, Validation score: 1.1950123067495615, target pseudo loss: -0.889605638384819
+Current cumulative epochs of no improvement: 20
+End of epoch 248 / 300 	 Time Taken: 154 sec
+Current Learning Rate changed to 5.7825941079686356e-05
+(epoch: 249, iters: 0, time: 0.054) src_seg_loss: -0.712 src_seg_loss_masked: -0.684 src_seg_loss_aux: -0.776 src_seg_loss_aux_masked: -0.754 src_cos_reg: 0.017 src_cos_reg_masked: 0.017 tgt_pse_seg_loss: -0.920 tgt_pse_seg_loss_aux: -0.944 tgt_cos_reg: 0.023 
+Epoch: 249, Validation Dice: 0.7527176089326509, Validation score: 1.193119817350305, target pseudo loss: -0.8808044168353081
+Current cumulative epochs of no improvement: 21
+End of epoch 249 / 300 	 Time Taken: 154 sec
+Current Learning Rate changed to 5.392756249091362e-05
+(epoch: 250, iters: 0, time: 0.044) src_seg_loss: -0.864 src_seg_loss_masked: -0.839 src_seg_loss_aux: -0.849 src_seg_loss_aux_masked: -0.827 src_cos_reg: 0.011 src_cos_reg_masked: 0.010 tgt_pse_seg_loss: -0.926 tgt_pse_seg_loss_aux: -0.929 tgt_cos_reg: 0.003 
+Epoch: 250, Validation Dice: 0.7455421286253606, Validation score: 1.1893291051118051, target pseudo loss: -0.887573952972889
+Current cumulative epochs of no improvement: 22
+End of epoch 250 / 300 	 Time Taken: 155 sec
+Current Learning Rate changed to 5.0005000000000007e-05
+(epoch: 251, iters: 0, time: 0.053) src_seg_loss: -0.852 src_seg_loss_masked: -0.827 src_seg_loss_aux: -0.850 src_seg_loss_aux_masked: -0.791 src_cos_reg: 0.011 src_cos_reg_masked: 0.012 tgt_pse_seg_loss: -0.953 tgt_pse_seg_loss_aux: -0.955 tgt_cos_reg: 0.007 
+Epoch: 251, Validation Dice: 0.7521519094769966, Validation score: 1.193787952146412, target pseudo loss: -0.883272085338831
+Current cumulative epochs of no improvement: 23
+End of epoch 251 / 300 	 Time Taken: 154 sec
+Current Learning Rate changed to 4.6082437509086404e-05
+(epoch: 252, iters: 0, time: 0.022) src_seg_loss: -0.846 src_seg_loss_masked: -0.819 src_seg_loss_aux: -0.857 src_seg_loss_aux_masked: -0.842 src_cos_reg: 0.016 src_cos_reg_masked: 0.016 tgt_pse_seg_loss: -0.947 tgt_pse_seg_loss_aux: -0.943 tgt_cos_reg: 0.015 
+Epoch: 252, Validation Dice: 0.7552697935287634, Validation score: 1.2074415909831206, target pseudo loss: -0.9043435949087143
+Current cumulative epochs of no improvement: 0
+End of epoch 252 / 300 	 Time Taken: 153 sec
+Current Learning Rate changed to 4.218405892031368e-05
+(epoch: 253, iters: 0, time: 0.022) src_seg_loss: -0.837 src_seg_loss_masked: -0.803 src_seg_loss_aux: -0.843 src_seg_loss_aux_masked: -0.825 src_cos_reg: 0.011 src_cos_reg_masked: 0.010 tgt_pse_seg_loss: -0.883 tgt_pse_seg_loss_aux: -0.916 tgt_cos_reg: 0.020 
+Epoch: 253, Validation Dice: 0.7496880807988925, Validation score: 1.201056907724647, target pseudo loss: -0.9027376538515091
+Current cumulative epochs of no improvement: 1
+End of epoch 253 / 300 	 Time Taken: 153 sec
+Current Learning Rate changed to 3.833389903402402e-05
+(epoch: 254, iters: 0, time: 0.054) src_seg_loss: -0.613 src_seg_loss_masked: -0.581 src_seg_loss_aux: -0.778 src_seg_loss_aux_masked: -0.763 src_cos_reg: 0.011 src_cos_reg_masked: 0.011 tgt_pse_seg_loss: -0.581 tgt_pse_seg_loss_aux: -0.952 tgt_cos_reg: 0.015 
+Epoch: 254, Validation Dice: 0.7525975546633997, Validation score: 1.1985148989057341, target pseudo loss: -0.8918346884846687
+Current cumulative epochs of no improvement: 2
+End of epoch 254 / 300 	 Time Taken: 154 sec
+Current Learning Rate changed to 3.455569536622451e-05
+(epoch: 255, iters: 0, time: 0.035) src_seg_loss: -0.198 src_seg_loss_masked: -0.186 src_seg_loss_aux: -0.787 src_seg_loss_aux_masked: -0.755 src_cos_reg: 0.010 src_cos_reg_masked: 0.014 tgt_pse_seg_loss: -0.948 tgt_pse_seg_loss_aux: -0.954 tgt_cos_reg: 0.019 
+Epoch: 255, Validation Dice: 0.7521591860795761, Validation score: 1.2045079853380467, target pseudo loss: -0.9046975985169411
+Current cumulative epochs of no improvement: 3
+End of epoch 255 / 300 	 Time Taken: 152 sec
+Current Learning Rate changed to 3.0872741798907346e-05
+(epoch: 256, iters: 0, time: 0.026) src_seg_loss: -0.821 src_seg_loss_masked: -0.807 src_seg_loss_aux: -0.802 src_seg_loss_aux_masked: -0.792 src_cos_reg: 0.012 src_cos_reg_masked: 0.011 tgt_pse_seg_loss: -0.717 tgt_pse_seg_loss_aux: -0.919 tgt_cos_reg: 0.041 
+Epoch: 256, Validation Dice: 0.7524313908914674, Validation score: 1.2025556887785542, target pseudo loss: -0.9002485957741737
+Current cumulative epochs of no improvement: 4
+End of epoch 256 / 300 	 Time Taken: 152 sec
+Current Learning Rate changed to 2.7307744965521364e-05
+(epoch: 257, iters: 0, time: 0.022) src_seg_loss: -0.866 src_seg_loss_masked: -0.840 src_seg_loss_aux: -0.865 src_seg_loss_aux_masked: -0.846 src_cos_reg: 0.011 src_cos_reg_masked: 0.011 tgt_pse_seg_loss: -0.943 tgt_pse_seg_loss_aux: -0.952 tgt_cos_reg: 0.017 
+Epoch: 257, Validation Dice: 0.7507554514538651, Validation score: 1.198764204813183, target pseudo loss: -0.8960175067186356
+Current cumulative epochs of no improvement: 5
+End of epoch 257 / 300 	 Time Taken: 152 sec
+Current Learning Rate changed to 2.3882684257026145e-05
+(epoch: 258, iters: 0, time: 0.033) src_seg_loss: -0.764 src_seg_loss_masked: -0.735 src_seg_loss_aux: -0.788 src_seg_loss_aux_masked: -0.771 src_cos_reg: 0.010 src_cos_reg_masked: 0.010 tgt_pse_seg_loss: -0.925 tgt_pse_seg_loss_aux: -0.933 tgt_cos_reg: 0.013 
+Epoch: 258, Validation Dice: 0.7518235114753942, Validation score: 1.200506767982314, target pseudo loss: -0.8973665130138397
+Current cumulative epochs of no improvement: 6
+End of epoch 258 / 300 	 Time Taken: 153 sec
+Current Learning Rate changed to 2.0618676311637815e-05
+(epoch: 259, iters: 0, time: 0.027) src_seg_loss: -0.812 src_seg_loss_masked: -0.777 src_seg_loss_aux: -0.755 src_seg_loss_aux_masked: -0.727 src_cos_reg: 0.013 src_cos_reg_masked: 0.013 tgt_pse_seg_loss: -0.950 tgt_pse_seg_loss_aux: -0.962 tgt_cos_reg: 0.012 
+Epoch: 259, Validation Dice: 0.7508904999405694, Validation score: 1.1984509526104283, target pseudo loss: -0.8951209053397179
+Current cumulative epochs of no improvement: 7
+End of epoch 259 / 300 	 Time Taken: 151 sec
+Current Learning Rate changed to 1.7535844823732476e-05
+(epoch: 260, iters: 0, time: 0.054) src_seg_loss: -0.314 src_seg_loss_masked: -0.320 src_seg_loss_aux: -0.746 src_seg_loss_aux_masked: -0.705 src_cos_reg: 0.007 src_cos_reg_masked: 0.007 tgt_pse_seg_loss: -0.944 tgt_pse_seg_loss_aux: -0.951 tgt_cos_reg: 0.006 
+Epoch: 260, Validation Dice: 0.7564334993406112, Validation score: 1.2065195860310372, target pseudo loss: -0.9001721733808518
+Current cumulative epochs of no improvement: 8
+End of epoch 260 / 300 	 Time Taken: 155 sec
+Current Learning Rate changed to 1.465319647457856e-05
+(epoch: 261, iters: 0, time: 0.037) src_seg_loss: -0.790 src_seg_loss_masked: -0.762 src_seg_loss_aux: -0.765 src_seg_loss_aux_masked: -0.742 src_cos_reg: 0.019 src_cos_reg_masked: 0.019 tgt_pse_seg_loss: -0.919 tgt_pse_seg_loss_aux: -0.932 tgt_cos_reg: 0.013 
+Epoch: 261, Validation Dice: 0.7551277850188368, Validation score: 1.201811616829788, target pseudo loss: -0.8933676636219025
+Current cumulative epochs of no improvement: 9
+End of epoch 261 / 300 	 Time Taken: 152 sec
+Current Learning Rate changed to 1.1988503749826454e-05
+(epoch: 262, iters: 0, time: 0.024) src_seg_loss: -0.843 src_seg_loss_masked: -0.813 src_seg_loss_aux: -0.863 src_seg_loss_aux_masked: -0.847 src_cos_reg: 0.014 src_cos_reg_masked: 0.013 tgt_pse_seg_loss: -0.885 tgt_pse_seg_loss_aux: -0.895 tgt_cos_reg: 0.013 
+Epoch: 262, Validation Dice: 0.7546877156835224, Validation score: 1.2096587558727887, target pseudo loss: -0.9099420803785324
+Current cumulative epochs of no improvement: 0
+End of epoch 262 / 300 	 Time Taken: 154 sec
+Current Learning Rate changed to 9.55819536622451e-06
+(epoch: 263, iters: 0, time: 0.029) src_seg_loss: -0.824 src_seg_loss_masked: -0.792 src_seg_loss_aux: -0.742 src_seg_loss_aux_masked: -0.727 src_cos_reg: 0.012 src_cos_reg_masked: 0.012 tgt_pse_seg_loss: -0.912 tgt_pse_seg_loss_aux: -0.954 tgt_cos_reg: 0.012 
+Epoch: 263, Validation Dice: 0.7556618557852381, Validation score: 1.2041116955858344, target pseudo loss: -0.8968996796011924
+Current cumulative epochs of no improvement: 1
+End of epoch 263 / 300 	 Time Taken: 152 sec
+Current Learning Rate changed to 7.377254983117162e-06
+(epoch: 264, iters: 0, time: 0.058) src_seg_loss: -0.627 src_seg_loss_masked: -0.620 src_seg_loss_aux: -0.770 src_seg_loss_aux_masked: -0.762 src_cos_reg: 0.013 src_cos_reg_masked: 0.012 tgt_pse_seg_loss: -0.723 tgt_pse_seg_loss_aux: -0.931 tgt_cos_reg: 0.014 
+Epoch: 264, Validation Dice: 0.7544727760404774, Validation score: 1.1979776516408154, target pseudo loss: -0.8870097512006759
+Current cumulative epochs of no improvement: 2
+End of epoch 264 / 300 	 Time Taken: 155 sec
+Current Learning Rate changed to 5.459128823202553e-06
+(epoch: 265, iters: 0, time: 0.055) src_seg_loss: -0.734 src_seg_loss_masked: -0.707 src_seg_loss_aux: -0.795 src_seg_loss_aux_masked: -0.780 src_cos_reg: 0.025 src_cos_reg_masked: 0.026 tgt_pse_seg_loss: -0.939 tgt_pse_seg_loss_aux: -0.952 tgt_cos_reg: 0.016 
+Epoch: 265, Validation Dice: 0.7540913372451914, Validation score: 1.2151234593207492, target pseudo loss: -0.9220642441511154
+Current cumulative epochs of no improvement: 0
+End of epoch 265 / 300 	 Time Taken: 157 sec
+Current Learning Rate changed to 3.81564277209822e-06
+(epoch: 266, iters: 0, time: 0.047) src_seg_loss: -0.786 src_seg_loss_masked: -0.761 src_seg_loss_aux: -0.767 src_seg_loss_aux_masked: -0.760 src_cos_reg: 0.019 src_cos_reg_masked: 0.019 tgt_pse_seg_loss: -0.944 tgt_pse_seg_loss_aux: -0.949 tgt_cos_reg: 0.009 
+Epoch: 266, Validation Dice: 0.7544862576361372, Validation score: 1.203015734010525, target pseudo loss: -0.8970589527487755
+Current cumulative epochs of no improvement: 1
+End of epoch 266 / 300 	 Time Taken: 155 sec
+Current Learning Rate changed to 2.4569294678237992e-06
+(epoch: 267, iters: 0, time: 0.021) src_seg_loss: -0.859 src_seg_loss_masked: -0.838 src_seg_loss_aux: -0.850 src_seg_loss_aux_masked: -0.827 src_cos_reg: 0.011 src_cos_reg_masked: 0.011 tgt_pse_seg_loss: -0.925 tgt_pse_seg_loss_aux: -0.948 tgt_cos_reg: 0.012 
+Epoch: 267, Validation Dice: 0.7542056681184788, Validation score: 1.2147277735142727, target pseudo loss: -0.9210442107915878
+Current cumulative epochs of no improvement: 2
+End of epoch 267 / 300 	 Time Taken: 151 sec
+Current Learning Rate changed to 1.3913658297181607e-06
+(epoch: 268, iters: 0, time: 0.029) src_seg_loss: -0.868 src_seg_loss_masked: -0.847 src_seg_loss_aux: -0.866 src_seg_loss_aux_masked: -0.851 src_cos_reg: 0.009 src_cos_reg_masked: 0.009 tgt_pse_seg_loss: -0.908 tgt_pse_seg_loss_aux: -0.937 tgt_cos_reg: 0.012 
+Epoch: 268, Validation Dice: 0.7541367044595759, Validation score: 1.2097043948916477, target pseudo loss: -0.9111353808641434
+Current cumulative epochs of no improvement: 3
+End of epoch 268 / 300 	 Time Taken: 153 sec
+Current Learning Rate changed to 6.255214119460928e-07
+(epoch: 269, iters: 0, time: 0.038) src_seg_loss: -0.876 src_seg_loss_masked: -0.850 src_seg_loss_aux: -0.877 src_seg_loss_aux_masked: -0.861 src_cos_reg: 0.014 src_cos_reg_masked: 0.014 tgt_pse_seg_loss: -0.765 tgt_pse_seg_loss_aux: -0.940 tgt_cos_reg: 0.019 
+Epoch: 269, Validation Dice: 0.754098371457443, Validation score: 1.2027716800981614, target pseudo loss: -0.8973466172814369
+Current cumulative epochs of no improvement: 4
+End of epoch 269 / 300 	 Time Taken: 153 sec
+Current Learning Rate changed to 1.6411790001226747e-07
+(epoch: 270, iters: 0, time: 0.051) src_seg_loss: -0.371 src_seg_loss_masked: -0.372 src_seg_loss_aux: -0.810 src_seg_loss_aux_masked: -0.789 src_cos_reg: 0.011 src_cos_reg_masked: 0.011 tgt_pse_seg_loss: -0.953 tgt_pse_seg_loss_aux: -0.952 tgt_cos_reg: 0.009 
+Epoch: 270, Validation Dice: 0.7539775987427817, Validation score: 1.2057683514516935, target pseudo loss: -0.9035815054178238
+Current cumulative epochs of no improvement: 5
+End of epoch 270 / 300 	 Time Taken: 154 sec
+Current Learning Rate changed to 0.0001
+(epoch: 271, iters: 0, time: 0.026) src_seg_loss: -0.764 src_seg_loss_masked: -0.728 src_seg_loss_aux: -0.786 src_seg_loss_aux_masked: -0.770 src_cos_reg: 0.018 src_cos_reg_masked: 0.018 tgt_pse_seg_loss: -0.932 tgt_pse_seg_loss_aux: -0.947 tgt_cos_reg: 0.014 
+Epoch: 271, Validation Dice: 0.7523605992001794, Validation score: 1.187924712459495, target pseudo loss: -0.871128226518631
+Current cumulative epochs of no improvement: 6
+End of epoch 271 / 300 	 Time Taken: 152 sec
+Current Learning Rate changed to 9.996145566685496e-05
+(epoch: 272, iters: 0, time: 0.028) src_seg_loss: -0.699 src_seg_loss_masked: -0.640 src_seg_loss_aux: -0.744 src_seg_loss_aux_masked: -0.719 src_cos_reg: 0.020 src_cos_reg_masked: 0.018 tgt_pse_seg_loss: -0.935 tgt_pse_seg_loss_aux: -0.932 tgt_cos_reg: 0.013 
+Epoch: 272, Validation Dice: 0.7444019447279857, Validation score: 1.1839663989854738, target pseudo loss: -0.8791289085149765
+Current cumulative epochs of no improvement: 7
+End of epoch 272 / 300 	 Time Taken: 153 sec
+Current Learning Rate changed to 9.984588209998774e-05
+(epoch: 273, iters: 0, time: 0.026) src_seg_loss: -0.856 src_seg_loss_masked: -0.825 src_seg_loss_aux: -0.834 src_seg_loss_aux_masked: -0.788 src_cos_reg: 0.023 src_cos_reg_masked: 0.023 tgt_pse_seg_loss: -0.897 tgt_pse_seg_loss_aux: -0.924 tgt_cos_reg: 0.008 
+Epoch: 273, Validation Dice: 0.746178121926229, Validation score: 1.1907484934348274, target pseudo loss: -0.8891407430171967
+Current cumulative epochs of no improvement: 8
+End of epoch 273 / 300 	 Time Taken: 151 sec
+Current Learning Rate changed to 9.965345750546155e-05
+(epoch: 274, iters: 0, time: 0.022) src_seg_loss: -0.827 src_seg_loss_masked: -0.801 src_seg_loss_aux: -0.830 src_seg_loss_aux_masked: -0.803 src_cos_reg: 0.015 src_cos_reg_masked: 0.015 tgt_pse_seg_loss: -0.861 tgt_pse_seg_loss_aux: -0.948 tgt_cos_reg: 0.011 
+Epoch: 274, Validation Dice: 0.7537084288382202, Validation score: 1.197782731600967, target pseudo loss: -0.8881486055254936
+Current cumulative epochs of no improvement: 9
+End of epoch 274 / 300 	 Time Taken: 151 sec
+Current Learning Rate changed to 9.938447858805392e-05
+(epoch: 275, iters: 0, time: 0.060) src_seg_loss: -0.835 src_seg_loss_masked: -0.817 src_seg_loss_aux: -0.822 src_seg_loss_aux_masked: -0.800 src_cos_reg: 0.015 src_cos_reg_masked: 0.015 tgt_pse_seg_loss: -0.900 tgt_pse_seg_loss_aux: -0.925 tgt_cos_reg: 0.013 
+Epoch: 275, Validation Dice: 0.7453553981175822, Validation score: 1.1888408986320895, target pseudo loss: -0.8869710010290146
+Current cumulative epochs of no improvement: 10
+End of epoch 275 / 300 	 Time Taken: 155 sec
+Current Learning Rate changed to 9.903936009375951e-05
+(epoch: 276, iters: 0, time: 0.024) src_seg_loss: -0.712 src_seg_loss_masked: -0.638 src_seg_loss_aux: -0.839 src_seg_loss_aux_masked: -0.818 src_cos_reg: 0.010 src_cos_reg_masked: 0.010 tgt_pse_seg_loss: -0.924 tgt_pse_seg_loss_aux: -0.941 tgt_cos_reg: 0.013 
+Epoch: 276, Validation Dice: 0.7453737302389992, Validation score: 1.189514486667241, target pseudo loss: -0.8882815128564835
+Current cumulative epochs of no improvement: 11
+End of epoch 276 / 300 	 Time Taken: 152 sec
+Current Learning Rate changed to 9.861863417028185e-05
+(epoch: 277, iters: 0, time: 0.029) src_seg_loss: -0.841 src_seg_loss_masked: -0.815 src_seg_loss_aux: -0.832 src_seg_loss_aux_masked: -0.814 src_cos_reg: 0.011 src_cos_reg_masked: 0.012 tgt_pse_seg_loss: -0.781 tgt_pse_seg_loss_aux: -0.946 tgt_cos_reg: 0.014 
+Epoch: 277, Validation Dice: 0.7467618341309106, Validation score: 1.1841851742130791, target pseudo loss: -0.8748466801643372
+Current cumulative epochs of no improvement: 12
+End of epoch 277 / 300 	 Time Taken: 154 sec
+Current Learning Rate changed to 9.81229495465001e-05
+(epoch: 278, iters: 0, time: 0.023) src_seg_loss: -0.851 src_seg_loss_masked: -0.829 src_seg_loss_aux: -0.823 src_seg_loss_aux_masked: -0.802 src_cos_reg: 0.027 src_cos_reg_masked: 0.027 tgt_pse_seg_loss: -0.867 tgt_pse_seg_loss_aux: -0.908 tgt_cos_reg: 0.018 
+Epoch: 278, Validation Dice: 0.7457092066938141, Validation score: 1.1816703245872715, target pseudo loss: -0.8719222357869149
+Current cumulative epochs of no improvement: 13
+End of epoch 278 / 300 	 Time Taken: 152 sec
+Current Learning Rate changed to 9.755307053217622e-05
+(epoch: 279, iters: 0, time: 0.050) src_seg_loss: -0.838 src_seg_loss_masked: -0.817 src_seg_loss_aux: -0.836 src_seg_loss_aux_masked: -0.808 src_cos_reg: 0.020 src_cos_reg_masked: 0.019 tgt_pse_seg_loss: -0.900 tgt_pse_seg_loss_aux: -0.929 tgt_cos_reg: 0.016 
+Epoch: 279, Validation Dice: 0.7523102497750683, Validation score: 1.1852997663313314, target pseudo loss: -0.8659790331125259
+Current cumulative epochs of no improvement: 14
+End of epoch 279 / 300 	 Time Taken: 154 sec
+Current Learning Rate changed to 9.69098758394446e-05
+(epoch: 280, iters: 0, time: 0.022) src_seg_loss: -0.833 src_seg_loss_masked: -0.808 src_seg_loss_aux: -0.830 src_seg_loss_aux_masked: -0.809 src_cos_reg: 0.020 src_cos_reg_masked: 0.020 tgt_pse_seg_loss: -0.945 tgt_pse_seg_loss_aux: -0.931 tgt_cos_reg: 0.021 
+Epoch: 280, Validation Dice: 0.7493022396901713, Validation score: 1.1930967500547038, target pseudo loss: -0.887589020729065
+Current cumulative epochs of no improvement: 15
+End of epoch 280 / 300 	 Time Taken: 153 sec
+Current Learning Rate changed to 9.619435722790178e-05
+(epoch: 281, iters: 0, time: 0.063) src_seg_loss: -0.845 src_seg_loss_masked: -0.799 src_seg_loss_aux: -0.832 src_seg_loss_aux_masked: -0.823 src_cos_reg: 0.016 src_cos_reg_masked: 0.016 tgt_pse_seg_loss: -0.926 tgt_pse_seg_loss_aux: -0.935 tgt_cos_reg: 0.019 
+Epoch: 281, Validation Dice: 0.7486289198122232, Validation score: 1.1809435833416193, target pseudo loss: -0.8646293270587921
+Current cumulative epochs of no improvement: 16
+End of epoch 281 / 300 	 Time Taken: 155 sec
+Current Learning Rate changed to 9.540761797538495e-05
+(epoch: 282, iters: 0, time: 0.022) src_seg_loss: -0.816 src_seg_loss_masked: -0.768 src_seg_loss_aux: -0.825 src_seg_loss_aux_masked: -0.798 src_cos_reg: 0.018 src_cos_reg_masked: 0.019 tgt_pse_seg_loss: -0.900 tgt_pse_seg_loss_aux: -0.937 tgt_cos_reg: 0.023 
+Epoch: 282, Validation Dice: 0.7474530717091811, Validation score: 1.1935078465299855, target pseudo loss: -0.8921095496416092
+Current cumulative epochs of no improvement: 17
+End of epoch 282 / 300 	 Time Taken: 151 sec
+Current Learning Rate changed to 9.455087117679746e-05
+(epoch: 283, iters: 0, time: 0.041) src_seg_loss: -0.759 src_seg_loss_masked: -0.677 src_seg_loss_aux: -0.757 src_seg_loss_aux_masked: -0.736 src_cos_reg: 0.015 src_cos_reg_masked: 0.017 tgt_pse_seg_loss: -0.873 tgt_pse_seg_loss_aux: -0.940 tgt_cos_reg: 0.015 
+Epoch: 283, Validation Dice: 0.7515242933589962, Validation score: 1.199584197934344, target pseudo loss: -0.8961198091506958
+Current cumulative epochs of no improvement: 18
+End of epoch 283 / 300 	 Time Taken: 153 sec
+Current Learning Rate changed to 9.36254378736045e-05
+(epoch: 284, iters: 0, time: 0.025) src_seg_loss: -0.766 src_seg_loss_masked: -0.756 src_seg_loss_aux: -0.763 src_seg_loss_aux_masked: -0.756 src_cos_reg: 0.018 src_cos_reg_masked: 0.017 tgt_pse_seg_loss: -0.819 tgt_pse_seg_loss_aux: -0.833 tgt_cos_reg: 0.025 
+Epoch: 284, Validation Dice: 0.7502759632755269, Validation score: 1.1951197681118, target pseudo loss: -0.8896876096725463
+Current cumulative epochs of no improvement: 19
+End of epoch 284 / 300 	 Time Taken: 154 sec
+Current Learning Rate changed to 9.263274501688284e-05
+(epoch: 285, iters: 0, time: 0.020) src_seg_loss: -0.821 src_seg_loss_masked: -0.793 src_seg_loss_aux: -0.779 src_seg_loss_aux_masked: -0.757 src_cos_reg: 0.019 src_cos_reg_masked: 0.018 tgt_pse_seg_loss: -0.872 tgt_pse_seg_loss_aux: -0.879 tgt_cos_reg: 0.023 
+Epoch: 285, Validation Dice: 0.7572558803373817, Validation score: 1.1992237051838877, target pseudo loss: -0.8839356496930122
+Current cumulative epochs of no improvement: 20
+End of epoch 285 / 300 	 Time Taken: 153 sec
+Current Learning Rate changed to 9.157432326706576e-05
+(epoch: 286, iters: 0, time: 0.077) src_seg_loss: -0.786 src_seg_loss_masked: -0.763 src_seg_loss_aux: -0.820 src_seg_loss_aux_masked: -0.774 src_cos_reg: 0.029 src_cos_reg_masked: 0.025 tgt_pse_seg_loss: -0.875 tgt_pse_seg_loss_aux: -0.910 tgt_cos_reg: 0.050 
+Epoch: 286, Validation Dice: 0.7467329487633203, Validation score: 1.1870913263093923, target pseudo loss: -0.880716755092144
+Current cumulative epochs of no improvement: 21
+End of epoch 286 / 300 	 Time Taken: 157 sec
+Current Learning Rate changed to 9.045180463377551e-05
+(epoch: 287, iters: 0, time: 0.026) src_seg_loss: -0.746 src_seg_loss_masked: -0.741 src_seg_loss_aux: -0.767 src_seg_loss_aux_masked: -0.751 src_cos_reg: 0.018 src_cos_reg_masked: 0.018 tgt_pse_seg_loss: -0.841 tgt_pse_seg_loss_aux: -0.939 tgt_cos_reg: 0.036 
+Epoch: 287, Validation Dice: 0.7478126252530293, Validation score: 1.185005674743481, target pseudo loss: -0.8743860989809036
+Current cumulative epochs of no improvement: 22
+End of epoch 287 / 300 	 Time Taken: 152 sec
+Current Learning Rate changed to 8.926691995938284e-05
+(epoch: 288, iters: 0, time: 0.032) src_seg_loss: -0.631 src_seg_loss_masked: -0.620 src_seg_loss_aux: -0.715 src_seg_loss_aux_masked: -0.682 src_cos_reg: 0.024 src_cos_reg_masked: 0.037 tgt_pse_seg_loss: -0.930 tgt_pse_seg_loss_aux: -0.932 tgt_cos_reg: 0.015 
+Epoch: 288, Validation Dice: 0.7454324084981082, Validation score: 1.1962853980525134, target pseudo loss: -0.9017059791088105
+Current cumulative epochs of no improvement: 23
+End of epoch 288 / 300 	 Time Taken: 152 sec
+Current Learning Rate changed to 8.802149625017355e-05
+(epoch: 289, iters: 0, time: 0.023) src_seg_loss: -0.821 src_seg_loss_masked: -0.806 src_seg_loss_aux: -0.814 src_seg_loss_aux_masked: -0.770 src_cos_reg: 0.024 src_cos_reg_masked: 0.024 tgt_pse_seg_loss: -0.946 tgt_pse_seg_loss_aux: -0.952 tgt_cos_reg: 0.021 
+Epoch: 289, Validation Dice: 0.7452569487209777, Validation score: 1.1915513187165718, target pseudo loss: -0.892588739991188
+Current cumulative epochs of no improvement: 24
+End of epoch 289 / 300 	 Time Taken: 151 sec
+Current Learning Rate changed to 8.67174538592371e-05
+(epoch: 290, iters: 0, time: 0.024) src_seg_loss: -0.771 src_seg_loss_masked: -0.759 src_seg_loss_aux: -0.822 src_seg_loss_aux_masked: -0.777 src_cos_reg: 0.017 src_cos_reg_masked: 0.017 tgt_pse_seg_loss: -0.931 tgt_pse_seg_loss_aux: -0.935 tgt_cos_reg: 0.013 
+Epoch: 290, Validation Dice: 0.7436546401470985, Validation score: 1.1821378449887123, target pseudo loss: -0.8769664096832276
+Current cumulative epochs of no improvement: 25
+End of epoch 290 / 300 	 Time Taken: 152 sec
+Current Learning Rate changed to 8.535680352542144e-05
+(epoch: 291, iters: 0, time: 0.026) src_seg_loss: -0.775 src_seg_loss_masked: -0.732 src_seg_loss_aux: -0.717 src_seg_loss_aux_masked: -0.711 src_cos_reg: 0.013 src_cos_reg_masked: 0.012 tgt_pse_seg_loss: -0.947 tgt_pse_seg_loss_aux: -0.944 tgt_cos_reg: 0.011 
+Epoch: 291, Validation Dice: 0.7453585826220642, Validation score: 1.1914061403634677, target pseudo loss: -0.8920951154828072
+Current cumulative epochs of no improvement: 26
+End of epoch 291 / 300 	 Time Taken: 152 sec
+Current Learning Rate changed to 8.394164327291943e-05
+(epoch: 292, iters: 0, time: 0.055) src_seg_loss: -0.843 src_seg_loss_masked: -0.821 src_seg_loss_aux: -0.854 src_seg_loss_aux_masked: -0.836 src_cos_reg: 0.016 src_cos_reg_masked: 0.016 tgt_pse_seg_loss: -0.939 tgt_pse_seg_loss_aux: -0.947 tgt_cos_reg: 0.016 
+Epoch: 292, Validation Dice: 0.750482691124723, Validation score: 1.2005690475261663, target pseudo loss: -0.9001727128028869
+Current cumulative epochs of no improvement: 27
+End of epoch 292 / 300 	 Time Taken: 155 sec
+Current Learning Rate changed to 8.247415517626754e-05
+(epoch: 293, iters: 0, time: 0.027) src_seg_loss: -0.840 src_seg_loss_masked: -0.759 src_seg_loss_aux: -0.832 src_seg_loss_aux_masked: -0.812 src_cos_reg: 0.015 src_cos_reg_masked: 0.016 tgt_pse_seg_loss: -0.910 tgt_pse_seg_loss_aux: -0.924 tgt_cos_reg: 0.009 
+Epoch: 293, Validation Dice: 0.7506782840229301, Validation score: 1.197942181084278, target pseudo loss: -0.8945277941226959
+Current cumulative epochs of no improvement: 28
+End of epoch 293 / 300 	 Time Taken: 152 sec
+Current Learning Rate changed to 8.095660199574515e-05
+(epoch: 294, iters: 0, time: 0.056) src_seg_loss: -0.846 src_seg_loss_masked: -0.811 src_seg_loss_aux: -0.846 src_seg_loss_aux_masked: -0.827 src_cos_reg: 0.012 src_cos_reg_masked: 0.013 tgt_pse_seg_loss: -0.917 tgt_pse_seg_loss_aux: -0.943 tgt_cos_reg: 0.021 
+Epoch: 294, Validation Dice: 0.7499501749184995, Validation score: 1.1988425996211438, target pseudo loss: -0.8977848494052887
+Current cumulative epochs of no improvement: 29
+End of epoch 294 / 300 	 Time Taken: 155 sec
+Current Learning Rate changed to 7.939132368836219e-05
+(epoch: 295, iters: 0, time: 0.047) src_seg_loss: -0.847 src_seg_loss_masked: -0.828 src_seg_loss_aux: -0.850 src_seg_loss_aux_masked: -0.837 src_cos_reg: 0.019 src_cos_reg_masked: 0.019 tgt_pse_seg_loss: -0.925 tgt_pse_seg_loss_aux: -0.923 tgt_cos_reg: 0.010 
+Epoch: 295, Validation Dice: 0.747517036351982, Validation score: 1.1963277392123373, target pseudo loss: -0.8976214057207108
+Current cumulative epochs of no improvement: 30
+End of epoch 295 / 300 	 Time Taken: 153 sec
+Current Learning Rate changed to 7.778073379981501e-05
+(epoch: 296, iters: 0, time: 0.039) src_seg_loss: -0.726 src_seg_loss_masked: -0.749 src_seg_loss_aux: -0.766 src_seg_loss_aux_masked: -0.763 src_cos_reg: 0.014 src_cos_reg_masked: 0.015 tgt_pse_seg_loss: -0.937 tgt_pse_seg_loss_aux: -0.962 tgt_cos_reg: 0.016 
+Epoch: 296, Validation Dice: 0.7463161216700666, Validation score: 1.1944116324210756, target pseudo loss: -0.896191021502018
+Current cumulative epochs of no improvement: 31
+End of epoch 296 / 300 	 Time Taken: 155 sec
+Current Learning Rate changed to 7.612731574297387e-05
+(epoch: 297, iters: 0, time: 0.032) src_seg_loss: -0.794 src_seg_loss_masked: -0.777 src_seg_loss_aux: -0.759 src_seg_loss_aux_masked: -0.737 src_cos_reg: 0.005 src_cos_reg_masked: 0.006 tgt_pse_seg_loss: -0.833 tgt_pse_seg_loss_aux: -0.910 tgt_cos_reg: 0.061 
+Epoch: 297, Validation Dice: 0.7496254428551314, Validation score: 1.1944611751363394, target pseudo loss: -0.8896714645624161
+Current cumulative epochs of no improvement: 32
+End of epoch 297 / 300 	 Time Taken: 152 sec
+Current Learning Rate changed to 7.443361896864027e-05
+(epoch: 298, iters: 0, time: 0.056) src_seg_loss: -0.829 src_seg_loss_masked: -0.817 src_seg_loss_aux: -0.817 src_seg_loss_aux_masked: -0.810 src_cos_reg: 0.011 src_cos_reg_masked: 0.011 tgt_pse_seg_loss: -0.885 tgt_pse_seg_loss_aux: -0.923 tgt_cos_reg: 0.015 
+Epoch: 298, Validation Dice: 0.7444254412903396, Validation score: 1.1878502466930954, target pseudo loss: -0.8868496108055115
+Current cumulative epochs of no improvement: 33
+End of epoch 298 / 300 	 Time Taken: 154 sec
+Current Learning Rate changed to 7.270225503447864e-05
+(epoch: 299, iters: 0, time: 0.043) src_seg_loss: -0.867 src_seg_loss_masked: -0.848 src_seg_loss_aux: -0.836 src_seg_loss_aux_masked: -0.826 src_cos_reg: 0.013 src_cos_reg_masked: 0.013 tgt_pse_seg_loss: -0.942 tgt_pse_seg_loss_aux: -0.952 tgt_cos_reg: 0.017 
+Epoch: 299, Validation Dice: 0.7493944992612389, Validation score: 1.201108407873967, target pseudo loss: -0.9034278172254563
+Current cumulative epochs of no improvement: 34
+End of epoch 299 / 300 	 Time Taken: 155 sec
+Current Learning Rate changed to 7.093589357818372e-05
+(epoch: 300, iters: 0, time: 0.052) src_seg_loss: -0.761 src_seg_loss_masked: -0.752 src_seg_loss_aux: -0.794 src_seg_loss_aux_masked: -0.784 src_cos_reg: 0.029 src_cos_reg_masked: 0.031 tgt_pse_seg_loss: -0.887 tgt_pse_seg_loss_aux: -0.926 tgt_cos_reg: 0.020 
+Epoch: 300, Validation Dice: 0.7510828676165786, Validation score: 1.2046795245351043, target pseudo loss: -0.9071933138370514
+Current cumulative epochs of no improvement: 35
+End of epoch 300 / 300 	 Time Taken: 156 sec
+Current Learning Rate changed to 6.913725820109267e-05
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33mX_site_70_final[0m at: [34mhttps://wandb.ai/lrying0128-emory-university/PROJ/runs/pp3t14r0[0m
+[1;34mwandb[0m: Find logs at: [1;35mwandb/run-20250503_204136-pp3t14r0/logs[0m
