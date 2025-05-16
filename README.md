@@ -19,17 +19,59 @@ For more details on data usage, structure, and benchmarks, please refer to the f
 
 We provide links and instructions for all dataset
 
-1. **Specification of dependencies**
-2. **Training code** 
-3. **Evaluation code**
-4. **Pre-trained models**
-5. **README file including table of results accompanied by precise commands to run/produce those results**
+1. **ABCD** : [Adolescent Brain Cognitive Development Study](https://nda.nih.gov/general-query.html?q=query=featured-datasets:Adolescent%20Brain%20Cognitive%20Development%20Study%20(ABCD))
 
-We verified that repositories that check more items on the checklist also tend to have a higher number of GitHub stars. This was verified by analysing official NeurIPS 2019 repositories - more details in the [blog post](https://medium.com/paperswithcode/ml-code-completeness-checklist-e9127b168501). We also provide the [data](notebooks/code_checklist-neurips2019.csv) and [notebook](notebooks/code_checklist-analysis.pdf) to reproduce this analysis from the post. 
+   **License**: NDA (Must apply through the NIH's NIMH Data Archive)
 
-NeurIPS 2019 repositories that had all five of these components had the highest number of GitHub stars (median of 196 and mean of 2,664 stars). 
+2. **ABIDE** : [Autism Brain Imaging Data Exchange](https://fcon_1000.projects.nitrc.org/indi/abide/abide_I.html)
 
-We explain each item on the checklist in detail blow. 
+   **License**: Freely available to the research community. No DUA Required.
+
+3. **ADHD 200** : [ADHD-200 Global Competition Dataset](https://fcon_1000.projects.nitrc.org/indi/adhd200/)
+
+   **License**: Freely available to the research community. No DUA Required.
+
+4. **ADNI** : [Alzheimer's Disease Neuroimaging Initiative](https://ida.loni.usc.edu/login.jsp?project=ADNI&page=HOME)
+
+   **License**: Application Required via LONI IDA (Create an account and  request access at https://ida.loni.usc.edu)
+
+5. **BCP** : [Baby Connectome Project](https://nda.nih.gov/edit_collection.html?id=2848)
+
+   **License**: NDA (Must apply through the NIH's NIMH Data Archive)
+
+6. **dHCP** : [Developing Human Connectome Project](https://www.developingconnectome.org/data-release/second-data-release/)
+
+   **License**: Distributed under the Creative Commons Attribution 4.0 International (CC BY 4.0) license.
+
+7. **HBCD** : [Healthy Brain and Child Development Study](https://hbcd-docs.readthedocs.io/data_access/)
+
+   **License**: NDA (Must apply through the NIH's NIMH Data Archive)
+
+8. **HBN** : [Healthy Brain Network](https://fcon_1000.projects.nitrc.org/indi/cmi_healthy_brain_network/MRI_EEG.html#Direct%20Down)
+
+   **License**: NDA (Must apply through the NIH's NIMH Data Archive)
+
+9. **HCP-A** : [Human Connectome Project – Aging](https://www.humanconnectome.org/study/hcp-lifespan-aging/data-releases)
+
+   **License**: NDA (Must apply through the NIH's NIMH Data Archive)
+
+10. **HCP-D** : [Developing Human Connectome Project-Devolpment](https://www.humanconnectome.org/study/hcp-lifespan-aging/data-releases)
+
+    **License**: NDA (Must apply through the NIH's NIMH Data Archive)
+
+11. **PING** : [Pediatric Imaging, Neurocognition, and Genetics Study](https://nda.nih.gov/edit_collection.html?id=2607)
+
+    **License**: NDA (Must apply through the NIH's NIMH Data Archive)
+
+12. **FeTA**:  [Fetal Tissue Annotation Dataset](https://www.synapse.org/Synapse:syn23747212/wiki/608434)
+
+    **License**: Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+13. **MOMMA**: Not publish
+
+14. **FIND**: Not publish
+
+15. **Subcortical Segmentagtion** : [Brain subcortical segmentation](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/B5OU7H)[Brain Image](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/B5OU7H)https://nda.nih.gov/study.html?id=1745
 
 #### 1. Specification of dependencies
 
@@ -79,6 +121,12 @@ We provide 2D and 3D MAE
 
 We provide seven SOTA for different tasks
 
+1. [RClone](https://rclone.org/) - provides unified access to many different cloud storage providers
+1. [RClone](https://rclone.org/) - provides unified access to many different cloud storage providers
+1. [RClone](https://rclone.org/) - provides unified access to many different cloud storage providers
+1. [RClone](https://rclone.org/) - provides unified access to many different cloud storage providers
+1. [RClone](https://rclone.org/) - provides unified access to many different cloud storage providers
+1. [RClone](https://rclone.org/) - provides unified access to many different cloud storage providers
 1. [RClone](https://rclone.org/) - provides unified access to many different cloud storage providers
 
 ### Standardized model interfaces
