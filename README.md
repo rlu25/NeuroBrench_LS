@@ -113,21 +113,15 @@ We provide seven SOTA for different tasks
 1. [ORDER](https://github.com/jaygshah/Robust-Brain-Age-Prediction) - obust Brain Age Prediction
 1. [TSAN](https://github.com/Milan-BUAA/TSAN-brain-age-estimation) - Brain Age Estimation From MRI Using Cascade Networks with Ranking Loss
 
-### Standardized model interfaces
+### MAE_finetune
 
-1. [PyTorch Hub](https://pytorch.org/hub/)
-2. [Tensorflow Hub](https://www.tensorflow.org/hub)
-3. [Hugging Face NLP models](https://huggingface.co/models)
-4. [ONNX](https://onnx.ai/)
+1. [Subcortical Segmentation](https://github.com/rlu25/NeuroBrench_LS/tree/main/Benchmark_Finetune/Subcortical%20Segmentation)
 
-### Results leaderboards
+2. [MRI Synthesis](https://github.com/rlu25/NeuroBrench_LS/tree/main/Benchmark_Finetune/MRI%20Synthesis)
 
-1. [Papers with Code leaderboards](https://paperswithcode.com/sota) - with 4000+ leaderboards
-2. [CodaLab Competitions](https://competitions.codalab.org/) - with 450+ leaderboards
-3. [EvalAI](https://eval.ai/) - with 100+ leaderboards
-4. [NLP Progress](https://nlpprogress.com/) - with 90+ leaderboards
-5. [Collective Knowledge](https://cKnowledge.io/reproduced-results) - with 40+ leaderboards
-6. [Weights & Biases - Benchmarks](https://www.wandb.com/benchmarks) - with 9+ leaderboards
+3. [Age Prediction](https://github.com/rlu25/NeuroBrench_LS/tree/main/Benchmark_Finetune/Age%20Prediction)
+
+   s
 
 ### Making project pages
 
