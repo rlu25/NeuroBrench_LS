@@ -99,7 +99,7 @@ We provide 2D and 3D MAE
 
 1. [2D MAE](https://github.com/rlu25/NeuroBrench_LS/tree/main/MAE_Model/MAE_2D) - 2D MAE pretrained on slice-based MRI acquisitions.
 2. [3D MAE](https://github.com/rlu25/NeuroBrench_LS/tree/main/MAE_Model/MAE_3D) - 3D MAE pretrained on volumetric MRI scans
-3. [Google Drive](https://drive.google.com/drive/folders/1JwdIB00tUwrLIUAX7HIbTgUj6c97j6Aa?usp=sharing) - Weights in here
+3. [Google Drive](https://drive.google.com/drive/folders/1JwdIB00tUwrLIUAX7HIbTgUj6c97j6Aa?usp=sharing) - Weights can be downloaded here
 
 ### Baseline
 
@@ -120,6 +120,8 @@ We provide seven SOTA for different tasks
 2. [MRI Synthesis](https://github.com/rlu25/NeuroBrench_LS/tree/main/Benchmark_Finetune/MRI%20Synthesis)
 
 3. [Age Prediction](https://github.com/rlu25/NeuroBrench_LS/tree/main/Benchmark_Finetune/Age%20Prediction)
+
+4. [Google Drive](https://drive.google.com/drive/folders/1JwdIB00tUwrLIUAX7HIbTgUj6c97j6Aa?usp=sharing) - Weights can be downloaded here
 
    
 
