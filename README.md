@@ -123,20 +123,8 @@ We provide seven SOTA for different tasks
 
    
 
-### Making project pages
-
-1. [GitHub pages](https://pages.github.com/)
-2. [Fastpages](https://github.com/fastai/fastpages)
-
-### Making demos, tutorials, executable papers
-
-1. [Google Colab](https://colab.research.google.com/)
-2. [Binder](https://mybinder.org/)
-3. [Streamlit](https://github.com/streamlit/streamlit)
-4. [CodaLab Worksheets](https://worksheets.codalab.org/)
-
 ## Contributing
 
-If you'd like to contribute, or have any suggestions for these guidelines, you can contact us at hello@paperswithcode.com or open an issue on this GitHub repository. 
+If you'd like to contribute, or have any suggestions for these guidelines, you can contact us at rliu60@emory.edu or open an issue on this GitHub repository. 
 
-All contributions welcome! All content in this repository is licensed under the MIT license.
+All contributions welcome! 
