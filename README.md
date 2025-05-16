@@ -121,7 +121,7 @@ We provide seven SOTA for different tasks
 
 3. [Age Prediction](https://github.com/rlu25/NeuroBrench_LS/tree/main/Benchmark_Finetune/Age%20Prediction)
 
-   s
+   
 
 ### Making project pages
 
