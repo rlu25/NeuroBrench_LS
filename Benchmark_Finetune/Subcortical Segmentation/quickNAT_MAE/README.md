@@ -15,13 +15,13 @@ pip install -r requirements.txt
 ### Training your model
 
 ```
-python run_model.py 
+python run_train.py 
 ```
 
 ### Evaluating your model
 
 ```
-python eval_NeuroBenchLS.py 
+python run_test.py 
 ```
 
 
