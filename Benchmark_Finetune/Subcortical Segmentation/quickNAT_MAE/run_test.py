@@ -172,9 +172,9 @@ if __name__ == '__main__':
 
     class Args:
         mode = 'eval_bulk'
-        setting_path = '/opt/localdata/data/usr-envs/ruiying/Code/NeurIPS/QuickNet/quickNAT_MAE/settings_eval.ini'
+        setting_path = 'settings_eval.ini'
     args = Args()
-    settings = Settings('/opt/localdata/data/usr-envs/ruiying/Code/NeurIPS/QuickNet/quickNAT_MAE/settings.ini')
+    settings = Settings('settings.ini')
     common_params, data_params, net_params, train_params, eval_params = settings['COMMON'], settings['DATA'], \
                                                                         settings[
                                                                             'NETWORK'], settings['TRAINING'], \
