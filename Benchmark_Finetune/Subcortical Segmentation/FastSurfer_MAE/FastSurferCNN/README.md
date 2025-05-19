@@ -12,7 +12,7 @@ The network was trained with NeuroBench_LS_subcortical_segmentation. link: https
 The *FastSurferCNN* directory contains all the source code and modules needed to run the scripts. A list of python libraries used within the code can be found in __requirements.txt__. The main script is called __eval_NeuroBenchLS.py__ within .yaml, datastructurw is 
 
 ## General
-
+```
 test_data/
 ├── domain1_img/     # Input images for domain 1
 ├── domain2_img/     # Input images for domain 2
@@ -22,6 +22,7 @@ domain1_img/
 ├── subject_001.nii.gz
 ├── subject_002.nii.gz
 ...
+```
 ## Checkpoints and configs
 
 * `--ckpt_sag`: path to sagittal network checkpoint
