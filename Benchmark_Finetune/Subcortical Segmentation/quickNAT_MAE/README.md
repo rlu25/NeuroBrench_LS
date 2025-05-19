@@ -28,9 +28,29 @@ python run_test.py
 * **device**: CPU or ID of GPU (0 or 1) you want to excecute your code.
 * **coronal_model_path**: It is by default set to "saved_models/finetuned_alldata_coronal.pth.tar" which is our final model. You may also use "saved_models/IXI_fsNet_coronal.pth.tar" which is our pre-trained model.
 * **axial_model_path**: Similar to above. It is only used for view_aggregation stage.
-* **data_dir**: Absolute path to the data directory where input volumes are present.
-* **directory_struct**: Valid options are "FS" or "Linear". If you input data directory is similar to FreeSurfer, i.e. **data_dir**/<Data_id>/mri/orig.mgz then use "FS". If the entries are **data_dir**/<Data_id> use "Linear".
-* **volumes_txt_file**: Path to the '.txt' file where the data_ID names are stored. If **directory_struct** is "FS" the entries should be only the folder names, whereas if it is "Linear" the entry name should be the file names with the file extensions.
+* * `--data_dir`: Directory with images to load. Default: /data
+Your data_dir would then look like this:
+ ```
+  data/
+├── domain1_img/     # Input images for domain 1
+├── domain1_label/   # Corresponding labels or segmentations for domain 1
+├── domain2_img/     # Input images for domain 2
+├── domain2_label/   # Corresponding labels or segmentations for domain 2
+├── ...              # Additional domains (e.g., test_img, test_label, etc.)
+
+domain1_img/
+├── subject_001.nii.gz
+├── subject_002.nii.gz
+...
+
+domain1_label/
+├── subject_001_seg.nii.gz
+├── subject_002_seg.nii.gz
+...
+
+ ```
+
+* **volumes_txt_file**: Path to the '.txt' file for the domain name.
 * **batch_size**: Set this according the capacity of your GPU RAM.
 * **save_predictions_dir**: Indicate the absolute path where you want to save the segmentation outputs along with the '.csv' files for volume and uncertainty estimates.
 * **view_agg**: Valid options are "True" or "False". When "False", it uses coronal network by default.
