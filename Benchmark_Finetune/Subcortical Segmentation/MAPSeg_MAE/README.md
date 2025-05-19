@@ -2,13 +2,6 @@
 
 [CVPR 2024](https://openaccess.thecvf.com/content/CVPR2024/html/Zhang_MAPSeg_Unified_Unsupervised_Domain_Adaptation_for_Heterogeneous_Medical_Image_Segmentation_CVPR_2024_paper.html) / [arXiv](https://arxiv.org/abs/2303.09373)
 
-A **unified** UDA framework for **3D** medical image segmentation for several scenarios: 
-
-![MAPseg can solver various problems in different settings](/figs/overview.png)
-
-Built upon complementary masked autoencoding and pseudo-labeling: 
-
-![Framework](/figs/framework.png)
 ## Usage: 
 
     conda create --name mapseg --file requirements.txt
