@@ -81,9 +81,7 @@ A list of python libraries used within the code can be found in __requirements.t
 
 * `--hdf5_name`: Path and name of the to-be-created hdf5-file. Default: ../data/hdf5_set/Multires_coronal.hdf5
 * `--data_dir`: Directory with images to load. Default: /data
-* `--pattern`: Pattern to match only certain files in the directory
-* `--csv_file`: Csv-file listing subjects to load (can be used instead of data_dir; one complete path per line (up to the subject directory))
-  Example: You have a directory called **dataset** with three different datasets (**D1**, **D2** and **D3**). You want to include subject1, subject10 and subject20 from D1 and D2. Your csv-file would then look like this:
+Your data_dir would then look like this:
   ```
   data/
 ├── domain1_img/     # Input images for domain 1
