@@ -13,7 +13,7 @@ For training:
 Training procedure:
     
 MAE pretraining: 
-    I you need MAE model detail, please refer to [here]([(https://github.com/rlu25/NeuroBrench_LS/tree/main/MAE_Model/MAE_3D)]). 
+    I you need MAE model detail, please refer to [here](https://github.com/rlu25/NeuroBrench_LS/tree/main/MAE_Model/MAE_3D). 
 
 For inference: 
 
