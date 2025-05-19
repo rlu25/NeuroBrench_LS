@@ -36,6 +36,6 @@ python eval_NeuroBenchLS.py
 * **view_agg**: Valid options are "True" or "False". When "False", it uses coronal network by default.
 * **estimate_uncertainty**: Valid options are "True" or "False". Indicates if you want to estimate the structure-wise uncertainty for segmentation Quality control. Refer to "Bayesian QuickNAT" paper for more details.
 * **mc_samples**: Active only if **estimate_uncertainty** flag is "True". Indicates the number of Monte-Carlo samples used for uncertainty estimation. 
-* **labels**: List of label names please find [here]().
+* **labels**: List of label names please find [here](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/B5OU7H).
 
  
