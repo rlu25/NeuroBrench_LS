@@ -74,7 +74,7 @@ The output will be stored in:
 # 2. Hdf5-Trainingset Generation
 <!-- after generate_hdf5 heading -->
 
-The *FastSurferCNN* directory contains all the source code and modules needed to create a hdf5-file from given MRI volumes. Here, we use the orig.mgz output from freesurfer as the input image and the aparc.DKTatlas+aseg.mgz as the ground truth. The mapping functions are set-up accordingly as well and need to be changed if you use a different segmentation as ground truth. 
+The *FastSurferCNN* directory contains all the source code and modules needed to create a hdf5-file from given MRI volumes. 
 A list of python libraries used within the code can be found in __requirements.txt__. The main script is called __generate_hdf5.py__ within which certain options can be selected and set via the command line:
 
 ### General
@@ -82,7 +82,7 @@ A list of python libraries used within the code can be found in __requirements.t
 * `--hdf5_name`: Path and name of the to-be-created hdf5-file. Default: ../data/hdf5_set/Multires_coronal.hdf5
 * `--data_dir`: Directory with images to load. Default: /data
 Your data_dir would then look like this:
-  ```
+ ```
   data/
 ├── domain1_img/     # Input images for domain 1
 ├── domain1_label/   # Corresponding labels or segmentations for domain 1
@@ -100,7 +100,7 @@ domain1_label/
 ├── subject_002_seg.nii.gz
 ...
 
-  ```
+ ```
 * --lut: FreeSurfer-style Color Lookup Table with labels to use in final prediction. 
 
 
