@@ -14,8 +14,8 @@ DATA:
   SIZES: [256, 311, 320]
   PADDED_SIZE: 320
   PLANE: "sagittal"
-  PATH_HDF5_TRAIN: "/opt/localdata/data/usr-envs/ruiying/Code/NeurIPS/FastSurfer/FastSurfer_MAE/FastSurferCNN/train_data/training_set_sagittal.hdf5"
-  PATH_HDF5_VAL: "/opt/localdata/data/usr-envs/ruiying/Code/NeurIPS/FastSurfer/FastSurfer_MAE/FastSurferCNN/train_data/val_set_sagittal.hdf5"
+  PATH_HDF5_TRAIN: "training_set_sagittal.hdf5"
+  PATH_HDF5_VAL: "val_set_sagittal.hdf5"
   AUG: ["None", "Gaussian"]
 
 DATA_LOADER:
@@ -31,6 +31,6 @@ TRAIN:
   FINE_TUNE: True
   RESUME_EXPR_NUM: "FastSurferVINN"
 
-LOG_DIR: "/opt/localdata/data/usr-envs/ruiying/Code/NeurIPS/FastSurfer/FastSurfer_MAE/FastSurferCNN/experiments/sagittal"
+LOG_DIR: "experiments/sagittal"
 EXPR_NUM: "FastSurferVINN"
-MAE_MODEL: "/opt/localdata/data/usr-envs/ruiying/Code/NeurIPS/FastSurfer/FastSurfer_MAE/FastSurferCNN/MAE_Pretrain_model/model_final.pth"
+MAE_MODEL: "MAE_Pretrain_model/model_final.pth"
