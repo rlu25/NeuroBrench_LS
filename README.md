@@ -5,6 +5,7 @@
 <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/08/Logo_for_Conference_on_Neural_Information_Processing_Systems.svg/1200px-Logo_for_Conference_on_Neural_Information_Processing_Systems.svg.png" width=200>
 
 **💡 NeuroBench-LS **, a unified benchmark framework designed to evaluate and enhance the generalizability of foundation models across the human lifespan using brain MRI. *** 
+![Diagram](pipeline.png)
 
 ## 📋 Our Dataset
 
