@@ -6,8 +6,8 @@ loss=mse
 batch_size=8
 lbd=10
 beta=1
-first_stage_net=./fetal_wenyi/ScaleDense/ScaleDense_best_model.pth.tar
-save_path=./fetal_wenyi/second_stage_test/
+first_stage_net=./ckpt/ScaleDense/ScaleDense_best_model.pth.tar
+save_path=./ckpt_fetal/second_stage_test/
 label=./data_fetal/dataset.xls
 
 train_data=./data_fetal/train

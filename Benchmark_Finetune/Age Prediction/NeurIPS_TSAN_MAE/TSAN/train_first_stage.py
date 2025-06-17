@@ -11,7 +11,6 @@ from prediction_first_stage import test
 from sklearn.metrics import mean_absolute_error
 warnings.filterwarnings("ignore")
 
-os.chdir('/opt/localdata/data/usr-envs/wenyi/TSAN_MAE/TSAN-brain-age-estimation')
 
 torch.manual_seed(0)
 torch.cuda.manual_seed_all(0)
@@ -250,9 +249,12 @@ def train(train_loader, model, criterion1, criterion2, optimizer, device, epoch)
         if opt.model == 'ScaleDense':
             # out = model(input, male)
             out = model(input)
-
+            out = out.detach().cpu().numpy()
+            out = out.argmax(axis=1) 
         else:
             out = model(input)
+            out = out.detach().cpu().numpy()
+            out = out.argmax(axis=1) 
         # =========== compute loss =========== #
         loss1 = criterion1(out, target)
         if opt.lbd > 0:
@@ -320,8 +322,12 @@ def validate(valid_loader, model, criterion1, criterion2, device):
             if opt.model == 'ScaleDense':
                 # out = model(input,male)
                 out = model(input)
+                out = out.detach().cpu().numpy()
+                out = out.argmax(axis=1) 
             else:
                 out = model(input)
+                out = out.detach().cpu().numpy()
+                out = out.argmax(axis=1)
             # =========== compute loss =========== #
             loss1 = criterion1(out, target)
             if opt.lbd > 0:
@@ -440,3 +446,4 @@ if __name__ == "__main__":
     os.system('echo "train {}" >> {}'.format(datetime.datetime.now(), res))
 
     main(res)
+

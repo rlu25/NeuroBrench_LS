@@ -6,6 +6,8 @@
 
 **💡 NeuroBench-LS **, a unified benchmark framework designed to evaluate and enhance the generalizability of foundation models across the human lifespan using brain MRI. *** 
 
+![image-20250528120257568](/Users/rliu60/Library/Application Support/typora-user-images/image-20250528120257568.png)
+
 ## 📋 Our Dataset
 
 We provide a comprehensive MRI dataset on [Harvard Dataverse](https://dataverse.harvard.edu/) spanning the full human lifespan—from fetus and infant to elderly adults. The collection includes over **22,000** high-quality **T1-weighted** and **T2-weighted** structural brain MRI scans.

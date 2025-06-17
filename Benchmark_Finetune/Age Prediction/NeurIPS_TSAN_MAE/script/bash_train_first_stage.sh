@@ -5,7 +5,7 @@ loss=mse
 batch_size=8
 lbd=10
 beta=1
-save_path=./trained_wenyi/ScaleDense/
+save_path=./ckpt/ScaleDense/
 label=./data/dataset.xls
 
 train_data=./data/train

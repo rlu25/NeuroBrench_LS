@@ -250,11 +250,11 @@ def train(train_loader, model, first_stage_model,criterion1, criterion2, optimiz
         model.train()
         model.zero_grad()
         
-        predicted_residual_age, output_age = model(input, dis_age) # male, 
-        target_residual_age = target - dis_age
+        output_age = model(input, dis_age) # male, 
+        #target_residual_age = target - dis_age
             
         # =========== compute loss =========== #
-        loss1 = criterion1(predicted_residual_age, target_residual_age)
+        loss1 = criterion1(output_age, target)
         if opt.lbd > 0:
             loss2 = criterion2(output_age, target)
         else:
@@ -320,10 +320,10 @@ def validate(valid_loader, model, first_stage_model,criterion1,criterion2, devic
             dis_age = discretize_age(first_stage_predict.cpu(),range=opt.dis_range).to(device)
         
             # =========== compute output and loss =========== #
-            predicted_residual_age, output_age = model(input, dis_age) # , male
-            target_residual_age = target - dis_age
+            output_age = model(input, dis_age) # , male
+            #target_residual_age = target - dis_age
             # =========== compute loss =========== #
-            loss1 = criterion1(predicted_residual_age, target_residual_age)
+            loss1 = criterion1(output_age, target)
             if opt.lbd > 0:
                 loss2 = criterion2(output_age, target)
             else:
@@ -440,3 +440,4 @@ if __name__ == "__main__":
     os.system('echo "train {}" >> {}'.format(datetime.datetime.now(), res))
 
     main(res)
+
