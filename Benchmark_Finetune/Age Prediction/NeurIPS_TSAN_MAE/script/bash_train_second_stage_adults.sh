@@ -6,8 +6,8 @@ loss=mse
 batch_size=8
 lbd=10
 beta=1
-first_stage_net=./adults_wenyi/ScaleDense/ScaleDense_best_model.pth.tar
-save_path=./adults_wenyi/second_stage_test/
+first_stage_net=./ckpt/ScaleDense/ScaleDense_best_model.pth.tar
+save_path=./ckpt/second_stage_test/
 label=./data_adults/dataset.xls
 
 train_data=./data_adults/train

@@ -101,7 +101,7 @@ class ScaleDense(nn.Module):
             )
         self.end_fc_without_gender = nn.Sequential(
             nn.Linear(32,16),
-            nn.Linear(16,1),
+            nn.Linear(16,3),
             nn.ReLU()
             )
 

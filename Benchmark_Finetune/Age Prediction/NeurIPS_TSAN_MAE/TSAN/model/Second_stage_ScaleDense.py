@@ -108,7 +108,7 @@ class second_stage_scaledense(nn.Module):
             )
 
         self.end_fc_without_gender = nn.Sequential(
-            nn.Linear(48,16),
+            nn.Linear(32,16),
             nn.ReLU(),
             nn.Linear(16,1),
             nn.ReLU()
@@ -129,7 +129,7 @@ class second_stage_scaledense(nn.Module):
         x = self.gap(x)
         x = torch.reshape(x,(x.size(0),-1))
         x = self.fc(x)
-        dis_age = self.dis_fc(dis_age_input)
+        #dis_age = self.dis_fc(dis_age_input)
         
         # if self.use_gender:
         #     male = torch.reshape(male_input,(male_input.size(0),-1))
@@ -138,13 +138,13 @@ class second_stage_scaledense(nn.Module):
         #     x = self.end_fc_with_gender(x) 
 
         # else:
-        x = torch.cat([x,dis_age],1)
+        #x = torch.cat([x,dis_age],1)
         x = self.end_fc_without_gender(x) 
-        x = torch.clamp(x, min=-5, max=5)
+        #x = torch.clamp(x, min=-5, max=5)
 
         # residual_age = x
         # output_age = residual_age + dis_age_input
-        return x, x + dis_age_input
+        return x
 
 def get_parameter_number(net):
     total_num = sum(p.numel() for p in net.parameters())
