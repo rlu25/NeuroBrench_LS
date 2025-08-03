@@ -12,7 +12,7 @@
 We provide a comprehensive MRI dataset on [Harvard Dataverse](https://dataverse.harvard.edu/) spanning the full human lifespan—from fetus and infant to elderly adults. The collection includes over **22,000** high-quality **T1-weighted** and **T2-weighted** structural brain MRI scans.
 
 - **Publicly released subcortical segmentation** are available via the official [Dataverse link](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/B5OU7H).
-- **Private or restricted datasets** can be accessed upon request. Please contact the corresponding principal investigator (PI) for access approval.
+- **Private or restricted datasets** may be made available on reasonable request and subject to institutional data sharing agreements and ethical approval. Please contact the corresponding principal investigator (PI) for access approval.
 
 For more details on data usage, structure, and benchmarks, please refer to the full documentation in this repository.   
 
